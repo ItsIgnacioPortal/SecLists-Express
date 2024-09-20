@@ -27,7 +27,7 @@ Cloning this repository should take 4-5 minutes at 5MB/s speeds.
 **Zip**
 
 ```
-wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip \
+wget -c https://github.com/ItsIgnacioPortal/SecLists-Express/archive/master.zip -O SecList.zip \
   && unzip SecList.zip \
   && rm -f SecList.zip
 ```
@@ -36,25 +36,13 @@ wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList
 
 ```
 git clone --depth 1 \
-  https://github.com/danielmiessler/SecLists.git
+  https://github.com/ItsIgnacioPortal/SecLists-Express.git
 ```
 
 **Git (Complete)**
 
 ```
-git clone https://github.com/danielmiessler/SecLists.git
-```
-
-**Kali Linux** ([Tool Page](https://www.kali.org/tools/seclists/))
-
-```
-apt -y install seclists
-```
-
-**BlackArch** ([Tool Page](https://blackarch.org/tools.html))
-
-```
-sudo pacman -S seclists
+git clone https://github.com/ItsIgnacioPortal/SecLists-Express.git
 ```
 
 - - -
