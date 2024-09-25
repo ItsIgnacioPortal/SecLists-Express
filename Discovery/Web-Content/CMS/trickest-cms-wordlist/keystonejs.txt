@@ -2086,6 +2086,8 @@ eslint.config.js
 pnpm-lock.yaml
 .changeset/config.json
 .changeset/short-rocks-design.md
+.changeset/cyan-glasses-kiss.md
+.changeset/old-dolphins-obey.md
 .changeset/contributors.json
 .changeset/README.md
 .devcontainer/devcontainer.json
