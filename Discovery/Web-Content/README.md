@@ -106,3 +106,12 @@ Year of the first release of Microsoft Frontpage: 1997
 Year of the last release of Microsoft Frontpage: 2003
 
 Date of last update: Oct 14, 2010
+
+
+## jrun.txt
+Use for: Fuzzing for common filepaths in webpages served with **[Java Servlet Runner (Adobe JRun)](https://adobe.fandom.com/wiki/JRun)**
+
+Year of the first release of Java Servlet Runner (Adobe JRun): 1997
+Year of the last release of Java Servlet Runner (Adobe JRun): 2007
+
+Date of last update: Oct 14, 2010
