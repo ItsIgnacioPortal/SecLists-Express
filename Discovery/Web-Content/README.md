@@ -117,7 +117,7 @@ Year of the last release of Java Servlet Runner (Adobe JRun): 2007
 Date of last update: Oct 14, 2010
 
 
-## iplanet.txt
+## Oracle-Sun-iPlanet.txt
 Use for: Fuzzing for common filepaths in webpages served with **[Oracle Sun iPlanet](https://www.oracle.com/middleware/technologies/webtier.html)**
 
 Year of the first release of Java Servlet Runner (Adobe JRun): 1994
