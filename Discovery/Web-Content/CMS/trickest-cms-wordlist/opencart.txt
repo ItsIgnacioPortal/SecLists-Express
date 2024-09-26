@@ -86,6 +86,8 @@ upload/install/language/en-gb/error/not_found.php
 upload/install/language/en-gb/en-gb.php
 upload/install/language/en-gb/upgrade/upgrade.php
 upload/extension/ocmod/index.html
+upload/extension/opencart/admin/view/template/api/reward.twig
+upload/extension/opencart/admin/view/template/api/coupon.twig
 upload/extension/opencart/admin/view/template/fraud/ip.twig
 upload/extension/opencart/admin/view/template/fraud/ip_ip.twig
 upload/extension/opencart/admin/view/template/currency/fixer.twig
@@ -114,8 +116,6 @@ upload/extension/opencart/admin/view/template/captcha/basic.twig
 upload/extension/opencart/admin/view/template/total/total.twig
 upload/extension/opencart/admin/view/template/total/low_order_fee.twig
 upload/extension/opencart/admin/view/template/total/tax.twig
-upload/extension/opencart/admin/view/template/total/coupon_order.twig
-upload/extension/opencart/admin/view/template/total/reward_order.twig
 upload/extension/opencart/admin/view/template/total/reward.twig
 upload/extension/opencart/admin/view/template/total/shipping.twig
 upload/extension/opencart/admin/view/template/total/credit.twig
@@ -188,6 +188,8 @@ upload/extension/opencart/admin/view/template/report/customer.twig
 upload/extension/opencart/admin/view/template/report/marketing.twig
 upload/extension/opencart/admin/view/template/report/customer_activity_list.twig
 upload/extension/opencart/admin/view/template/report/sale_coupon.twig
+upload/extension/opencart/admin/controller/api/reward.php
+upload/extension/opencart/admin/controller/api/coupon.php
 upload/extension/opencart/admin/controller/fraud/ddos.php
 upload/extension/opencart/admin/controller/fraud/ip.php
 upload/extension/opencart/admin/controller/currency/fixer.php
@@ -264,6 +266,8 @@ upload/extension/opencart/admin/model/report/product_viewed.php
 upload/extension/opencart/admin/model/report/activity.php
 upload/extension/opencart/admin/model/report/sale.php
 upload/extension/opencart/admin/model/report/customer.php
+upload/extension/opencart/admin/language/en-gb/api/reward.php
+upload/extension/opencart/admin/language/en-gb/api/coupon.php
 upload/extension/opencart/admin/language/en-gb/fraud/ip.php
 upload/extension/opencart/admin/language/en-gb/currency/fixer.php
 upload/extension/opencart/admin/language/en-gb/currency/ecb.php
@@ -338,14 +342,16 @@ upload/extension/opencart/catalog/view/template/module/account.twig
 upload/extension/opencart/catalog/view/template/module/html.twig
 upload/extension/opencart/catalog/view/template/module/featured.twig
 upload/extension/opencart/catalog/view/template/module/special.twig
+upload/extension/opencart/catalog/view/template/checkout/reward.twig
+upload/extension/opencart/catalog/view/template/checkout/shipping.twig
+upload/extension/opencart/catalog/view/template/checkout/coupon.twig
 upload/extension/opencart/catalog/view/template/captcha/basic.twig
-upload/extension/opencart/catalog/view/template/total/reward.twig
-upload/extension/opencart/catalog/view/template/total/shipping.twig
-upload/extension/opencart/catalog/view/template/total/coupon.twig
 upload/extension/opencart/catalog/view/template/payment/bank_transfer.twig
 upload/extension/opencart/catalog/view/template/payment/free_checkout.twig
 upload/extension/opencart/catalog/view/template/payment/cheque.twig
 upload/extension/opencart/catalog/view/template/payment/cod.twig
+upload/extension/opencart/catalog/controller/api/reward.php
+upload/extension/opencart/catalog/controller/api/coupon.php
 upload/extension/opencart/catalog/controller/fraud/ddos.php
 upload/extension/opencart/catalog/controller/currency/fixer.php
 upload/extension/opencart/catalog/controller/currency/ecb.php
@@ -362,10 +368,10 @@ upload/extension/opencart/catalog/controller/module/latest.php
 upload/extension/opencart/catalog/controller/module/topic.php
 upload/extension/opencart/catalog/controller/module/filter.php
 upload/extension/opencart/catalog/controller/module/html.php
+upload/extension/opencart/catalog/controller/checkout/reward.php
+upload/extension/opencart/catalog/controller/checkout/coupon.php
+upload/extension/opencart/catalog/controller/checkout/shipping.php
 upload/extension/opencart/catalog/controller/captcha/basic.php
-upload/extension/opencart/catalog/controller/total/reward.php
-upload/extension/opencart/catalog/controller/total/coupon.php
-upload/extension/opencart/catalog/controller/total/shipping.php
 upload/extension/opencart/catalog/controller/payment/bank_transfer.php
 upload/extension/opencart/catalog/controller/payment/cod.php
 upload/extension/opencart/catalog/controller/payment/free_checkout.php
@@ -393,6 +399,8 @@ upload/extension/opencart/catalog/model/payment/bank_transfer.php
 upload/extension/opencart/catalog/model/payment/cod.php
 upload/extension/opencart/catalog/model/payment/free_checkout.php
 upload/extension/opencart/catalog/model/payment/cheque.php
+upload/extension/opencart/catalog/language/en-gb/api/reward.php
+upload/extension/opencart/catalog/language/en-gb/api/coupon.php
 upload/extension/opencart/catalog/language/en-gb/shipping/weight.php
 upload/extension/opencart/catalog/language/en-gb/shipping/item.php
 upload/extension/opencart/catalog/language/en-gb/shipping/pickup.php
@@ -409,6 +417,8 @@ upload/extension/opencart/catalog/language/en-gb/module/store.php
 upload/extension/opencart/catalog/language/en-gb/module/latest.php
 upload/extension/opencart/catalog/language/en-gb/module/topic.php
 upload/extension/opencart/catalog/language/en-gb/module/filter.php
+upload/extension/opencart/catalog/language/en-gb/checkout/reward.php
+upload/extension/opencart/catalog/language/en-gb/checkout/coupon.php
 upload/extension/opencart/catalog/language/en-gb/captcha/basic.php
 upload/extension/opencart/catalog/language/en-gb/total/low_order_fee.php
 upload/extension/opencart/catalog/language/en-gb/total/credit.php
@@ -5301,7 +5311,6 @@ upload/catalog/view/javascript/bootstrap/js/bootstrap.esm.js
 upload/catalog/view/javascript/bootstrap/js/bootstrap.js.map
 upload/catalog/view/javascript/bootstrap/js/bootstrap.min.js.map
 upload/catalog/controller/api/payment_method.php
-upload/catalog/controller/api/extension.php
 upload/catalog/controller/api/payment_address.php
 upload/catalog/controller/api/shipping_address.php
 upload/catalog/controller/api/order.php

@@ -2670,6 +2670,7 @@ res/ide-support/eclipse/clean-up-asf-tomcat.xml
 res/ide-support/idea/codeStyles/codeStyleConfig.xml
 res/ide-support/idea/codeStyles/Project.xml
 res/ide-support/idea/inspectionProfiles/Project_Default.xml
+res/ide-support/idea/.name
 res/ide-support/idea/compiler.xml
 res/ide-support/idea/tomcat.iml
 res/ide-support/idea/copyright/profiles_settings.xml
@@ -3056,14 +3057,13 @@ webapps/docs/api/index.html
 webapps/docs/balancer-howto.xml
 webapps/docs/introduction.xml
 webapps/docs/architecture/overview.xml
-webapps/docs/architecture/startup/4_catalina_start_2.svg
-webapps/docs/architecture/startup/serverStartup.txt
-webapps/docs/architecture/startup/5_catalina_start_3.svg
-webapps/docs/architecture/startup/6_catalina_start_4.svg
 webapps/docs/architecture/startup/3_catalina_start_1.plantuml
-webapps/docs/architecture/startup/serverStartup.pdf
 webapps/docs/architecture/startup/1_overview.plantuml
 webapps/docs/architecture/startup/2_catalina_init.plantuml
+webapps/docs/architecture/startup/6_catalina_host_config.plantuml
+webapps/docs/architecture/startup/5_catalina_start_3.plantuml
+webapps/docs/architecture/startup/4_catalina_start_2.plantuml
+webapps/docs/architecture/startup/7_catalina_context_config.plantuml
 webapps/docs/architecture/index.xml
 webapps/docs/architecture/startup.xml
 webapps/docs/architecture/project.xml
@@ -3961,6 +3961,7 @@ test/org/apache/catalina/valves/TestExtendedAccessLogValve.java
 test/org/apache/catalina/valves/TestPatternTokenizer.java
 test/org/apache/catalina/valves/Benchmarks.java
 test/org/apache/catalina/valves/TestCrawlerSessionManagerValve.java
+test/org/apache/catalina/valves/TestHealthCheckValve.java
 test/org/apache/catalina/valves/TestAccessLogValve.java
 test/org/apache/catalina/valves/TestSSLValve.java
 test/org/apache/catalina/valves/TestRemoteIpValve.java
@@ -3973,6 +3974,7 @@ test/org/apache/catalina/valves/TestAbstractAccessLogValveEscape.java
 test/org/apache/catalina/ant/TestDeployTask.java
 test/org/apache/catalina/ssi/TestRegExpCapture.java
 test/org/apache/catalina/ssi/TestExpressionParseTree.java
+test/org/apache/catalina/manager/TestManagerWebapp.java
 test/org/apache/catalina/manager/TestStatusTransformer.java
 test/org/apache/catalina/loader/TesterUnweavedClass.java
 test/org/apache/catalina/loader/TestWebappClassLoaderWeaving.java
@@ -4204,6 +4206,7 @@ test/org/apache/tomcat/util/res/TestStringManager.java
 test/org/apache/tomcat/util/http/TestCookies.java
 test/org/apache/tomcat/util/http/TestCookieProcessorGenerationHttp.java
 test/org/apache/tomcat/util/http/TestRequestUtilNormalize.java
+test/org/apache/tomcat/util/http/TestFastHttpDateFormat.java
 test/org/apache/tomcat/util/http/TestCookieParsing.java
 test/org/apache/tomcat/util/http/TestCookieProcessorGeneration.java
 test/org/apache/tomcat/util/http/parser/TestAuthorizationDigest.java

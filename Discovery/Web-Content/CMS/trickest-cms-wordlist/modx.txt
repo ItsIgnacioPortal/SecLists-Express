@@ -327,6 +327,7 @@ _build/templates/default/sass/components/_components.scss
 _build/templates/default/sass/components/_shaded-box.scss
 _build/templates/default/sass/_navbar.scss
 _build/templates/default/sass/_trash.scss
+_build/templates/default/sass/_a11y.scss
 _build/templates/default/sass/login.scss
 _build/templates/default/sass/_utility.scss
 _build/templates/default/sass/_package-management.scss
@@ -2835,6 +2836,9 @@ core/src/Revolution/Processors/Context/Setting/UpdateFromGrid.php
 core/src/Revolution/Processors/Context/GetList.php
 core/src/Revolution/Processors/Context/Remove.php
 core/src/Revolution/Processors/Context/UpdateFromGrid.php
+core/src/Revolution/Processors/SoftwareUpdate/GetFile.php
+core/src/Revolution/Processors/SoftwareUpdate/GetList.php
+core/src/Revolution/Processors/SoftwareUpdate/Base.php
 core/src/Revolution/Processors/Model/GetListProcessor.php
 core/src/Revolution/Processors/Model/DuplicateProcessor.php
 core/src/Revolution/Processors/Model/RemoveProcessor.php

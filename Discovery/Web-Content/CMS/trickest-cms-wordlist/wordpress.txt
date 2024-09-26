@@ -333,7 +333,9 @@ wp-includes/Text/Diff/Engine/string.php
 wp-includes/Text/Diff/Renderer/inline.php
 wp-includes/Text/Diff/Renderer.php
 wp-includes/assets/script-loader-packages.php
+wp-includes/assets/script-modules-packages.php
 wp-includes/assets/script-loader-react-refresh-entry.php
+wp-includes/assets/script-modules-packages.min.php
 wp-includes/assets/script-loader-react-refresh-runtime.php
 wp-includes/assets/script-loader-react-refresh-entry.min.php
 wp-includes/assets/script-loader-packages.min.php
@@ -834,6 +836,7 @@ wp-includes/query.php
 wp-includes/fonts.php
 wp-includes/cron.php
 wp-includes/blocks.php
+wp-includes/class-wp-block-templates-registry.php
 wp-includes/template.php
 wp-includes/theme-templates.php
 wp-includes/class-wp-block-type-registry.php
@@ -1170,7 +1173,22 @@ wp-includes/js/dist/router.min.js
 wp-includes/js/dist/viewport.min.js
 wp-includes/js/dist/customize-widgets.min.js
 wp-includes/js/dist/edit-site.js
-wp-includes/js/dist/interactivity-router.js
+wp-includes/js/dist/script-modules/interactivity-router/index.js
+wp-includes/js/dist/script-modules/interactivity-router/index.min.js
+wp-includes/js/dist/script-modules/block-library/file/view.js
+wp-includes/js/dist/script-modules/block-library/file/view.min.js
+wp-includes/js/dist/script-modules/block-library/navigation/view.js
+wp-includes/js/dist/script-modules/block-library/navigation/view.min.js
+wp-includes/js/dist/script-modules/block-library/image/view.js
+wp-includes/js/dist/script-modules/block-library/image/view.min.js
+wp-includes/js/dist/script-modules/block-library/query/view.js
+wp-includes/js/dist/script-modules/block-library/query/view.min.js
+wp-includes/js/dist/script-modules/block-library/search/view.js
+wp-includes/js/dist/script-modules/block-library/search/view.min.js
+wp-includes/js/dist/script-modules/interactivity/debug.js
+wp-includes/js/dist/script-modules/interactivity/index.js
+wp-includes/js/dist/script-modules/interactivity/index.min.js
+wp-includes/js/dist/script-modules/interactivity/debug.min.js
 wp-includes/js/dist/block-directory.js
 wp-includes/js/dist/media-utils.js
 wp-includes/js/dist/annotations.min.js
@@ -1201,9 +1219,7 @@ wp-includes/js/dist/development/react-refresh-entry.min.js
 wp-includes/js/dist/development/react-refresh-runtime.js
 wp-includes/js/dist/development/react-refresh-runtime.min.js
 wp-includes/js/dist/block-library.min.js
-wp-includes/js/dist/interactivity.js
 wp-includes/js/dist/undo-manager.min.js
-wp-includes/js/dist/interactivity-router.min.asset.php
 wp-includes/js/dist/url.js
 wp-includes/js/dist/widgets.min.js
 wp-includes/js/dist/data.min.js
@@ -1212,11 +1228,9 @@ wp-includes/js/dist/patterns.min.js
 wp-includes/js/dist/undo-manager.js
 wp-includes/js/dist/core-commands.js
 wp-includes/js/dist/is-shallow-equal.js
-wp-includes/js/dist/interactivity.min.js
 wp-includes/js/dist/block-library.js
 wp-includes/js/dist/date.js
 wp-includes/js/dist/patterns.js
-wp-includes/js/dist/interactivity-router.min.js
 wp-includes/js/dist/private-apis.js
 wp-includes/js/dist/preferences-persistence.min.js
 wp-includes/js/dist/blob.js
@@ -1231,6 +1245,8 @@ wp-includes/js/dist/data.js
 wp-includes/js/dist/redux-routine.js
 wp-includes/js/dist/editor.js
 wp-includes/js/dist/compose.min.js
+wp-includes/js/dist/fields.min.js
+wp-includes/js/dist/fields.js
 wp-includes/js/dist/vendor/react-dom.min.js
 wp-includes/js/dist/vendor/wp-polyfill-url.js
 wp-includes/js/dist/vendor/moment.js
@@ -1272,7 +1288,6 @@ wp-includes/js/dist/element.min.js
 wp-includes/js/dist/style-engine.js
 wp-includes/js/dist/commands.min.js
 wp-includes/js/dist/edit-post.min.js
-wp-includes/js/dist/interactivity-router.asset.php
 wp-includes/js/dist/reusable-blocks.js
 wp-includes/js/dist/rich-text.js
 wp-includes/js/dist/media-utils.min.js
@@ -2338,6 +2353,7 @@ wp-content/themes/twentytwentyfour/patterns/testimonial-centered.php
 wp-content/themes/twentytwentyfour/patterns/template-index-blogging.php
 wp-content/themes/twentytwentyfour/patterns/page-portfolio-overview.php
 wp-content/themes/twentytwentyfour/patterns/page-rsvp-landing.php
+wp-content/themes/twentytwentyfour/patterns/hidden-posts-heading.php
 wp-content/themes/twentytwentyfour/patterns/text-faq.php
 wp-content/themes/twentytwentyfour/patterns/hidden-portfolio-hero.php
 wp-content/themes/twentytwentyfour/patterns/template-home-portfolio.php
@@ -2795,6 +2811,7 @@ wp-content/themes/twentytwentythree/patterns/post-meta.php
 wp-content/themes/twentytwentythree/patterns/call-to-action.php
 wp-content/themes/twentytwentythree/patterns/hidden-comments.php
 wp-content/themes/twentytwentythree/patterns/footer-default.php
+wp-content/themes/twentytwentythree/patterns/hidden-heading.php
 wp-content/themes/twentythirteen/readme.txt
 wp-content/themes/twentythirteen/content-video.php
 wp-content/themes/twentythirteen/sidebar-main.php
