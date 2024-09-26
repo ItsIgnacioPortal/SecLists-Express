@@ -12,9 +12,9 @@ Seclists-Express is a frequently-updated fork of Seclists maintained by [ItsIgna
 
 ### Repository details
 
-Size of a complete clone of SecLists is currently at `1.5 GB`
+Size of a complete clone of SecLists is currently at `1.6 GB`
 
-Cloning this repository should take 4-5 minutes at 5MB/s speeds.
+Cloning this repository should take 5-6 minutes at 5MB/s speeds.
 
 <!--- details anchor -->
 
