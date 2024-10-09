@@ -14,7 +14,7 @@ No updates have been made to this wordlist since its creation.
 Use for: Discvering sensitive content in Apache web servers.
 Date of last update: Jan 26, 2015
 
-## ApacheTomcat.fuzz.txt
+## Apache-Tomcat.txt
 Use for: Discovering sensitive content in Apache Tomcat servers.
 Date of last update: Dec 14, 2017
 
