@@ -46,3 +46,12 @@ Reference: https://github.com/irsdl/IIS-ShortName-Scanner
 Discussion: https://github.com/danielmiessler/SecLists/pull/783
 
 Date of last update: Jun 27, 2022
+
+
+## JBoss.txt
+Use for: Fuzzing for common filepaths in webpages served with **[JBoss - RedHat](https://jbossas.jboss.org)** (not to be confused with "JBoss EAP").
+
+Date of the first release of JBoss: [2002-05-29](https://jbossas.jboss.org/downloads/)
+Date of the last release of JBoss: 2012-03-09
+
+Date of last wordlist update: Feb 27, 2014
