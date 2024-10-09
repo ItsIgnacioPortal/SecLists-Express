@@ -155,3 +155,12 @@ As an Unauthenticated user it's also possible to:
 Reference: https://the-infosec.com/2017/03/29/do-you-know-what-your-erp-is-telling-us/
 
 Date of last update: Oct 7, 2019
+
+
+## iis-systemweb.txt
+Use for: Fuzzing the `/aspnet_client/system_web/` directory on [Microsoft IIS](https://www.iis.net/) servers to detect **CGIs** and **scripts** even even if the two ladder directories are inaccessible.
+
+Reference: https://github.com/irsdl/IIS-ShortName-Scanner
+Discussion: https://github.com/danielmiessler/SecLists/pull/783
+
+Date of last update: Jun 27, 2022
