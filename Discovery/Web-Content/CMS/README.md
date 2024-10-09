@@ -28,3 +28,17 @@ As an Unauthenticated user it's also possible to:
 Reference: https://the-infosec.com/2017/03/29/do-you-know-what-your-erp-is-telling-us/
 
 Date of last update: Oct 7, 2019
+
+
+## Sharepoint-Ennumeration.txt
+Use for: Enumerating what files/functionality are being used to discover the attack surface of a SharePoint instance.
+
+> [!IMPORTANT]
+> Make sure to replace the following placeholders before using this wordlist:
+> - `{APPNAME}`
+> - `{COMPANYNAME}`
+> - `{COUNTRY}`
+> - `{SITENAME}`
+> - `{UUID}`
+
+Date of last update: Jun 27, 2022
