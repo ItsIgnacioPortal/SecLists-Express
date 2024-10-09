@@ -2760,6 +2760,9 @@ erpnext/assets/doctype/asset_capitalization/asset_capitalization.py
 erpnext/assets/doctype/asset_capitalization/asset_capitalization.js
 erpnext/assets/doctype/asset_capitalization/test_asset_capitalization.py
 erpnext/assets/doctype/asset_capitalization/asset_capitalization.json
+erpnext/assets/doctype/asset_repair_purchase_invoice/__init__.py
+erpnext/assets/doctype/asset_repair_purchase_invoice/asset_repair_purchase_invoice.json
+erpnext/assets/doctype/asset_repair_purchase_invoice/asset_repair_purchase_invoice.py
 erpnext/assets/doctype/asset_activity/__init__.py
 erpnext/assets/doctype/asset_activity/test_asset_activity.py
 erpnext/assets/doctype/asset_activity/asset_activity.json
@@ -3684,6 +3687,7 @@ erpnext/patches/v14_0/crm_ux_cleanup.py
 erpnext/patches/v14_0/delete_shopify_doctypes.py
 erpnext/patches/v14_0/update_opportunity_currency_fields.py
 erpnext/patches/v14_0/update_flag_for_return_invoices.py
+erpnext/patches/v14_0/update_currency_exchange_settings_for_frankfurter.py
 erpnext/patches/v14_0/update_entry_type_for_journal_entry.py
 erpnext/patches/v14_0/migrate_cost_center_allocations.py
 erpnext/patches/v15_0/create_asset_depreciation_schedules_from_assets.py

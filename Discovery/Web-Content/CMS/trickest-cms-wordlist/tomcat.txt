@@ -127,6 +127,7 @@ modules/jdbc-pool/doc/package.xsl
 modules/jdbc-pool/doc/changelog.xml
 modules/jdbc-pool/NOTICE
 CONTRIBUTING.md
+.DS_Store
 java/jakarta/xml/ws/WebServiceRef.java
 java/jakarta/xml/ws/WebServiceRefs.java
 java/jakarta/annotation/PostConstruct.java
@@ -1100,9 +1101,11 @@ java/org/apache/catalina/util/CustomObjectInputStream.java
 java/org/apache/catalina/util/LocalStrings_ko.properties
 java/org/apache/catalina/util/CharsetMapperDefault.properties
 java/org/apache/catalina/util/ParameterMap.java
+java/org/apache/catalina/util/RateLimiter.java
 java/org/apache/catalina/util/LocalStrings_ru.properties
 java/org/apache/catalina/util/StandardSessionIdGenerator.java
 java/org/apache/catalina/util/Introspection.java
+java/org/apache/catalina/util/FastRateLimiter.java
 java/org/apache/catalina/util/ServerInfo.java
 java/org/apache/catalina/util/URLEncoder.java
 java/org/apache/catalina/util/TLSUtil.java
@@ -2592,6 +2595,7 @@ java/org/apache/el/parser/AstMult.java
 java/org/apache/el/parser/SimpleNode.java
 java/org/apache/el/parser/AstMethodParameters.java
 java/org/apache/el/parser/AstGreaterThan.java
+java/org/apache/el/parser/AstNotEmpty.java
 java/org/apache/el/parser/ELParserTokenManager.java
 java/org/apache/el/parser/Node.java
 java/org/apache/el/parser/TokenMgrError.java
@@ -2629,6 +2633,7 @@ java/org/apache/el/parser/AstValue.java
 java/org/apache/el/parser/AstGreaterThanEqual.java
 java/org/apache/el/parser/AstChoice.java
 java/org/apache/el/parser/AstFloatingPoint.java
+java/org/apache/el/parser/AstAbstractEmpty.java
 java/org/apache/el/parser/AstString.java
 java/org/apache/el/parser/Token.java
 java/org/apache/el/parser/NodeVisitor.java
@@ -3974,8 +3979,10 @@ test/org/apache/catalina/valves/TestAbstractAccessLogValveEscape.java
 test/org/apache/catalina/ant/TestDeployTask.java
 test/org/apache/catalina/ssi/TestRegExpCapture.java
 test/org/apache/catalina/ssi/TestExpressionParseTree.java
+test/org/apache/catalina/manager/TestHostManagerWebapp.java
 test/org/apache/catalina/manager/TestManagerWebapp.java
 test/org/apache/catalina/manager/TestStatusTransformer.java
+test/org/apache/catalina/manager/TestManagerWebappSsl.java
 test/org/apache/catalina/loader/TesterUnweavedClass.java
 test/org/apache/catalina/loader/TestWebappClassLoaderWeaving.java
 test/org/apache/catalina/loader/EchoTag.java
@@ -4315,10 +4322,12 @@ test/org/apache/el/parser/TesterBeanA.java
 test/org/apache/el/parser/TestAstIdentifier.java
 test/org/apache/el/parser/TestAstMapData.java
 test/org/apache/el/parser/TestAstConcatenation.java
+test/org/apache/el/parser/TestAstEmpty.java
 test/org/apache/el/parser/TestELParserPerformance.java
 test/org/apache/el/parser/TestAstChoice.java
 test/org/apache/el/parser/TestAstAnd.java
 test/org/apache/el/parser/TestAstPlus.java
+test/org/apache/el/parser/TestAstNotEmpty.java
 test/org/apache/el/parser/TestAstOr.java
 test/org/apache/el/parser/TestAstFunction.java
 test/org/apache/el/parser/TesterBeanB.java

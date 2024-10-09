@@ -362,6 +362,7 @@ themes/vibrant/html/base.html.twig
 themes/vibrant/html/email.html.twig
 themes/vibrant/README.md
 tests/acceptance.suite.yml
+tests/acceptance/EmailManagementCest.php
 tests/acceptance/ContactManagementCest.php
 tests/functional.suite.yml
 tests/object-manager.php
@@ -371,7 +372,10 @@ tests/_support/Helper/Unit.php
 tests/_support/Helper/Functional.php
 tests/_support/AcceptanceTester.php
 tests/_support/FunctionalTester.php
+tests/_support/Page/Acceptance/CategoriesPage.php
+tests/_support/Page/Acceptance/EmailsPage.php
 tests/_support/Page/Acceptance/ContactPage.php
+tests/_support/Page/Acceptance/SegmentsPage.php
 tests/_support/Page/Acceptance/CampaignPage.php
 tests/_support/Step/Acceptance/Campaign.php
 tests/_support/Step/Acceptance/ContactStep.php
@@ -740,6 +744,7 @@ plugins/MauticSocialBundle/Resources/views/FormTheme/twitter_hashtag_widget.html
 plugins/MauticSocialBundle/Resources/views/FormTheme/Config/_config_social_config_widget.html.twig
 plugins/MauticSocialBundle/Resources/views/FormTheme/twitter_tweet_widget.html.twig
 plugins/MauticSocialBundle/Resources/views/FormTheme/Campaigns/twitter_tweet_widget.html.twig
+plugins/MauticSocialBundle/Resources/views/Tokens/tokens_help_bundle.html.twig
 plugins/MauticSocialBundle/Translations/en_US/messages.ini
 plugins/MauticSocialBundle/Translations/en_US/validators.ini
 plugins/MauticSocialBundle/Translations/en_US/flashes.ini
@@ -893,7 +898,6 @@ app/assets/fonts/source-sans-3-v15-cyrillic_cyrillic-ext_greek_greek-ext_latin_l
 app/assets/fonts/source-sans-3-v15-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext_vietnamese-600italic.woff2
 app/assets/fonts/source-sans-3-v15-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext_vietnamese-600.woff2
 app/assets/images/.htaccess
-app/assets/images/avatar.svg
 app/assets/images/mejs/controls.svg
 app/assets/images/mejs/mejs-controls.svg
 app/assets/images/mejs/bigplay.svg
@@ -959,7 +963,6 @@ app/bundles/UserBundle/DependencyInjection/Firewall/Factory/PluginFactory.php
 app/bundles/UserBundle/MauticUserBundle.php
 app/bundles/UserBundle/EventListener/LogoutListener.php
 app/bundles/UserBundle/EventListener/SAMLSubscriber.php
-app/bundles/UserBundle/EventListener/PasswordSubscriber.php
 app/bundles/UserBundle/EventListener/ConfigSubscriber.php
 app/bundles/UserBundle/EventListener/UserSubscriber.php
 app/bundles/UserBundle/EventListener/SecuritySubscriber.php
@@ -1016,7 +1019,6 @@ app/bundles/UserBundle/Tests/Security/SAML/Store/EntityDescriptorStoreTest.php
 app/bundles/UserBundle/Tests/Security/SAML/Store/TrustOptionsStoreTest.php
 app/bundles/UserBundle/Tests/Security/SAML/Store/CredentialsStoreTest.php
 app/bundles/UserBundle/Tests/Security/SAML/User/UserMapperTest.php
-app/bundles/UserBundle/Tests/EventListener/PasswordSubscriberTest.php
 app/bundles/UserBundle/Tests/EventListener/SecuritySubscriberTest.php
 app/bundles/UserBundle/Tests/EventListener/ConfigSubscriberTest.php
 app/bundles/UserBundle/Tests/EventListener/SAMLSubscriberTest.php
@@ -1714,6 +1716,7 @@ app/bundles/CampaignBundle/Tests/Functional/Fixtures/FixtureHelper.php
 app/bundles/CampaignBundle/Tests/Functional/Campaign/DetailsTest.php
 app/bundles/CampaignBundle/Tests/Functional/Campaign/CampaignActionJumpToEventWithIntervalTriggerModeFunctionalTest.php
 app/bundles/CampaignBundle/Tests/Functional/Campaign/JumpToActionTest.php
+app/bundles/CampaignBundle/Tests/Functional/Campaign/CampaignDecisionTest.php
 app/bundles/CampaignBundle/Tests/CampaignTestAbstract.php
 app/bundles/CampaignBundle/Tests/Executioner/KickoffExecutionerTest.php
 app/bundles/CampaignBundle/Tests/Executioner/Logger/EventLoggerTest.php
@@ -2213,6 +2216,7 @@ app/bundles/CoreBundle/Assets/css/app/less/components/editor.less
 app/bundles/CoreBundle/Assets/css/app/less/components/timeline.less
 app/bundles/CoreBundle/Assets/css/app/less/components/grid.less
 app/bundles/CoreBundle/Assets/css/app/less/components/input-groups.less
+app/bundles/CoreBundle/Assets/css/app/less/components/toggle.less
 app/bundles/CoreBundle/Assets/css/app/less/components/switch.less
 app/bundles/CoreBundle/Assets/css/app/less/components/panels.less
 app/bundles/CoreBundle/Assets/css/app/less/components/dropdowns.less
@@ -2524,6 +2528,7 @@ app/bundles/CoreBundle/Resources/views/Error/403.html.twig
 app/bundles/CoreBundle/Resources/views/Error/404.html.twig
 app/bundles/CoreBundle/Resources/views/Translation/row.html.twig
 app/bundles/CoreBundle/Resources/views/Translation/index.html.twig
+app/bundles/CoreBundle/Resources/views/Modal/tokens_help.html.twig
 app/bundles/CoreBundle/Resources/views/Modal/search_commands.html.twig
 app/bundles/CoreBundle/Resources/views/Modal/keyboard_shortcuts.html.twig
 app/bundles/CoreBundle/Resources/views/LeftPanel/index.html.twig
@@ -2907,6 +2912,7 @@ app/bundles/DynamicContentBundle/Resources/views/SubscribedEvents/Timeline/index
 app/bundles/DynamicContentBundle/Resources/views/FormTheme/Filter/layout.html.twig
 app/bundles/DynamicContentBundle/Resources/views/FormTheme/DynamicContentPushList/_dynamiccontentpush_list_row.html.twig
 app/bundles/DynamicContentBundle/Resources/views/FormTheme/DynamicContentDecisionList/_dynamiccontentdecision_list_row.html.twig
+app/bundles/DynamicContentBundle/Resources/views/Tokens/tokens_help_bundle.html.twig
 app/bundles/DynamicContentBundle/Resources/views/DynamicContent/form.html.twig
 app/bundles/DynamicContentBundle/Resources/views/DynamicContent/details.html.twig
 app/bundles/DynamicContentBundle/Resources/views/DynamicContent/list.html.twig
@@ -3133,6 +3139,7 @@ app/bundles/FormBundle/Resources/views/Public/videoembed.html.twig
 app/bundles/FormBundle/Resources/views/Result/export.html.twig
 app/bundles/FormBundle/Resources/views/Result/list.html.twig
 app/bundles/FormBundle/Resources/views/Result/_list.html.twig
+app/bundles/FormBundle/Resources/views/Tokens/tokens_help_bundle.html.twig
 app/bundles/FormBundle/Resources/views/messenger.html.twig
 app/bundles/FormBundle/Resources/views/Field/checkboxgrp.html.twig
 app/bundles/FormBundle/Resources/views/Field/radiogrp.html.twig
@@ -3299,6 +3306,7 @@ app/bundles/EmailBundle/Form/Type/EmailOpenType.php
 app/bundles/EmailBundle/Form/Type/EmailType.php
 app/bundles/EmailBundle/Form/Type/EmailClickDecisionType.php
 app/bundles/EmailBundle/Form/Type/EmailToUserType.php
+app/bundles/EmailBundle/Form/Type/BatchCategoryType.php
 app/bundles/EmailBundle/Form/Type/ExampleSendType.php
 app/bundles/EmailBundle/OptionsAccessor/EmailToUserAccessor.php
 app/bundles/EmailBundle/DependencyInjection/EnvProcessor/MailerDsnEnvVarProcessor.php
@@ -3366,6 +3374,7 @@ app/bundles/EmailBundle/Event/EmailValidationEvent.php
 app/bundles/EmailBundle/Event/QueueEmailEvent.php
 app/bundles/EmailBundle/Event/EmailReplyEvent.php
 app/bundles/EmailBundle/Assets/WebhookPayload/email_on_open.json
+app/bundles/EmailBundle/Assets/js/batch.js
 app/bundles/EmailBundle/Assets/js/send.example.js
 app/bundles/EmailBundle/Assets/js/email.js
 app/bundles/EmailBundle/Assets/js/config.js
@@ -3384,10 +3393,12 @@ app/bundles/EmailBundle/DataFixtures/ORM/LoadEmailData.php
 app/bundles/EmailBundle/Model/SendEmailToUser.php
 app/bundles/EmailBundle/Model/EmailModel.php
 app/bundles/EmailBundle/Model/TransportCallback.php
+app/bundles/EmailBundle/Model/EmailActionModel.php
 app/bundles/EmailBundle/Model/SendEmailToContact.php
 app/bundles/EmailBundle/Model/EmailStatModel.php
 app/bundles/EmailBundle/Controller/PublicController.php
 app/bundles/EmailBundle/Controller/AjaxController.php
+app/bundles/EmailBundle/Controller/BatchEmailController.php
 app/bundles/EmailBundle/Controller/EmailGraphStatsController.php
 app/bundles/EmailBundle/Controller/EmailMapStatsController.php
 app/bundles/EmailBundle/Controller/Api/EmailApiController.php
@@ -3396,6 +3407,7 @@ app/bundles/EmailBundle/MauticEmailBundle.php
 app/bundles/EmailBundle/Config/config.php
 app/bundles/EmailBundle/Config/services.php
 app/bundles/EmailBundle/Resources/views/Lead/preference_options.html.twig
+app/bundles/EmailBundle/Resources/views/Batch/form.html.twig
 app/bundles/EmailBundle/Resources/views/SubscribedEvents/Search/global.html.twig
 app/bundles/EmailBundle/Resources/views/SubscribedEvents/Timeline/index.html.twig
 app/bundles/EmailBundle/Resources/views/SubscribedEvents/Dashboard/Sent.email.to.contacts.html.twig
@@ -3417,6 +3429,7 @@ app/bundles/EmailBundle/Resources/views/FormTheme/Config/monitored_mailboxes_wid
 app/bundles/EmailBundle/Resources/views/Send/progress.html.twig
 app/bundles/EmailBundle/Resources/views/Send/form.html.twig
 app/bundles/EmailBundle/Resources/views/Heatmap/heatmap_legend.html.twig
+app/bundles/EmailBundle/Resources/views/Tokens/tokens_help_bundle.html.twig
 app/bundles/EmailBundle/Resources/views/AbTest/form.html.twig
 app/bundles/EmailBundle/Resources/views/KeyboardShortcuts/emails_shortcuts.html.twig
 app/bundles/EmailBundle/Validator/MultipleEmailsValid.php
@@ -3498,6 +3511,7 @@ app/bundles/EmailBundle/Tests/Model/EmailStatModelTest.php
 app/bundles/EmailBundle/Tests/Model/EmailModelTest.php
 app/bundles/EmailBundle/Tests/Model/EmailModelBuildUrlTest.php
 app/bundles/EmailBundle/Tests/Model/EmailModelFunctionalTest.php
+app/bundles/EmailBundle/Tests/Model/EmailActionModelTest.php
 app/bundles/EmailBundle/Tests/Model/SendEmailToUserTest.php
 app/bundles/EmailBundle/Tests/Model/TransportCallbackTest.php
 app/bundles/EmailBundle/Tests/Model/SendEmailToContactTest.php
@@ -4553,6 +4567,7 @@ app/bundles/LeadBundle/Resources/views/Timeline/plugin_table.html.twig
 app/bundles/LeadBundle/Resources/views/Timeline/_list_filter_form.html.twig
 app/bundles/LeadBundle/Resources/views/Timeline/list.html.twig
 app/bundles/LeadBundle/Resources/views/Timeline/_list.html.twig
+app/bundles/LeadBundle/Resources/views/Tokens/tokens_help_bundle.html.twig
 app/bundles/LeadBundle/Resources/views/Company/form_fields.html.twig
 app/bundles/LeadBundle/Resources/views/Company/merge.html.twig
 app/bundles/LeadBundle/Resources/views/Company/form_embedded.html.twig
@@ -5144,6 +5159,7 @@ app/bundles/PageBundle/Resources/views/Page/_list.html.twig
 app/bundles/PageBundle/Resources/views/Result/export.html.twig
 app/bundles/PageBundle/Resources/views/Result/list.html.twig
 app/bundles/PageBundle/Resources/views/Result/_list.html.twig
+app/bundles/PageBundle/Resources/views/Tokens/tokens_help_bundle.html.twig
 app/bundles/PageBundle/Resources/views/AbTest/form.html.twig
 app/bundles/PageBundle/PageEvents.php
 app/bundles/PageBundle/Translations/en_US/messages.ini
@@ -5195,6 +5211,7 @@ app/migrations/Version20240416112112.php
 app/migrations/Migration.template
 app/migrations/Version20230131133732.php
 app/migrations/Version20230311195347.php
+app/migrations/Version20240708153845.php
 app/migrations/Version20200513162918.php
 app/migrations/Version20240725105507.php
 app/migrations/Version20231207235400.php
@@ -5246,7 +5263,6 @@ var/.htaccess
 var/tmp/.gitkeep
 var/spool/.gitkeep
 .php-cs-fixer.php
-upgrade.php
 UPGRADE-PHP-TO-TWIG-TEMPLATES.md
 phpstan-baseline.neon
 .env.test

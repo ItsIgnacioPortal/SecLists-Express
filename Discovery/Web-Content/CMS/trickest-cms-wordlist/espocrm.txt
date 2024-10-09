@@ -3095,6 +3095,7 @@ application/Espo/Core/Formula/Functions/ExtGroup/PdfGroup/GenerateType.php
 application/Espo/Core/Formula/Functions/ExtGroup/SmsGroup/SendType.php
 application/Espo/Core/Formula/Functions/ExtGroup/EmailGroup/ApplyTemplateType.php
 application/Espo/Core/Formula/Functions/ExtGroup/EmailGroup/SendType.php
+application/Espo/Core/Formula/Functions/ExtGroup/MarkdownGroup/TransformType.php
 application/Espo/Core/Formula/Functions/OutputGroup/PrintType.php
 application/Espo/Core/Formula/Functions/OutputGroup/PrintLineType.php
 application/Espo/Core/Formula/Functions/LogGroup/ErrorType.php
@@ -3442,6 +3443,7 @@ application/Espo/Core/Acl/Table/RoleListProvider.php
 application/Espo/Core/Acl/Table/DefaultTableFactory.php
 application/Espo/Core/Acl/Table/DefaultTable.php
 application/Espo/Core/Acl/Table/DefaultRoleListProvider.php
+application/Espo/Core/Acl/Table/ScopeDataType.php
 application/Espo/Core/Acl/Table/TableFactory.php
 application/Espo/Core/Acl/Table/DefaultCacheKeyProvider.php
 application/Espo/Core/Acl/Table/Role.php
@@ -7452,6 +7454,7 @@ client/modules/crm/src/views/scheduler/scheduler.js
 client/modules/crm/src/view-setup-handlers/document/record-list-drag-n-drop.js
 client/modules/crm/src/knowledge-base-helper.js
 client/modules/crm/src/controllers/activities.js
+client/modules/crm/src/controllers/task.js
 client/modules/crm/src/controllers/calendar.js
 client/modules/crm/src/controllers/event-confirmation.js
 client/modules/crm/src/controllers/unsubscribe.js
@@ -7744,8 +7747,6 @@ client/res/templates/fields/range-int/edit.tpl
 client/res/templates/fields/varchar/detail.tpl
 client/res/templates/fields/varchar/list.tpl
 client/res/templates/fields/varchar/search.tpl
-client/res/templates/fields/datetime-short/detail.tpl
-client/res/templates/fields/datetime-short/list.tpl
 client/res/templates/fields/base/detail.tpl
 client/res/templates/fields/base/list.tpl
 client/res/templates/fields/base/search.tpl
@@ -7852,6 +7853,7 @@ client/src/helpers/list/settings.js
 client/src/helpers/list/misc/sticky-bar.js
 client/src/helpers/list/select-provider.js
 client/src/helpers/file-upload.js
+client/src/helpers/site/tabs.js
 client/src/ajax.js
 client/src/view.js
 client/src/page-title.js
@@ -8232,6 +8234,7 @@ client/src/views/admin/layouts/kanban.js
 client/src/views/admin/layouts/rows.js
 client/src/views/admin/layouts/detail-small.js
 client/src/views/admin/layouts/side-panels-edit.js
+client/src/views/admin/layouts/bottom-panels-detail-small.js
 client/src/views/admin/layouts/side-panels-detail-small.js
 client/src/views/admin/layouts/detail.js
 client/src/views/admin/layouts/list.js
@@ -8356,6 +8359,7 @@ client/src/views/stream/modals/view-audit-log.js
 client/src/views/stream/record/edit.js
 client/src/views/stream/record/list.js
 client/src/views/stream/record/row-actions/default.js
+client/src/views/stream/record/row-actions/detached.js
 client/src/views/stream/record/row-actions/update.js
 client/src/views/stream/notes/assign.js
 client/src/views/stream/notes/status.js
@@ -8428,6 +8432,7 @@ client/src/views/email/fields/replied.js
 client/src/views/email/fields/from-address-varchar.js
 client/src/views/email/fields/body.js
 client/src/views/email/fields/email-address.js
+client/src/views/email/fields/date-sent.js
 client/src/views/email/fields/create-event.js
 client/src/views/email/fields/from-email-address.js
 client/src/views/email/fields/email-address-varchar.js
