@@ -2,6 +2,12 @@
 
 These wordlists are specific to Content Management Systems.
 
+## AdobeCQ-AEM.txt
+Use for: Discovering sensitive filepaths of **Adobe Experience Manager**
+Creation date: Oct 1, 2017
+No updates have been made to this wordlist since its creation.
+
+
 ## Oracle-EBS-wordlist.txt
 Use for: Fuzzing for common filepaths of [Oracle E-Business Suite](https://www.oracle.com/applications/ebusiness/) (EBS) version 11.
 
