@@ -2,17 +2,24 @@
 
 ## AdobeXML.fuzz.txt
 Use for: Discovering sensitive filepaths of **Adobe ColdFusion**
+
 Creation date: Aug 27, 2012
+
 No updates have been made to this wordlist since its creation.
+
 
 ## CGI-HTTP-POST-Windows.fuzz.txt
 Use for: Exploiting various vulnerabilities in the now defunct WYSIWYG HTML editor and website administration tool, [Microsoft FrontPage](https://en.wikipedia.org/wiki/Microsoft_FrontPage)
+
 Source: https://github.com/deepak0401/Front-Page-Exploit
+
 Date of last update: Aug 27, 2012
+
 The last version of FrontPage was released on 2003.
 
 ## CGI-HTTP-POST.fuzz.txt
 Use for: Exploiting/Discovering various vulnerabilities in extremely old systems (Circa 1998) that use "CGI". 
+
 Date of last update: Aug 27, 2012
 
 This wordlist tests for the following vulnerabilities:
@@ -22,13 +29,18 @@ This wordlist tests for the following vulnerabilities:
 - Remote File Include in **[myPHPNuke](https://web.archive.org/web/20140812223623/http://www.myphpnuke.com/)**. Source: [Nessus](https://www.tenable.com/plugins/nessus/11836)
 - DoS in the **"D-Link Ethernet/Fast Ethernet Print Server DP-300+"**. Source: [Sullo's Security Advisory Archive](https://raw.githubusercontent.com/sullo/advisory-archives/master/phenoelit.de_dp-300.txt).
 
+
 ## CGI-Microsoft.fuzz.txt
 Use for: Exploiting/Discovering various vulnerabilities in miscelaneous CGI scripts that run on Microsoft operating systems.
+
 Date of last update: Aug 27, 2012
+
 
 ## raft-* wordlists
 Use for: Directory and file brute-forcing leading to identification of vulnerabilities in web applications.
+
 Source: [Google's RAFT](https://code.google.com/archive/p/raft/)
+
 
 ## combined_words.txt
 
@@ -67,6 +79,7 @@ This list is a combination of the following wordlists:
 - raft-small-directories.txt
 - common_directories.txt
 
+
 ## dsstorewordlist.txt
 
 SOURCE: https://github.com/aels/subdirectories-discover
@@ -75,6 +88,7 @@ Perfect wordlist to discover directories and files on target site with tools lik
 - It was collected by parsing Alexa top-million sites for **.DS_Store** files (https://en.wikipedia.org/wiki/.DS_Store), extracting all the found files, and then extracting found file and directory names from around 300k real websites.
 - Then sorted by probability and removed strings with one occurrence.
 - resulted file you can download is below. Happy Hunting!
+
 
 ## vulnerability-scan_j2ee-websites_WEB-INF.txt
 Use for: discovering sensitive j2ee files exploiting a lfi
@@ -90,6 +104,7 @@ References:
 Use for: Fuzzing for common filepaths in webpages designed with **[Microsoft Frontpage](https://en.wikipedia.org/wiki/Microsoft_FrontPage)**
 
 Year of the first release of Microsoft Frontpage: 1997
+
 Year of the last release of Microsoft Frontpage: 2003
 
 Date of last update: Oct 14, 2010
