@@ -55,3 +55,12 @@ Date of the first release of JBoss: [2002-05-29](https://jbossas.jboss.org/downl
 Date of the last release of JBoss: 2012-03-09
 
 Date of last wordlist update: Feb 27, 2014
+
+
+## Apache-Axis.txt
+Use for: Fuzzing for common filepaths in webpages created with **[Apache Axis](https://axis.apache.org/axis/)**
+
+Date of the first release of Apache Axis: [2002-10-07](https://jbossas.jboss.org/downloads/)
+Date of the last release of Apache Axis: 2006-04-22
+
+Date of last wordlist update: Feb 27, 2014
