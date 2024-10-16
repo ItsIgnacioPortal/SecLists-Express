@@ -108,3 +108,6 @@ Year of the first release of Microsoft Frontpage: 1997
 Year of the last release of Microsoft Frontpage: 2003
 
 Date of last update: Oct 14, 2010
+
+## graphql.txt
+Use for: Fuzzing for common filepaths in webpages that use the **[GraphQL Query Language](https://graphql.org/)**
