@@ -1,5 +1,5 @@
 * text=auto
 *.txt text
-Discovery/Web-Content/trickest-robots-disallowed-wordlists/top-10000.txt text eol=lf
+Discovery/Web-Content/trickest-robots-disallowed-wordlists/** text eol=lf
 *.zip -text
 *.tgz -text
