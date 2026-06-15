@@ -5813,6 +5813,7 @@ src/Umbraco.Core/PropertyEditors/ValueConverters/ColorPickerValueConverter.cs
 src/Umbraco.Core/PropertyEditors/ValueConverters/MultipleTextStringValueConverter.cs
 src/Umbraco.Core/PropertyEditors/ValueConverters/MultiNodeTreePickerValueConverter.cs
 src/Umbraco.Core/PropertyEditors/ValueConverters/DatePickerValueConverter.cs
+src/Umbraco.Core/PropertyEditors/AllowedContentTypeKeysParser.cs
 src/Umbraco.Core/PropertyEditors/DropDownFlexibleConfiguration.cs
 src/Umbraco.Core/PropertyEditors/EntityDataPickerConfiguration.cs
 src/Umbraco.Core/PropertyEditors/ConfigurationFieldAttribute.cs
@@ -5893,7 +5894,9 @@ src/Umbraco.Core/PropertyEditors/Validation/NestedValidationResults.cs
 src/Umbraco.Core/PropertyEditors/Validation/JsonPathValidator.cs
 src/Umbraco.Core/PropertyEditors/Validation/NestedJsonPathValidationResults.cs
 src/Umbraco.Core/PropertyEditors/Validation/JsonPathExpression.cs
+src/Umbraco.Core/PropertyEditors/Validation/TypedValidatorRunner.cs
 src/Umbraco.Core/PropertyEditors/Validation/ITypedJsonValidator.cs
+src/Umbraco.Core/PropertyEditors/Validation/ITypedValidator.cs
 src/Umbraco.Core/PropertyEditors/Validation/JsonPathValidationError.cs
 src/Umbraco.Core/PropertyEditors/Validation/TypedJsonValidatorRunner.cs
 src/Umbraco.Core/PropertyEditors/Validation/ValidationHelper.cs
@@ -6976,6 +6979,7 @@ src/Umbraco.Web.UI.Client/src/packages/documents/documents/search/global-search/
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/search/global-search/constants.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/search/document-search-result-item.element.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/search/constants.ts
+src/Umbraco.Web.UI.Client/src/packages/documents/documents/search/document-search.server.data-source.test.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/search/types.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/search/document.search-provider.ts
 src/Umbraco.Web.UI.Client/src/packages/documents/documents/user-start-node/manifests.ts
@@ -9505,6 +9509,7 @@ src/Umbraco.Web.UI.Client/src/packages/media/media/search/global-search/media-gl
 src/Umbraco.Web.UI.Client/src/packages/media/media/search/global-search/constants.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/search/constants.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/search/media-search-result-item.element.ts
+src/Umbraco.Web.UI.Client/src/packages/media/media/search/media-search.server.data-source.test.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/search/types.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/user-start-node/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/user-start-node/value-summary/manifests.ts
@@ -15498,6 +15503,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Web.Website/Cache/PartialViewCacheInvalida
 tests/Umbraco.Tests.UnitTests/Umbraco.Web.Website/ApplicationUrlConfigurationNotificationHandlerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Templates/DockerFileTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/PublishedContentTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/DomainCacheServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/DocumentCacheSyncFastPathTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/ElementBreadthFirstKeyProviderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.PublishedCache.HybridCache/ElementCacheSyncFastPathTests.cs
@@ -15875,6 +15881,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Extensions/UriExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/EntityDataPickerPropertyValueEditorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/RichTextPropertyEditorHelperTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/BlockListEditorPropertyValueEditorTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/AllowedContentTypeKeysParserTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/ColorPickerPropertyValueEditorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/MultipleTextStringPropertyValueEditorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/IntegerPropertyValueEditorTests.cs
@@ -15898,6 +15905,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/Validators/FileUpload
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/RichTextAllowedMediaTypeValidatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/BlockEditorComponentTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/SliderPropertyValueEditorTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/ContentPickerPropertyEditorValidationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/MediaPicker3ValueEditorValidationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/DataValueReferenceFactoryCollectionTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/DateTimeUnspecifiedPropertyEditorTests.cs
@@ -15907,6 +15915,8 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/BlockListPropertyValu
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/DateTimeDataValueEditorSortableTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/MultiNodeTreePickerValidationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/EnsureUniqueValuesValidatorTest.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/ElementPickerPropertyEditorMinMaxValidationTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/ElementPickerPropertyEditorValidationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/RadioButtonsPropertyValueEditorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/PropertyEditorValueTypeConverterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/PropertyEditors/DataValueEditorReuseTests.cs
@@ -16604,6 +16614,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Core/IO/FileSystemsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/IO/ShadowFileSystemTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Packaging/CreatedPackagesRepositoryTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Telemetry/TelemetryServiceTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Core/Cache/RuntimeCacheTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Cache/PublishedContentTypeCacheTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Cache/ContentCacheRefresherStaleCacheInstructionTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Core/Cache/DistributedCacheRefresherTests.cs

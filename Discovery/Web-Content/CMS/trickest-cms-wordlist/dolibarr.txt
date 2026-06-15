@@ -59,6 +59,7 @@ test/phpunit/testvirus.txt
 test/phpunit/KnowledgeRecordTest.php
 test/phpunit/CompanyBankAccountTest.php
 test/phpunit/FactureTestRounding.php
+test/phpunit/ModuleBuilderLibTest.php
 test/phpunit/MarginsLibTest.php
 test/phpunit/UtilsTest.php
 test/phpunit/phpunit.dtd
@@ -11415,6 +11416,7 @@ htdocs/imports/index.php
 htdocs/imports/emptyexample.php
 htdocs/ai/admin/assistant.php
 htdocs/ai/admin/setup.php
+htdocs/ai/admin/configure_tools.php
 htdocs/ai/admin/custom_prompt.php
 htdocs/ai/admin/log_viewer.php
 htdocs/ai/admin/server_mcp.php
@@ -11434,12 +11436,14 @@ htdocs/ai/class/llmadapter.class.php
 htdocs/ai/class/privacy_guard.class.php
 htdocs/ai/class/mcptool.class.php
 htdocs/ai/class/mcp_protocol.class.php
+htdocs/ai/js/ai.js
 htdocs/ai/js/ai_assistant.js
 htdocs/ai/server/mcp_server.php
 htdocs/ai/ajax/generate_content.php
 htdocs/ai/assistant/download_pdf.php
 htdocs/ai/assistant/execute_tool.php
 htdocs/ai/assistant/parse_intent.php
+htdocs/ai/assistant/popover.php
 htdocs/ai/assistant/index.php
 htdocs/ai/README.md
 htdocs/asset/model/accountancy_codes.php
@@ -12395,6 +12399,7 @@ htdocs/core/lib/eventorganization.lib.php
 htdocs/core/lib/supplier_proposal.lib.php
 htdocs/core/lib/memory.lib.php
 htdocs/core/lib/security.lib.php
+htdocs/core/lib/securitycore.lib.php
 htdocs/core/lib/tax.lib.php
 htdocs/core/lib/agenda.lib.php
 htdocs/core/lib/functionscli.lib.php
@@ -13002,6 +13007,7 @@ htdocs/core/login/README.txt
 htdocs/core/customreports.php
 htdocs/core/antispamimage.php
 htdocs/core/upload_page.php
+htdocs/core/ajax/changepositionfields.php
 htdocs/core/ajax/constantonoff.php
 htdocs/core/ajax/ajaxdirpreview.php
 htdocs/core/ajax/updateextrafield.php
@@ -13071,6 +13077,7 @@ htdocs/core/tpl/notes.tpl.php
 htdocs/core/tpl/originsubtotalline.tpl.php
 htdocs/core/tpl/subtotal_ajaxrow.tpl.php
 htdocs/core/tpl/bloc_comment.tpl.php
+htdocs/core/tpl/arrayfield_object_position_fields.tpl.php
 htdocs/core/tpl/admin_extrafields_view.tpl.php
 htdocs/core/tpl/bloc_showhide.tpl.php
 htdocs/core/tpl/filemanager.tpl.php

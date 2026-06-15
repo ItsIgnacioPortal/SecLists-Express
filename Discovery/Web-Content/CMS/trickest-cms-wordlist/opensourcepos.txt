@@ -12,10 +12,6 @@ branding/logo-white.svg
 BUILD.md
 .env.example
 composer.lock
-build/.phpunit.cache/test-results
-build/logs/logfile.xml
-build/logs/testdox.txt
-build/logs/testdox.html
 build.ps1
 docker-compose.yml
 CHANGELOG.md
@@ -1572,6 +1568,7 @@ tests/Controllers/EmployeesControllerTest.php
 tests/Controllers/ConfigTest.php
 tests/Controllers/HomeTest.php
 tests/Controllers/ItemsCsvImportTest.php
+tests/Controllers/CustomersCsvImportTest.php
 tests/Controllers/ReportsControllerTest.php
 tests/Models/EmployeeTest.php
 tests/Models/Reports/Summary_discounts_test.php
@@ -1582,6 +1579,7 @@ tests/Libraries/Token_libTest.php
 tests/.htaccess
 tests/README.md
 tests/helpers/UrlHelperTest.php
+tests/helpers/LocaleHelperTest.php
 CODE_OF_CONDUCT.md
 UPGRADE.md
 .htaccess

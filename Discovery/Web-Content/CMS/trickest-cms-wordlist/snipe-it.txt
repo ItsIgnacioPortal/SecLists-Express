@@ -7150,6 +7150,7 @@ app/Http/Controllers/Consumables/ConsumablesController.php
 app/Http/Controllers/Consumables/ConsumableCheckoutController.php
 app/Http/Controllers/CompaniesController.php
 app/Http/Controllers/ReportsController.php
+app/Http/Controllers/QrCodeController.php
 app/Http/Controllers/AssetModelsController.php
 app/Http/Controllers/SetupController.php
 app/Http/Controllers/DepartmentsController.php
@@ -7405,6 +7406,7 @@ tests/Feature/Importing/Ui/ImportTest.php
 tests/Feature/AssetModels/Api/IndexAssetModelsTest.php
 tests/Feature/AssetModels/Api/AssetModelFilesTest.php
 tests/Feature/AssetModels/Api/UpdateAssetModelsTest.php
+tests/Feature/AssetModels/Api/AssetModelPaginationTest.php
 tests/Feature/AssetModels/Api/DeleteAssetModelsTest.php
 tests/Feature/AssetModels/Api/CreateAssetModelsTest.php
 tests/Feature/AssetModels/Ui/ShowAssetModelsTest.php
@@ -7530,8 +7532,10 @@ tests/Feature/Accessories/Api/ShowAccessoryTest.php
 tests/Feature/Accessories/Api/IndexAccessoryCheckoutsTest.php
 tests/Feature/Accessories/Api/UpdateAccessoryTest.php
 tests/Feature/Accessories/Api/DeleteAccessoriesTest.php
+tests/Feature/Accessories/Api/AccessoryPaginationTest.php
 tests/Feature/Accessories/Ui/AccessoriesIndexTest.php
 tests/Feature/Accessories/Ui/EditAccessoryTest.php
+tests/Feature/Accessories/Ui/CheckoutAccessoryTest.php
 tests/Feature/Accessories/Ui/DeleteAccessoryTest.php
 tests/Feature/Accessories/Ui/ShowAccessoryTest.php
 tests/Feature/Accessories/Ui/CreateAccessoryWithFullMultipleCompanySupportTest.php
@@ -7542,6 +7546,7 @@ tests/Feature/Assets/Api/CheckinCheckoutCounters.php
 tests/Feature/Assets/Api/StoreAssetWithFullMultipleCompanySupportTest.php
 tests/Feature/Assets/Api/AssetPaginationTest.php
 tests/Feature/Assets/Api/AssignedComponentsTest.php
+tests/Feature/Assets/Api/UploadedFilesPaginationTest.php
 tests/Feature/Assets/Api/DeleteAssetsTest.php
 tests/Feature/Assets/Api/AuditAssetTest.php
 tests/Feature/Assets/Api/AssetNotesTest.php
@@ -7614,6 +7619,7 @@ tests/Feature/Licenses/Api/DeleteLicensesTest.php
 tests/Feature/Licenses/Api/LicenseCheckoutCheckinTest.php
 tests/Feature/Licenses/Api/LicenseIndexTest.php
 tests/Feature/Licenses/Api/LicensesForSelectListTest.php
+tests/Feature/Licenses/Api/UpdateLicenseTest.php
 tests/Feature/Licenses/Ui/StoreLicenseWithFullMultipleCompanySupportTest.php
 tests/Feature/Licenses/Ui/CreateLicenseTest.php
 tests/Feature/Licenses/Ui/BulkDeleteLicensesTest.php
@@ -7627,6 +7633,7 @@ tests/Feature/LicenseSeats/Api/LicenseSeatUpdateTest.php
 tests/Feature/ActionLogs/ActionlogCompanyIdBackfillTest.php
 tests/Feature/ActionLogs/ActionlogCompanyIdTest.php
 tests/Feature/ActionLogs/DisplaySigTest.php
+tests/Feature/PredefinedKits/Api/AttachKitItemsTest.php
 tests/Feature/PredefinedKits/Api/DeletePredefinedKitsTest.php
 tests/Feature/PredefinedKits/Ui/IndexPredefinedKitsTest.php
 tests/Feature/PredefinedKits/Ui/ShowPredefinedKitTest.php
@@ -7652,6 +7659,7 @@ tests/Feature/Console/CheckinAndDeleteItemsTest.php
 tests/Feature/Console/SendAcceptanceReminderTest.php
 tests/Feature/Console/FixupAssignedToAssignedTypeTest.php
 tests/Feature/Console/Commands/PurgeEulaPDFTest.php
+tests/Feature/Console/TestLocationsFmcsTest.php
 tests/Feature/Console/CleanIncorrectCheckoutAcceptancesTest.php
 tests/Feature/Console/CleanOldCheckoutRequestsTest.php
 tests/Feature/Console/ValidateAssetsTest.php
@@ -7662,20 +7670,25 @@ tests/Feature/Locations/Api/CreateLocationsTest.php
 tests/Feature/Locations/Api/UpdateLocationsTest.php
 tests/Feature/Locations/Api/LocationsViewTest.php
 tests/Feature/Locations/Api/DeleteLocationsTest.php
+tests/Feature/Locations/Api/LocationParentCompanyTest.php
 tests/Feature/Locations/Api/LocationsForSelectListTest.php
 tests/Feature/Locations/Api/IndexLocationsTest.php
 tests/Feature/Locations/Api/LocationFileTest.php
 tests/Feature/Locations/Ui/CreateLocationsTest.php
 tests/Feature/Locations/Ui/UpdateLocationsTest.php
 tests/Feature/Locations/Ui/DeleteLocationsTest.php
+tests/Feature/Locations/Ui/LocationParentCompanyTest.php
 tests/Feature/Locations/Ui/IndexLocationsTest.php
 tests/Feature/Locations/Ui/ShowLocationTest.php
+tests/Feature/Reporting/DeleteAcceptanceAuthorizationTest.php
 tests/Feature/Reporting/ActivityReportTest.php
 tests/Feature/Reporting/CustomReportTest.php
 tests/Feature/Reporting/AccessoryReportTest.php
 tests/Feature/Reporting/UnacceptedAssetReportTest.php
+tests/Feature/Maintenances/Api/MaintenanceTypesPaginationTest.php
 tests/Feature/Maintenances/Api/CreateMaintenanceTest.php
 tests/Feature/Maintenances/Api/MaintenanceNotesTest.php
+tests/Feature/Maintenances/Api/MaintenancePaginationTest.php
 tests/Feature/Maintenances/Api/MaintenanceTypesTest.php
 tests/Feature/Maintenances/Api/EditMaintenanceTest.php
 tests/Feature/Maintenances/Api/IndexMaintenanceTest.php
@@ -7761,6 +7774,7 @@ database/migrations/2017_10_27_180947_denorm_asset_locations.php
 database/migrations/2015_09_09_195301_add_custom_css_to_settings.php
 database/migrations/2025_11_14_150613_add_color_to_companies.php
 database/migrations/2016_10_16_015024_rename_modelno_to_model_number.php
+database/migrations/2026_06_10_000001_add_null_company_is_floater_to_settings.php
 database/migrations/2016_08_02_124944_add_color_to_statuslabel.php
 database/migrations/2016_03_08_225351_create_components_table.php
 database/migrations/2014_10_16_200626_add_rtd_location_to_assets.php
