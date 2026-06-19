@@ -1401,6 +1401,7 @@ lib/text/quote_remover/attribution_pattern/wrote.rb
 lib/text/quote_remover/attribution_pattern/outlook_delimiter.rb
 lib/text/quote_remover/attribution_pattern/posted_by.rb
 lib/text/quote_remover/signature.rb
+lib/text/content_cleanup.rb
 lib/text/quote_remover.rb
 lib/upload_cache.rb
 lib/certificate/x509.rb
@@ -2958,6 +2959,7 @@ app/graphql/gql/types/ticket/priority_type.rb
 app/graphql/gql/types/ticket/article_type.rb
 app/graphql/gql/types/ticket/time_accounting/type_type.rb
 app/graphql/gql/types/ticket/state_type.rb
+app/graphql/gql/types/ticket/external_references/issue_tracker_item/issue_type_type.rb
 app/graphql/gql/types/ticket/external_references/issue_tracker_item/label_type.rb
 app/graphql/gql/types/ticket/external_references/idoit_object_type.rb
 app/graphql/gql/types/ticket/external_references/issue_tracker_item_type.rb
@@ -3064,6 +3066,7 @@ app/controllers/integration/idoit_controller.rb
 app/controllers/integration/placetel_controller.rb
 app/controllers/integration/exchange_controller.rb
 app/controllers/integration/ldap_controller.rb
+app/controllers/integration/issue_tracker_controller.rb
 app/controllers/application_controller/has_user.rb
 app/controllers/application_controller/authorizes.rb
 app/controllers/application_controller/prevents_csrf.rb
@@ -4637,6 +4640,9 @@ app/services/service/ai/agent/run/context/instruction.rb
 app/services/service/ai/agent/run/context.rb
 app/services/service/ai/agent/run/perform/agent.rb
 app/services/service/ai/vectordb/reload.rb
+app/services/service/ai/vectordb/content/chunks/strategy/base.rb
+app/services/service/ai/vectordb/content/chunks/strategy/sentence.rb
+app/services/service/ai/vectordb/content/chunks.rb
 app/services/service/ai/vectordb/base.rb
 app/services/service/ai/vectordb/create_table.rb
 app/services/service/ai/vectordb/similarity_search.rb
@@ -6047,6 +6053,7 @@ app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExt
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarIdoit/__tests__/TicketSidebarIdoit.spec.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/IssueTrackerLinkFlyout.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/IssueTrackerList/IssueTrackerItem/IssueTrackerBadgeList.vue
+app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/IssueTrackerList/IssueTrackerItem/issueTypeColors.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/IssueTrackerList/IssueTrackerItem.vue
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/useIssueTracker.ts
 app/frontend/apps/desktop/pages/ticket/components/TicketSidebar/TicketSidebarExternalReferences/TicketSidebarExternalIssueTracker/IssueTrackerList.vue
@@ -6650,7 +6657,6 @@ app/frontend/apps/desktop/router/index.ts
 app/frontend/apps/desktop/router/guards/before/activeTaskbarTab.ts
 app/frontend/apps/desktop/router/guards/before/__tests__/systemSetupInfo.spec.ts
 app/frontend/apps/desktop/router/guards/before/systemSetupInfo.ts
-app/frontend/apps/desktop/plugins/directives/__tests__/tooltip.spec.ts
 app/frontend/apps/desktop/components/layout/useSidebarDisplay.ts
 app/frontend/apps/desktop/components/layout/LayoutPage.vue
 app/frontend/apps/desktop/components/layout/LayoutSidebar/LeftSidebar/LeftSidebarHeader.vue
@@ -7578,7 +7584,6 @@ app/frontend/apps/mobile/router/index.ts
 app/frontend/apps/mobile/router/guards/before/viewTransition.ts
 app/frontend/apps/mobile/router/guards/before/__test__/viewTransition.spec.ts
 app/frontend/apps/mobile/sw/sw.ts
-app/frontend/apps/mobile/plugins/directives/__tests__/tooltip.spec.ts
 app/frontend/apps/mobile/components/layout/LayoutBottomNavigation.vue
 app/frontend/apps/mobile/components/layout/useCustomLayout.ts
 app/frontend/apps/mobile/components/layout/LayoutHeader.vue
@@ -8291,7 +8296,6 @@ app/frontend/shared/initializer/initializeUserAvatarClasses.ts
 app/frontend/shared/initializer/initializeLinkClasses.ts
 app/frontend/shared/initializer/initializeNotificationClasses.ts
 app/frontend/shared/initializer/initializeBadgeClasses.ts
-app/frontend/shared/initializer/initializeDirectives.ts
 app/frontend/shared/initializer/initializeFakeTimer.ts
 app/frontend/shared/initializer/initializeOrganizationAvatarClasses.ts
 app/frontend/shared/initializer/initializeAlertClasses.ts
@@ -8445,6 +8449,7 @@ app/frontend/shared/composables/activity-message/activityMessageBuilder/builders
 app/frontend/shared/composables/activity-message/activityMessageBuilder/types.ts
 app/frontend/shared/composables/activity-message/activityMessageBuilder/__tests__/activityMessageBuilder.spec.ts
 app/frontend/shared/composables/activity-message/useActivityMessage.ts
+app/frontend/shared/composables/activity-message/__tests__/useActivityMessage.spec.ts
 app/frontend/shared/composables/useTraverseOptions.ts
 app/frontend/shared/composables/useImageViewer.ts
 app/frontend/shared/composables/useHtmlLinks.ts
@@ -8520,6 +8525,9 @@ app/frontend/shared/sw/register.ts
 app/frontend/shared/sw/types.ts
 app/frontend/shared/plugins/directives/directives.d.ts
 app/frontend/shared/plugins/directives/tooltip/index.ts
+app/frontend/shared/plugins/directives/tooltip/types.ts
+app/frontend/shared/plugins/directives/types.ts
+app/frontend/shared/plugins/directives/__tests__/tooltip.spec.ts
 app/frontend/shared/plugins/applicationConfigPlugin.ts
 app/frontend/shared/components/CommonTranslateRenderer/CommonTranslateRenderer.vue
 app/frontend/shared/components/CommonTranslateRenderer/types.ts
@@ -9896,6 +9904,7 @@ spec/models/knowledge_base/category/translation_spec.rb
 spec/models/knowledge_base/answer/translation_spec.rb
 spec/models/knowledge_base/answer/translation/search_with_attachment_spec.rb
 spec/models/knowledge_base/answer/translation/content_spec.rb
+spec/models/knowledge_base/answer/translation/search_spec.rb
 spec/models/knowledge_base/permission_spec.rb
 spec/models/knowledge_base/locale_spec.rb
 spec/models/job_spec.rb
@@ -10214,6 +10223,7 @@ spec/graphql/gql/types/email_address_parsed_type_spec.rb
 spec/graphql/gql/types/ticket/shared_draft_start_type_spec.rb
 spec/graphql/gql/record_loader_spec.rb
 spec/controllers/integration/exchange_spec.rb
+spec/controllers/application_controller/has_user_spec.rb
 spec/controllers/application_controller/has_download/download_file_spec.rb
 spec/controllers/can_paginate/pagination_spec.rb
 spec/jobs/trigger_webhook_job/record_payload_spec.rb
@@ -10630,6 +10640,7 @@ spec/lib/facebook_spec.rb
 spec/lib/background_services_spec.rb
 spec/lib/password_policy_spec.rb
 spec/lib/text/quote_remover_spec.rb
+spec/lib/text/content_cleanup_spec.rb
 spec/lib/certificate/apply_ssl_certificates_spec.rb
 spec/lib/certificate/x509/smime_spec.rb
 spec/lib/user_agent_spec.rb
@@ -11051,6 +11062,7 @@ spec/services/service/ai/agent/run/context/instruction/object_attributes/options
 spec/services/service/ai/agent/run/context_spec.rb
 spec/services/service/ai/agent/run_spec.rb
 spec/services/service/ai/vectordb/rebuild_spec.rb
+spec/services/service/ai/vectordb/content/chunks_spec.rb
 spec/services/service/ai/vectordb/create_table_spec.rb
 spec/services/service/ai/vectordb/reload_spec.rb
 spec/services/service/ai/vectordb/similarity_search_spec.rb
@@ -11267,6 +11279,7 @@ spec/policies/controllers/ai/analytics/downloads_controller_policy_spec.rb
 spec/policies/controllers/knowledge_base/categories_controller_policy_spec.rb
 spec/policies/controllers/knowledge_base/feeds_controller_policy_spec.rb
 spec/policies/controllers/knowledge_base/answers_controller_policy_spec.rb
+spec/policies/controllers/knowledge_base/answer/attachments_controller_policy_spec.rb
 spec/policies/controllers/tags_controller_policy_spec.rb
 spec/policies/controllers/monitoring_controller_policy_spec.rb
 spec/policies/controllers/time_accountings_controller_policy_spec.rb
@@ -11602,6 +11615,8 @@ spec/fixtures/files/ai/text_tool/input007.json
 spec/fixtures/files/ai/text_tool/input009.json
 spec/fixtures/files/ai/text_tool/input010.json
 spec/fixtures/files/ai/text_tool/input013.json
+spec/fixtures/files/ai/vectordb/content/long-text-002.html
+spec/fixtures/files/ai/vectordb/content/long-text-001.html
 spec/fixtures/files/pgp/zammad@localhost.revoker.fingerprint
 spec/fixtures/files/pgp/zammad@localhost.revoker.pgp
 spec/fixtures/files/pgp/noexpirepgp1@example.com.pgp
