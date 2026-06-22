@@ -678,6 +678,7 @@ apps/admin-x-settings/src/components/settings/site/site-settings.tsx
 apps/admin-x-settings/src/components/settings/site/change-theme.tsx
 apps/admin-x-settings/src/components/settings/site/navigation.tsx
 apps/admin-x-settings/src/components/settings/site/theme/theme-file-tree.tsx
+apps/admin-x-settings/src/components/settings/site/theme/theme-validation-details.tsx
 apps/admin-x-settings/src/components/settings/site/theme/theme-installed-modal.tsx
 apps/admin-x-settings/src/components/settings/site/theme/theme-preview.tsx
 apps/admin-x-settings/src/components/settings/site/theme/theme-editor-styles.ts
@@ -3973,6 +3974,7 @@ ghost/core/test/integration/services/email-service/__snapshots__/batch-sending.t
 ghost/core/test/integration/services/email-service/domain-warming.test.js
 ghost/core/test/integration/services/email-service/cards.test.js
 ghost/core/test/integration/services/email-service/README.md
+ghost/core/test/integration/services/email-service/tier-segmentation.test.js
 ghost/core/test/integration/services/webhook-request.test.js
 ghost/core/test/integration/services/automations/welcome-email-automation-poll.test.js
 ghost/core/test/integration/services/offer-bookshelf-repository.test.js
@@ -4000,16 +4002,15 @@ ghost/core/test/utils/assertions.js
 ghost/core/test/utils/db-utils.js
 ghost/core/test/utils/e2e-utils.js
 ghost/core/test/utils/minio.ts
-ghost/core/test/utils/automations-fixtures.js
 ghost/core/test/utils/mock-knex.js
 ghost/core/test/utils/url-utils.js
 ghost/core/test/utils/email-verification-utils.ts
 ghost/core/test/utils/e2e-framework-mock-manager.js
 ghost/core/test/utils/admin-utils.js
 ghost/core/test/utils/logging-utils.js
+ghost/core/test/utils/vitest-global-db-setup.ts
+ghost/core/test/utils/clock-utils.js
 ghost/core/test/utils/redirects.js
-ghost/core/test/utils/overrides.js
-ghost/core/test/utils/mocha-retry-reporter.js
 ghost/core/test/utils/vitest-setup-db.ts
 ghost/core/test/utils/agents/test-agent.js
 ghost/core/test/utils/agents/index.js
@@ -4020,6 +4021,7 @@ ghost/core/test/utils/agents/members-api-test-agent.js
 ghost/core/test/utils/i18n-test-utils.js
 ghost/core/test/utils/url-service-utils.js
 ghost/core/test/utils/api.js
+ghost/core/test/utils/db-template.js
 ghost/core/test/utils/mocks/modules.js
 ghost/core/test/utils/mocks/index.js
 ghost/core/test/utils/deferred.js
@@ -4210,13 +4212,16 @@ ghost/core/test/utils/fixtures/import/draft-2014-12-19-test-2.md
 ghost/core/test/utils/fixtures/import/published-2014-12-19-test-1.md
 ghost/core/test/utils/fixtures/import/draft-2014-12-19-test-3.md
 ghost/core/test/utils/fixtures/import/draft-2014-12-19-test-1.md
+ghost/core/test/utils/db-template-paths.js
 ghost/core/test/utils/batch-email-utils.js
 ghost/core/test/utils/e2e-framework.js
 ghost/core/test/utils/index.js
 ghost/core/test/utils/stripe-mocker.js
 ghost/core/test/utils/browser-test-utils.js
+ghost/core/test/utils/automations-fixtures.ts
 ghost/core/test/utils/config-utils.js
 ghost/core/test/utils/fixture-utils.js
+ghost/core/test/utils/vitest-globalsetup-services.ts
 ghost/core/test/utils/vitest-setup.ts
 ghost/core/test/e2e-frontend/members.test.js
 ghost/core/test/e2e-frontend/middleware.test.js
@@ -4561,6 +4566,8 @@ ghost/core/test/unit/server/services/member-attribution/service.test.js
 ghost/core/test/unit/server/services/member-attribution/attribution.test.js
 ghost/core/test/unit/server/services/indexnow.test.js
 ghost/core/test/unit/server/services/email-suppression-list/email-suppression-list.test.js
+ghost/core/test/unit/server/services/jobs/worker-model-event-bridge.test.js
+ghost/core/test/unit/server/services/jobs/job-service.test.js
 ghost/core/test/unit/server/services/tinybird/tinybird-service.test.js
 ghost/core/test/unit/server/services/email-service/email-renderer.test.js
 ghost/core/test/unit/server/services/email-service/domain-warming-service.test.ts
@@ -4591,6 +4598,7 @@ ghost/core/test/unit/server/services/automations/automations-api.test.js
 ghost/core/test/unit/server/services/automations/automations-repository.test.ts
 ghost/core/test/unit/server/services/automations/service.test.js
 ghost/core/test/unit/server/services/automations/poll.test.ts
+ghost/core/test/unit/server/services/automations/fake-wait-hours-multiplier.test.ts
 ghost/core/test/unit/server/services/stats/members.test.js
 ghost/core/test/unit/server/services/stats/posts.test.js
 ghost/core/test/unit/server/services/stats/stats.test.js
@@ -4670,6 +4678,7 @@ ghost/core/test/unit/server/services/webhooks/trigger.test.js
 ghost/core/test/unit/server/services/slack-notifications/slack-notifications.test.js
 ghost/core/test/unit/server/services/slack-notifications/index.test.js
 ghost/core/test/unit/server/services/slack-notifications/slack-notifications-service.test.js
+ghost/core/test/unit/server/services/audience-feedback/audience-feedback-controller.test.js
 ghost/core/test/unit/server/services/audience-feedback/audience-feedback-service.test.js
 ghost/core/test/unit/server/services/permissions/parse-context.test.js
 ghost/core/test/unit/server/services/permissions/providers.test.js
@@ -5479,6 +5488,7 @@ ghost/core/core/server/services/email-suppression-list/service.js
 ghost/core/core/server/services/email-suppression-list/mailgun-email-suppression-list.js
 ghost/core/core/server/services/email-suppression-list/index.js
 ghost/core/core/server/services/jobs/job-service.js
+ghost/core/core/server/services/jobs/worker-model-event-bridge.js
 ghost/core/core/server/services/jobs/index.js
 ghost/core/core/server/services/tinybird/tinybird-service.js
 ghost/core/core/server/services/tinybird/tinybird-service-wrapper.js
@@ -5526,6 +5536,7 @@ ghost/core/core/server/services/verification-trigger.js
 ghost/core/core/server/services/automations/automations-api.ts
 ghost/core/core/server/services/automations/service.js
 ghost/core/core/server/services/automations/poll.ts
+ghost/core/core/server/services/automations/fake-wait-hours-multiplier.ts
 ghost/core/core/server/services/automations/constants.ts
 ghost/core/core/server/services/automations/database-automations-repository.ts
 ghost/core/core/server/services/automations/index.js
@@ -6276,6 +6287,8 @@ ghost/core/core/server/data/migrations/versions/6.46/2026-05-29-08-35-51-add-gif
 ghost/core/core/server/data/migrations/versions/6.46/2026-06-14-02-38-59-create-automation-tables.js
 ghost/core/core/server/data/migrations/versions/6.46/2026-06-17-10-00-00-add-gift-links-permission-to-admin-integration.js
 ghost/core/core/server/data/migrations/versions/6.46/2026-06-17-16-09-07-add-enable-updates-and-announcements-to-members.js
+ghost/core/core/server/data/migrations/versions/6.46/2026-06-19-10-00-00-grandfather-llms.js
+ghost/core/core/server/data/migrations/versions/6.46/2026-06-18-16-37-27-rename-welcome-email-automation-names.js
 ghost/core/core/server/data/migrations/versions/5.91/2024-08-28-05-28-22-add-donation-message-column-to-donation-payment-events.js
 ghost/core/core/server/data/migrations/versions/5.66/2023-09-22-14-15-add-recommendation-notifications-column.js
 ghost/core/core/server/data/migrations/versions/5.94/2024-09-03-20-09-40-null-analytics-jobs-timings.js
