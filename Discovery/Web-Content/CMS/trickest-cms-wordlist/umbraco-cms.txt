@@ -2727,6 +2727,7 @@ src/Umbraco.Infrastructure/Examine/DeliveryApiContentIndexFieldDefinitionBuilder
 src/Umbraco.Infrastructure/Examine/UmbracoExamineFieldNames.cs
 src/Umbraco.Infrastructure/Examine/IIndexDiagnosticsFactory.cs
 src/Umbraco.Infrastructure/Examine/ExamineUmbracoIndexingHandler.cs
+src/Umbraco.Infrastructure/Examine/RebuildOnStartedHandler.cs
 src/Umbraco.Infrastructure/Examine/RebuildOnStartupHandler.cs
 src/Umbraco.Infrastructure/Examine/ContentValueSetBuilder.cs
 src/Umbraco.Infrastructure/Examine/IContentValueSetValidator.cs
@@ -8201,6 +8202,7 @@ src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/prope
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/property-editor/types.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/input-entity-data.context.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/input-entity-data.element.ts
+src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/input-entity-data.element.test.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/entity-data-picker-data-source.context.token.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/input-entity-data.context.test.ts
 src/Umbraco.Web.UI.Client/src/packages/property-editors/entity-data-picker/input/entity-data-picker-data-source.context.ts
@@ -9687,6 +9689,7 @@ src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-media/input-
 src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-media/input-media.context.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-media/input-media.test.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-rich-media/index.ts
+src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-rich-media/input-rich-media.test.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/components/input-rich-media/input-rich-media.element.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/item/index.ts
 src/Umbraco.Web.UI.Client/src/packages/media/media/item/manifests.ts
@@ -9699,6 +9702,7 @@ src/Umbraco.Web.UI.Client/src/packages/media/vite.config.ts
 src/Umbraco.Web.UI.Client/src/packages/media/imaging/index.ts
 src/Umbraco.Web.UI.Client/src/packages/media/imaging/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/media/imaging/imaging-request-batcher.ts
+src/Umbraco.Web.UI.Client/src/packages/media/imaging/stories/working-with-media-images.mdx
 src/Umbraco.Web.UI.Client/src/packages/media/imaging/imaging-request-batcher.test.ts
 src/Umbraco.Web.UI.Client/src/packages/media/imaging/imaging.store.test.ts
 src/Umbraco.Web.UI.Client/src/packages/media/imaging/imaging.store.token.ts
@@ -9708,7 +9712,11 @@ src/Umbraco.Web.UI.Client/src/packages/media/imaging/imaging.server.data.ts
 src/Umbraco.Web.UI.Client/src/packages/media/imaging/imaging.store.ts
 src/Umbraco.Web.UI.Client/src/packages/media/imaging/types.ts
 src/Umbraco.Web.UI.Client/src/packages/media/imaging/components/index.ts
+src/Umbraco.Web.UI.Client/src/packages/media/imaging/components/media-thumbnail.element.ts
 src/Umbraco.Web.UI.Client/src/packages/media/imaging/components/imaging-thumbnail.element.ts
+src/Umbraco.Web.UI.Client/src/packages/media/imaging/components/media-thumbnail.stories.ts
+src/Umbraco.Web.UI.Client/src/packages/media/imaging/components/imaging-thumbnail.element.test.ts
+src/Umbraco.Web.UI.Client/src/packages/media/imaging/components/media-thumbnail.element.test.ts
 src/Umbraco.Web.UI.Client/src/packages/media/imaging/components/media-image.element.ts
 src/Umbraco.Web.UI.Client/src/packages/media/entry-point.ts
 src/Umbraco.Web.UI.Client/src/packages/user/index.ts
@@ -10797,6 +10805,9 @@ src/Umbraco.Web.UI.Client/src/packages/block/block-rte/components/block-rte-entr
 src/Umbraco.Web.UI.Client/src/packages/block/block-rte/components/block-rte-entry/block-rte-entry.test.ts
 src/Umbraco.Web.UI.Client/src/packages/block/block-rte/components/block-rte-entry/block-rte-entry.element.ts
 src/Umbraco.Web.UI.Client/src/packages/block/block-rte/components/block-rte-entry/block-rte-entry-inline.test.ts
+src/Umbraco.Web.UI.Client/src/packages/block/block-rte/components/unsupported-rte-block/index.ts
+src/Umbraco.Web.UI.Client/src/packages/block/block-rte/components/unsupported-rte-block/unsupported-rte-block.element.ts
+src/Umbraco.Web.UI.Client/src/packages/block/block-rte/components/unsupported-rte-block/unsupported-rte-block.test.ts
 src/Umbraco.Web.UI.Client/src/packages/block/umbraco-package.ts
 src/Umbraco.Web.UI.Client/src/packages/block/block/index.ts
 src/Umbraco.Web.UI.Client/src/packages/block/block/manifests.ts
@@ -11995,6 +12006,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/utils/path/has-own-opener.function.t
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/path-folder-name.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/ensure-local-path.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/path/remove-last-slash-from-path.function.ts
+src/Umbraco.Web.UI.Client/src/packages/core/utils/is-production-build.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/is-test-environment.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/media/image-size.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/media/image-size.function.ts
@@ -12012,7 +12024,9 @@ src/Umbraco.Web.UI.Client/src/packages/core/utils/type/diff.type.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/type/deep-partial-object.type.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/type/partial-some.type.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/deprecation/index.ts
+src/Umbraco.Web.UI.Client/src/packages/core/utils/deprecation/deprecation-origin.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/deprecation/deprecation.ts
+src/Umbraco.Web.UI.Client/src/packages/core/utils/deprecation/deprecation-origin.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/deprecation/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/utils/pagination/target/is-target-request.guard.ts
@@ -13713,6 +13727,9 @@ src/Umbraco.Web.UI.Client/src/packages/core/entity/contexts/parent/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity/contexts/parent/parent.entity-context.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity/contexts/parent/constants.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity/contexts/parent/parent.entity-context-token.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity/input/index.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity/input/entity-input-interaction-memory.manager.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity/input/entity-input-interaction-memory.manager.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity/entity.context.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity/entity.context.ts
@@ -16416,6 +16433,7 @@ tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DatabaseCache
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaHybridCacheMediaTypeTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheMockTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaCacheServiceTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheStaleSetRaceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaHybridCacheTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/ElementHybridCacheVariantsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentPropertyCacheLevelTests.cs
