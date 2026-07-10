@@ -101,12 +101,14 @@ resources/assets/less/app.less
 resources/assets/less/overrides.less
 resources/assets/js/extensions/pGenerator.jquery.js
 resources/assets/js/extensions/jquery.base64.js
+resources/assets/js/build-jspdf-dejavu-fonts.js
 resources/assets/js/dragtable.js
 resources/assets/js/snipeit_modals.js
 resources/assets/js/snipeit.js
 resources/assets/js/signature_pad.js
 resources/assets/js/FileSaver.min.js
 resources/assets/js/bootstrap-table-reorder-columns.js
+resources/assets/js/jspdf-dejavu-fonts.js
 resources/views/reports/unaccepted_assets.blade.php
 resources/views/reports/custom/asset.blade.php
 resources/views/reports/custom/component.blade.php
@@ -131,6 +133,8 @@ resources/views/settings/branding.blade.php
 resources/views/settings/security.blade.php
 resources/views/settings/slack.blade.php
 resources/views/settings/phpinfo.blade.php
+resources/views/settings/partials/labels-legacy-engine.blade.php
+resources/views/settings/partials/labels-new-engine.blade.php
 resources/views/settings/asset_tags.blade.php
 resources/views/settings/logins.blade.php
 resources/views/settings/localization.blade.php
@@ -227,9 +231,12 @@ resources/views/blade/form/label.blade.php
 resources/views/blade/form/legend-help.blade.php
 resources/views/blade/form/tooltip.blade.php
 resources/views/blade/form/row.blade.php
+resources/views/blade/form/radio-row.blade.php
+resources/views/blade/form/checkbox-inline.blade.php
 resources/views/blade/form/legend.blade.php
 resources/views/blade/form/static.blade.php
 resources/views/blade/form/index.blade.php
+resources/views/blade/form/checkbox-row.blade.php
 resources/views/blade/data-row.blade.php
 resources/views/blade/input/textarea.blade.php
 resources/views/blade/input/username-select.blade.php
@@ -238,6 +245,7 @@ resources/views/blade/input/select.blade.php
 resources/views/blade/input/minimum-quantity.blade.php
 resources/views/blade/input/company-select.blade.php
 resources/views/blade/input/purchase-cost.blade.php
+resources/views/blade/input/checkbox.blade.php
 resources/views/blade/input/button.blade.php
 resources/views/blade/input/text.blade.php
 resources/views/blade/input/country-select.blade.php
@@ -248,6 +256,7 @@ resources/views/blade/input/email-format-select.blade.php
 resources/views/blade/input/datepicker.blade.php
 resources/views/blade/input/category-select.blade.php
 resources/views/blade/input/quantity.blade.php
+resources/views/blade/input/radio.blade.php
 resources/views/blade/input/colorpicker.blade.php
 resources/views/blade/input/time-display-format.blade.php
 resources/views/blade/input/location-select.blade.php
@@ -330,6 +339,7 @@ resources/views/layouts/basic.blade.php
 resources/views/layouts/debug.blade.php
 resources/views/layouts/default.blade.php
 resources/views/layouts/setup.blade.php
+resources/views/partials/impersonation-banner.blade.php
 resources/views/partials/models-bulk-actions.blade.php
 resources/views/partials/label2-preview.blade.php
 resources/views/partials/more-info.blade.php
@@ -338,6 +348,7 @@ resources/views/partials/licenses-assigned.blade.php
 resources/views/partials/assets-assigned.blade.php
 resources/views/partials/confetti-js.blade.php
 resources/views/partials/users-bulk-actions.blade.php
+resources/views/partials/labels-legacy-engine.blade.php
 resources/views/partials/forms/edit/uploadLogo.blade.php
 resources/views/partials/forms/edit/model_number.blade.php
 resources/views/partials/forms/edit/image-upload.blade.php
@@ -386,6 +397,7 @@ resources/views/partials/forms/demo-mode.blade.php
 resources/views/partials/asset-bulk-actions.blade.php
 resources/views/partials/label2-field-definitions.blade.php
 resources/views/partials/bootstrap-table.blade.php
+resources/views/partials/labels-new-engine.blade.php
 resources/views/depreciations/edit.blade.php
 resources/views/depreciations/view.blade.php
 resources/views/depreciations/index.blade.php
@@ -511,6 +523,7 @@ resources/views/users/confirm-bulk-delete.blade.php
 resources/views/users/print.blade.php
 resources/views/users/view.blade.php
 resources/views/users/index.blade.php
+resources/views/users/impersonate-confirm-modal.blade.php
 resources/views/users/bulk-edit.blade.php
 resources/views/users/ldap.blade.php
 resources/views/users/confirm-merge.blade.php
@@ -6791,6 +6804,7 @@ docker/README.md
 docker/startup_alpine_fpm.sh
 docker/001-default-ssl.conf
 app/View/Composers/SidebarComposer.php
+app/View/Composers/ImpersonationBannerComposer.php
 app/View/Label.php
 app/Mail/CheckoutLicenseMail.php
 app/Mail/UnacceptedAssetReminderMail.php
@@ -7017,8 +7031,11 @@ app/Actions/Permissions/PreserveUnauthorizedPrivilegedPermissionsAction.php
 app/Actions/CheckoutRequests/CreateCheckoutRequestAction.php
 app/Actions/CheckoutRequests/CancelCheckoutRequestAction.php
 app/Actions/Categories/DestroyCategoryAction.php
+app/Actions/StatusLabels/DestroyStatuslabelAction.php
 app/Actions/Manufacturers/DestroyManufacturerAction.php
 app/Actions/Breadcrumbs/BuildAcceptanceBreadcrumbs.php
+app/Actions/Depreciations/DestroyDepreciationAction.php
+app/Actions/Departments/DestroyDepartmentAction.php
 app/Actions/Suppliers/DestroySupplierAction.php
 app/Actions/Acceptances/CreateCheckoutAcceptanceAction.php
 app/Jobs/Job.php
@@ -7038,6 +7055,7 @@ app/Exceptions/ItemStillHasChildCompanies.php
 app/Exceptions/ItemStillHasConsumables.php
 app/Exceptions/CheckoutNotAllowed.php
 app/Exceptions/UserDoestExistException.php
+app/Exceptions/MissingLogTarget.php
 app/Exceptions/ItemStillHasMaintenances.php
 app/Exceptions/ItemStillHasChildren.php
 app/Exceptions/ItemStillHasLicenses.php
@@ -7147,17 +7165,21 @@ app/Console/Commands/SendExpectedCheckinAlerts.php
 app/Console/Kernel.php
 app/Http/Controllers/LocationsController.php
 app/Http/Controllers/MaintenancesController.php
+app/Http/Controllers/BulkDepartmentsController.php
 app/Http/Controllers/MaintenanceTypesController.php
 app/Http/Controllers/Kits/CheckoutKitController.php
 app/Http/Controllers/Kits/PredefinedKitsController.php
 app/Http/Controllers/Users/UsersController.php
 app/Http/Controllers/Users/LDAPImportController.php
+app/Http/Controllers/Users/ImpersonateController.php
 app/Http/Controllers/Users/BulkUsersController.php
 app/Http/Controllers/SuppliersController.php
+app/Http/Controllers/BulkAccessoriesController.php
 app/Http/Controllers/BulkAssetModelsController.php
 app/Http/Controllers/BulkManufacturersController.php
 app/Http/Controllers/CustomFieldsetsController.php
 app/Http/Controllers/ViewAssetsController.php
+app/Http/Controllers/BulkStatuslabelsController.php
 app/Http/Controllers/Consumables/ConsumablesController.php
 app/Http/Controllers/Consumables/ConsumableCheckoutController.php
 app/Http/Controllers/CompaniesController.php
@@ -7239,6 +7261,7 @@ app/Http/Controllers/Auth/LoginController.php
 app/Http/Controllers/Auth/RegisterController.php
 app/Http/Controllers/Auth/ResetPasswordController.php
 app/Http/Controllers/Auth/SamlController.php
+app/Http/Controllers/BulkDepreciationsController.php
 app/Http/Requests/StoreLdapSettings.php
 app/Http/Requests/StoreSecuritySettings.php
 app/Http/Requests/UpdateComponentRequest.php
@@ -7260,6 +7283,7 @@ app/Http/Requests/AssetCheckinRequest.php
 app/Http/Requests/StoreAccessoryRequest.php
 app/Http/Requests/ItemImportRequest.php
 app/Http/Requests/UploadFileRequest.php
+app/Http/Requests/BulkUpdateAssetsRequest.php
 app/Http/Requests/StoreNotificationSettings.php
 app/Http/Requests/StoreLabelSettings.php
 app/Http/Requests/Request.php
@@ -7359,11 +7383,13 @@ tests/Unit/Rules/ExternalUrlTest.php
 tests/Unit/Helpers/HelperTest.php
 tests/Unit/Importer/AssetImportTest.php
 tests/Unit/CustomFieldTest.php
+tests/Unit/Codebase/ForbiddenFmcsPatternsTest.php
 tests/Unit/DatabaseSslConfigurationTest.php
 tests/Unit/Models/LicenseTest.php
 tests/Unit/Models/AssetOrphanedAssignmentTest.php
 tests/Unit/Models/ReportTemplates/ReportTemplateParsingValuesTest.php
 tests/Unit/Models/UserCanReceiveFromCompanyTest.php
+tests/Unit/Models/LoggableTest.php
 tests/Unit/Models/Company/CompanyTest.php
 tests/Unit/Models/Company/GetIdForCurrentUserTest.php
 tests/Unit/Models/UserTotalCostTest.php
@@ -7438,7 +7464,9 @@ tests/Feature/AssetModels/Api/CreateAssetModelsTest.php
 tests/Feature/AssetModels/Ui/ShowAssetModelsTest.php
 tests/Feature/AssetModels/Ui/IndexAssetModelsTest.php
 tests/Feature/AssetModels/Ui/UpdateAssetModelsTest.php
+tests/Feature/AssetModels/Ui/CloneAssetModelTest.php
 tests/Feature/AssetModels/Ui/CreateAssetModelsTest.php
+tests/Feature/Permissions/PermissionsFormPreCheckTest.php
 tests/Feature/Modals/Ui/ShowModalsTest.php
 tests/Feature/Scim/CreateGroupWithMembersTest.php
 tests/Feature/Authentication/PersonalAccessTokenTwoFactorGuardTest.php
@@ -7474,6 +7502,7 @@ tests/Feature/Categories/Ui/UpdateCategoriesTest.php
 tests/Feature/Categories/Ui/BulkDeleteCategoriesTest.php
 tests/Feature/Categories/Ui/ShowCategoryTest.php
 tests/Feature/Categories/Ui/DeleteCategoriesTest.php
+tests/Feature/Users/ImpersonateUserTest.php
 tests/Feature/Users/UserPermissionLoggingTest.php
 tests/Feature/Users/UserCompanyLoggingTest.php
 tests/Feature/Users/Api/CreateUserTest.php
@@ -7487,6 +7516,7 @@ tests/Feature/Users/Api/IndexUsersTest.php
 tests/Feature/Users/Api/UsersForSelectListTest.php
 tests/Feature/Users/Api/DeleteUsersTest.php
 tests/Feature/Users/Ui/CreateUserTest.php
+tests/Feature/Users/Ui/TwoFactorResetTest.php
 tests/Feature/Users/Ui/ViewUserTest.php
 tests/Feature/Users/Ui/CloneUserTest.php
 tests/Feature/Users/Ui/UserCompanyMembershipTest.php
@@ -7522,6 +7552,8 @@ tests/Feature/Checkouts/Ui/BulkAssetCheckoutTest.php
 tests/Feature/Checkouts/Ui/LicenseCheckoutTest.php
 tests/Feature/Setup/Ui/IndexSetupTest.php
 tests/Feature/StatusLabels/Api/DeleteStatusLabelsTest.php
+tests/Feature/StatusLabels/Api/BulkSelectableTest.php
+tests/Feature/StatusLabels/Ui/BulkDeleteStatusLabelsTest.php
 tests/Feature/StatusLabels/Ui/CreateStatusLabelTest.php
 tests/Feature/StatusLabels/Ui/ShowStatusLabelTest.php
 tests/Feature/StatusLabels/Ui/UpdateStatusLabelTest.php
@@ -7561,6 +7593,7 @@ tests/Feature/Accessories/Api/StoreAccessoryTest.php
 tests/Feature/Accessories/Api/AccessoriesForSelectListTest.php
 tests/Feature/Accessories/Api/ShowAccessoryTest.php
 tests/Feature/Accessories/Api/IndexAccessoryCheckoutsTest.php
+tests/Feature/Accessories/Api/BulkSelectableTest.php
 tests/Feature/Accessories/Api/UpdateAccessoryTest.php
 tests/Feature/Accessories/Api/DeleteAccessoriesTest.php
 tests/Feature/Accessories/Api/AccessoryPaginationTest.php
@@ -7571,6 +7604,7 @@ tests/Feature/Accessories/Ui/DeleteAccessoryTest.php
 tests/Feature/Accessories/Ui/ShowAccessoryTest.php
 tests/Feature/Accessories/Ui/CreateAccessoryWithFullMultipleCompanySupportTest.php
 tests/Feature/Accessories/Ui/CreateAccessoriesTest.php
+tests/Feature/Accessories/Ui/BulkDeleteAccessoriesTest.php
 tests/Feature/Accessories/Ui/UpdateAccessoryTest.php
 tests/Feature/Redirects/ModelNotFoundRedirectTest.php
 tests/Feature/Assets/Api/CheckinCheckoutCounters.php
@@ -7579,11 +7613,13 @@ tests/Feature/Assets/Api/AssetPaginationTest.php
 tests/Feature/Assets/Api/AssignedComponentsTest.php
 tests/Feature/Assets/Api/UploadedFilesPaginationTest.php
 tests/Feature/Assets/Api/DeleteAssetsTest.php
+tests/Feature/Assets/Api/BulkUpdateAssetsTest.php
 tests/Feature/Assets/Api/AuditAssetTest.php
 tests/Feature/Assets/Api/AssetNotesTest.php
 tests/Feature/Assets/Api/AssetHistoryTest.php
 tests/Feature/Assets/Api/AssignedAssetsTest.php
 tests/Feature/Assets/Api/UploadedFilesInlineTest.php
+tests/Feature/Assets/Api/BulkAuditAssetsTest.php
 tests/Feature/Assets/Api/AssetFilesTest.php
 tests/Feature/Assets/Api/StoreAssetTest.php
 tests/Feature/Assets/Api/RequestableAssetTest.php
@@ -7608,17 +7644,21 @@ tests/Feature/Assets/Ui/AssetBySerialTest.php
 tests/Feature/Assets/Ui/BulkDeleteAssetsTest.php
 tests/Feature/Depreciations/Api/DeleteDepreciationsTest.php
 tests/Feature/Depreciations/Api/DepreciationsIndexTest.php
+tests/Feature/Depreciations/Api/BulkSelectableTest.php
 tests/Feature/Depreciations/Ui/CreateDepreciationTest.php
 tests/Feature/Depreciations/Ui/UpdateDepreciationTest.php
 tests/Feature/Depreciations/Ui/DepreciationsIndexTest.php
 tests/Feature/Depreciations/Ui/ShowDepreciationTest.php
+tests/Feature/Depreciations/Ui/BulkDeleteDepreciationsTest.php
 tests/Feature/QueryShapeTest.php
 tests/Feature/Departments/Api/DeleteDepartmentsTest.php
 tests/Feature/Departments/Api/UpdateDepartmentsTest.php
 tests/Feature/Departments/Api/CreateDepartmentsTest.php
 tests/Feature/Departments/Api/DepartmentsIndexTest.php
+tests/Feature/Departments/Api/BulkSelectableTest.php
 tests/Feature/Departments/Ui/UpdateDepartmentsTest.php
 tests/Feature/Departments/Ui/ShowDepartmentTest.php
+tests/Feature/Departments/Ui/BulkDeleteDepartmentsTest.php
 tests/Feature/Departments/Ui/IndexDepartmentsTest.php
 tests/Feature/Departments/Ui/CreateDepartmentsTest.php
 tests/Feature/Components/Api/ComponentIndexTest.php
@@ -7631,6 +7671,7 @@ tests/Feature/Components/Ui/ShowComponentTest.php
 tests/Feature/Components/Ui/DeleteComponentTest.php
 tests/Feature/Components/Ui/StoreComponentWithFullMultipleCompanySupportTest.php
 tests/Feature/Components/Ui/CloneComponentTest.php
+tests/Feature/Settings/ImpersonationSettingsRowTest.php
 tests/Feature/Settings/LdapSettingsTest.php
 tests/Feature/Settings/OauthSettingsTest.php
 tests/Feature/Settings/LabelSettingTest.php
@@ -7649,6 +7690,9 @@ tests/Feature/Suppliers/Ui/UpdateSupplierTest.php
 tests/Feature/Suppliers/Ui/BulkDeleteSuppliersTest.php
 tests/Feature/Suppliers/Ui/ShowSupplierTest.php
 tests/Feature/Suppliers/Ui/IndexSuppliersTest.php
+tests/Feature/Blade/RadioRowTest.php
+tests/Feature/Blade/CheckboxRowTest.php
+tests/Feature/Blade/CheckboxInlineTest.php
 tests/Feature/Licenses/Api/LicenseUploadTest.php
 tests/Feature/Licenses/Api/DeleteLicensesTest.php
 tests/Feature/Licenses/Api/LicenseCheckoutCheckinTest.php
@@ -7688,6 +7732,7 @@ tests/Feature/Notifications/Email/CheckoutResponseEmailTest.php
 tests/Feature/Notifications/Email/EmailNotificationsToAdminAlertEmailUponCheckinTest.php
 tests/Feature/Notifications/Email/AcceptanceReminderTest.php
 tests/Feature/History/Api/IndexHistoryTest.php
+tests/Feature/Fmcs/HttpCrossCompanyLeakTest.php
 tests/Feature/CustomFieldsets/Api/DeleteCustomFieldsetsTest.php
 tests/Feature/Api/EnforceApiUserAgentTest.php
 tests/Feature/Console/BulkDeleteTest.php

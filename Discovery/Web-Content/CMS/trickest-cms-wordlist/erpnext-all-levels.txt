@@ -5653,6 +5653,11 @@ accounts/doctype/pos_invoice/pos_invoice_list.js
 doctype/pos_invoice/pos_invoice_list.js
 pos_invoice/pos_invoice_list.js
 pos_invoice_list.js
+erpnext/accounts/doctype/pos_invoice/test_pos_invoice_reset_mop.py
+accounts/doctype/pos_invoice/test_pos_invoice_reset_mop.py
+doctype/pos_invoice/test_pos_invoice_reset_mop.py
+pos_invoice/test_pos_invoice_reset_mop.py
+test_pos_invoice_reset_mop.py
 erpnext/accounts/doctype/pos_invoice/pos_invoice.py
 accounts/doctype/pos_invoice/pos_invoice.py
 doctype/pos_invoice/pos_invoice.py
@@ -10004,6 +10009,10 @@ erpnext/regional/italy/utils.py
 regional/italy/utils.py
 italy/utils.py
 utils.py
+erpnext/regional/italy/test_utils.py
+regional/italy/test_utils.py
+italy/test_utils.py
+test_utils.py
 erpnext/regional/italy/__init__.py
 regional/italy/__init__.py
 italy/__init__.py
@@ -20257,6 +20266,10 @@ erpnext/patches/v15_0/remove_loan_management_module.py
 patches/v15_0/remove_loan_management_module.py
 v15_0/remove_loan_management_module.py
 remove_loan_management_module.py
+erpnext/patches/v15_0/backfill_sla_link_filters_on_docfield.py
+patches/v15_0/backfill_sla_link_filters_on_docfield.py
+v15_0/backfill_sla_link_filters_on_docfield.py
+backfill_sla_link_filters_on_docfield.py
 erpnext/patches/v15_0/migrate_to_utm_analytics.py
 patches/v15_0/migrate_to_utm_analytics.py
 v15_0/migrate_to_utm_analytics.py
@@ -20573,6 +20586,10 @@ erpnext/patches/v15_0/update_total_number_of_booked_depreciations.py
 patches/v15_0/update_total_number_of_booked_depreciations.py
 v15_0/update_total_number_of_booked_depreciations.py
 update_total_number_of_booked_depreciations.py
+erpnext/patches/v15_0/backfill_sla_link_filters_on_custom_field.py
+patches/v15_0/backfill_sla_link_filters_on_custom_field.py
+v15_0/backfill_sla_link_filters_on_custom_field.py
+backfill_sla_link_filters_on_custom_field.py
 erpnext/patches/v15_0/rename_price_list_to_buying_price_list.py
 patches/v15_0/rename_price_list_to_buying_price_list.py
 v15_0/rename_price_list_to_buying_price_list.py
@@ -20977,6 +20994,10 @@ erpnext/patches/v16_0/update_order_qty_and_requested_qty_based_on_mr_and_po.py
 patches/v16_0/update_order_qty_and_requested_qty_based_on_mr_and_po.py
 v16_0/update_order_qty_and_requested_qty_based_on_mr_and_po.py
 update_order_qty_and_requested_qty_based_on_mr_and_po.py
+erpnext/patches/v16_0/crm_settings_handle_allowed_users_for_frappe_crm.py
+patches/v16_0/crm_settings_handle_allowed_users_for_frappe_crm.py
+v16_0/crm_settings_handle_allowed_users_for_frappe_crm.py
+crm_settings_handle_allowed_users_for_frappe_crm.py
 erpnext/patches/v16_0/set_not_applicable_on_german_item_tax_templates.py
 patches/v16_0/set_not_applicable_on_german_item_tax_templates.py
 v16_0/set_not_applicable_on_german_item_tax_templates.py

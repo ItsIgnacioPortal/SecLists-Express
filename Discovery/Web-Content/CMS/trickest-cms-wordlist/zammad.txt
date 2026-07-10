@@ -180,6 +180,8 @@ test/data/mail/mail085.yml
 test/data/mail/mail033-undelivered-mail-returned-to-sender-notification.box
 test/data/mail/mail036.yml
 test/data/mail/mail064.yml
+test/data/mail/mail117.box
+test/data/mail/mail117.yml
 test/data/mail/mail037.yml
 test/data/mail/mail099.box
 test/data/mail/mail041.yml
@@ -223,6 +225,7 @@ test/data/mail/mail096.yml
 test/data/mail/mail104.box
 test/data/mail/mail104.yml
 test/data/mail/mail066.box
+test/data/mail/mail118.yml
 test/data/mail/mail081.box
 test/data/mail/mail090.box
 test/data/mail/mail051.yml
@@ -247,6 +250,7 @@ test/data/mail/mail044.box
 test/data/mail/mail017.box
 test/data/mail/mail025.yml
 test/data/mail/mail007.yml
+test/data/mail/mail118.box
 test/data/mail/mail082.box
 test/data/mail/mail038.box
 test/data/mail/mail095.box
@@ -342,6 +346,13 @@ test/data/vcr_cassettes/models/webhook/pre_defined/slack/webhook_slack_with_tick
 test/data/vcr_cassettes/models/webhook/pre_defined/slack/webhook_slack_with_ticket_update_as_condition_creates_a_message_in_the_slack_channel.yml
 test/data/vcr_cassettes/models/webhook/pre_defined/slack/webhook_slack_with_ticket_reminder_reached_as_condition_creates_a_message_in_the_slack_channel.yml
 test/data/vcr_cassettes/zendesk_import.yml
+test/data/vcr_cassettes/integration/ai/related_knowledge_base_answers/ai_related_knowledge_base_answers_with_password_reset_de_json_suggests_every_expected_match_ranked_above_any_other_candidate_that_also_surfaces.yml
+test/data/vcr_cassettes/integration/ai/related_knowledge_base_answers/ai_related_knowledge_base_answers_with_mixed_language_json_suggests_every_expected_match_ranked_above_any_other_candidate_that_also_surfaces.yml
+test/data/vcr_cassettes/integration/ai/related_knowledge_base_answers/ai_related_knowledge_base_answers_with_groups_vs_roles_json_suggests_every_expected_match_ranked_above_any_other_candidate_that_also_surfaces.yml
+test/data/vcr_cassettes/integration/ai/related_knowledge_base_answers/ai_related_knowledge_base_answers_with_email_sync_json_suggests_every_expected_match_ranked_above_any_other_candidate_that_also_surfaces.yml
+test/data/vcr_cassettes/integration/ai/related_knowledge_base_answers/ai_related_knowledge_base_answers_with_password_reset_json_suggests_every_expected_match_ranked_above_any_other_candidate_that_also_surfaces.yml
+test/data/vcr_cassettes/integration/ai/related_knowledge_base_answers/ai_related_knowledge_base_answers_with_triggers_vs_schedulers_json_suggests_every_expected_match_ranked_above_any_other_candidate_that_also_surfaces.yml
+test/data/vcr_cassettes/integration/ai/related_knowledge_base_answers/ai_related_knowledge_base_answers_with_invoice_refund_json_suggests_every_expected_match_ranked_above_any_other_candidate_that_also_surfaces.yml
 test/data/vcr_cassettes/requests/external_credentials/external_credentials_authenticated_as_admin_for_facebook_link_account_failure_cases_with_invalid_credentials_via_externalcredential_record_returns_500_with_remote_facebook_auth_error.yml
 test/data/vcr_cassettes/requests/external_credentials/external_credentials_authenticated_as_admin_for_facebook_callback_failure_cases_with_invalid_credentials_via_externalcredential_record_returns_500_with_remote_facebook_auth_error.yml
 test/data/vcr_cassettes/requests/external_credentials/external_credentials_authenticated_as_admin_for_facebook_app_verify_failure_cases_with_invalid_credentials_via_externalcredential_record_returns_200_with_remote_facebook_auth_error.yml
@@ -859,6 +870,7 @@ doc/developer_manual/standards/how-to-use-forms.md
 doc/developer_manual/standards/code-style-guide.md
 doc/developer_manual/standards/how-to-design-services.md
 doc/developer_manual/standards/how-to-handle-localization.md
+doc/developer_manual/standards/how-to-log.md
 doc/developer_manual/standards/how-to-rebuild-the-chat.md
 doc/developer_manual/standards/how-to-add-an-svg-icon.md
 doc/developer_manual/standards/how-to-design-tests.md
@@ -1418,6 +1430,7 @@ lib/tasks/cache/clear.rake
 lib/tasks/zammad/bootstrap/reset.rake
 lib/tasks/zammad/bootstrap/init.rake
 lib/tasks/zammad/system_report.rb
+lib/tasks/zammad/package_command.rb
 lib/tasks/zammad/data_privacy/failed/retry.rake
 lib/tasks/zammad/data_privacy/failed/show.rb
 lib/tasks/zammad/data_privacy/failed/retry.rb
@@ -1428,18 +1441,24 @@ lib/tasks/zammad/system_report/plugins.rb
 lib/tasks/zammad/package/post_install.rake
 lib/tasks/zammad/package/verify.rb
 lib/tasks/zammad/package/install.rake
+lib/tasks/zammad/package/update_api.rb
 lib/tasks/zammad/package/precompile.rb
 lib/tasks/zammad/package/reinstall.rake
 lib/tasks/zammad/package/verify.rake
 lib/tasks/zammad/package/list.rb
 lib/tasks/zammad/package/list.rake
+lib/tasks/zammad/package/list_api.rb
 lib/tasks/zammad/package/migrate.rake
 lib/tasks/zammad/package/install.rb
 lib/tasks/zammad/package/uninstall.rb
 lib/tasks/zammad/package/reinstall_all.rb
+lib/tasks/zammad/package/install_api.rb
 lib/tasks/zammad/package/reinstall.rb
 lib/tasks/zammad/package/migrate.rb
+lib/tasks/zammad/package/list_api.rake
 lib/tasks/zammad/package/reinstall_all.rake
+lib/tasks/zammad/package/install_api.rake
+lib/tasks/zammad/package/update_api.rake
 lib/tasks/zammad/package/uninstall.rake
 lib/tasks/zammad/package/uninstall_all_files.rake
 lib/tasks/zammad/package/precompile.rake
@@ -9301,6 +9320,7 @@ db/migrate/20240718192329_rename_ticket_overview_priority_icon_setting.rb
 db/migrate/20221111124620_issue4306_delete_setting.rb
 db/migrate/20260225170815_add_ai_kb_answer_settings.rb
 db/migrate/20180320000001_setting_table_group_by_show_count.rb
+db/migrate/20260709080524_add_user_name_format_setting.rb
 db/migrate/20170421000001_pretty_date_options_added.rb
 db/migrate/20230830100819_create_ssl_certificates.rb
 db/migrate/20191129102720_active_job_lock_cleanup_job_scheduler.rb
@@ -9537,6 +9557,7 @@ db/migrate/20180913000002_permission_add_time_accounting.rb
 db/migrate/20251107095947_ticket_overview_query_polling_interval_ranges.rb
 db/migrate/20201201000001_setting_add_sender_format_agent_name.rb
 db/migrate/20200806122951_cti_user_profile.rb
+db/migrate/20260622000000_add_packages_token_setting.rb
 db/migrate/20170924054554_weibo_oauth2.rb
 db/migrate/20250220095415_improve_group_email_ui_wording.rb
 db/migrate/20220912142730_issue_3671_http_logs_unlimit_request_response.rb
@@ -9627,6 +9648,7 @@ db/migrate/20230130173733_add_taskbar_cleanup_job.rb
 db/migrate/20220124132029_scheduler_updates.rb
 db/migrate/20210311130946_remove_unfixable_generic_oauth2_login.rb
 db/migrate/20230622095629_drop_models_searchable_setting.rb
+db/migrate/20260707120000_add_edited_at_to_knowledge_base_answer_translations.rb
 db/migrate/20231016120344_search_index_settings.rb
 db/migrate/20230823082823_update_format_settings.rb
 db/migrate/20260529101015_signature_convert_images_to_cid.rb
@@ -9953,6 +9975,7 @@ spec/models/user/out_of_office_spec.rb
 spec/models/user/updates_ticket_organization_spec.rb
 spec/models/user/merge_spec.rb
 spec/models/user/can_lookup_search_index_attributes_examples.rb
+spec/models/template_spec.rb
 spec/models/activity_stream_spec.rb
 spec/models/ai/text_tool_spec.rb
 spec/models/ai/agent/type_spec.rb
@@ -10388,6 +10411,7 @@ spec/integration/elasticsearch_active_spec.rb
 spec/integration/freshdesk_spec.rb
 spec/integration/elasticsearch_spec.rb
 spec/integration/nagios_spec.rb
+spec/integration/ai/related_knowledge_base_answers_spec.rb
 spec/integration/kayako_spec.rb
 spec/integration/gitlab_spec.rb
 spec/integration/zendesk_spec.rb
@@ -10779,6 +10803,9 @@ spec/lib/microsoft_graph/api_error_spec.rb
 spec/lib/timeplan_calculation_spec.rb
 spec/lib/active_model/error_spec.rb
 spec/lib/tasks/zammad/command_spec.rb
+spec/lib/tasks/zammad/package/update_api_spec.rb
+spec/lib/tasks/zammad/package/install_api_spec.rb
+spec/lib/tasks/zammad/package/list_api_spec.rb
 spec/lib/tasks/zammad/db/max_connections_spec.rb
 spec/lib/tasks/zammad/store/move_files_spec.rb
 spec/lib/tasks/zammad/store/verify_files_spec.rb
@@ -11412,6 +11439,7 @@ spec/db/migrate/issue_2943_add_setting_enforce_special_character_spec.rb
 spec/db/migrate/issue_1977_remove_invalid_user_foreign_keys_spec.rb
 spec/db/migrate/ai_assistance_ticket_summary_selector_spec.rb
 spec/db/migrate/object_manager_attribute_date_remove_future_past_spec.rb
+spec/db/seeds/setting_user_name_format_spec.rb
 spec/views/eco_spec.rb
 spec/policies/macro_policy/scope_spec.rb
 spec/policies/taskbar_policy/scope_spec.rb
@@ -11747,6 +11775,13 @@ spec/fixtures/files/smime/ExpiredCA.crt
 spec/fixtures/files/smime/chain@example.com.csr
 spec/fixtures/files/smime/IntermediateCA.secret
 spec/fixtures/files/smime/IntermediateCA.key
+spec/fixtures/files/ai/related_knowledge_base_answers/invoice_refund.json
+spec/fixtures/files/ai/related_knowledge_base_answers/password_reset.json
+spec/fixtures/files/ai/related_knowledge_base_answers/password_reset_de.json
+spec/fixtures/files/ai/related_knowledge_base_answers/mixed_language.json
+spec/fixtures/files/ai/related_knowledge_base_answers/triggers_vs_schedulers.json
+spec/fixtures/files/ai/related_knowledge_base_answers/email_sync.json
+spec/fixtures/files/ai/related_knowledge_base_answers/groups_vs_roles.json
 spec/fixtures/files/ai/text_tool/input002.json
 spec/fixtures/files/ai/text_tool/input019.json
 spec/fixtures/files/ai/text_tool/input005.json
