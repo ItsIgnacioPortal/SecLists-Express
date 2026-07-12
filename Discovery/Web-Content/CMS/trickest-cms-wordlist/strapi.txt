@@ -6,6 +6,7 @@ rollup.utils.mjs
 package.json
 .yarn/releases/yarn-4.12.0.cjs
 scripts/unlink.js
+scripts/jsconfig.json
 scripts/release.js
 scripts/front/package.json
 scripts/front/merge-duplicated-translations/allowed-keys.js
@@ -680,6 +681,7 @@ packages/providers/email-sendgrid/.eslintrc.cjs
 packages/providers/email-sendgrid/README.md
 packages/providers/email-sendgrid/.npmignore
 packages/cli/create-strapi/package.json
+packages/cli/create-strapi/jsconfig.json
 packages/cli/create-strapi/LICENSE
 packages/cli/create-strapi/bin/index.js
 packages/cli/create-strapi/README.md
@@ -869,7 +871,6 @@ packages/cli/cloud/src/utils/analytics.ts
 packages/cli/cloud/src/utils/get-local-config.ts
 packages/cli/cloud/src/utils/error-message-factories.ts
 packages/cli/cloud/src/utils/helpers.ts
-packages/cli/cloud/src/utils/tests/compress-files.test.ts
 packages/cli/cloud/src/utils/__tests__/compress-files.test.ts
 packages/cli/cloud/src/utils/compress-files.ts
 packages/cli/cloud/src/services/index.ts
@@ -914,6 +915,7 @@ packages/utils/tsconfig/package.json
 packages/utils/tsconfig/base.json
 packages/utils/tsconfig/client.json
 packages/utils/eslint-config-custom/package.json
+packages/utils/eslint-config-custom/jsconfig.json
 packages/utils/eslint-config-custom/front/typescript.js
 packages/utils/eslint-config-custom/front/index.js
 packages/utils/eslint-config-custom/back/typescript.js
@@ -939,6 +941,7 @@ packages/utils/logger/lint-staged.config.mjs
 packages/utils/logger/.eslintrc.cjs
 packages/utils/typescript/package.json
 packages/utils/typescript/rollup.config.mjs
+packages/utils/typescript/jsconfig.json
 packages/utils/typescript/tsconfig.json
 packages/utils/typescript/src/index.ts
 packages/utils/typescript/src/compilers/basic.ts
@@ -1119,6 +1122,7 @@ packages/utils/api-tests/package.json
 packages/utils/api-tests/request.js
 packages/utils/api-tests/models.js
 packages/utils/api-tests/mock-fetch.js
+packages/utils/api-tests/jsconfig.json
 packages/utils/api-tests/agent.js
 packages/utils/api-tests/builder/action-registry.js
 packages/utils/api-tests/builder/context.js
@@ -1792,7 +1796,6 @@ packages/core/admin/ee/server/src/audit-logs/validation/audit-logs.ts
 packages/core/admin/ee/server/src/audit-logs/content-types/audit-log.ts
 packages/core/admin/ee/server/src/content-types/index.ts
 packages/core/admin/ee/server/tsconfig.build.json
-packages/core/admin/ee/server/tsconfig.eslint.json
 packages/core/admin/admin/tsconfig.json
 packages/core/admin/admin/src/index.ts
 packages/core/admin/admin/src/features/Tracking.tsx
@@ -1996,6 +1999,7 @@ packages/core/admin/admin/src/translations/zh-Hans.json
 packages/core/admin/admin/src/translations/es.json
 packages/core/admin/admin/src/assets/images/logo-strapi-2022.svg
 packages/core/admin/admin/src/assets/images/icon_offline-cloud.svg
+packages/core/admin/admin/src/utils/getProjectType.ts
 packages/core/admin/admin/src/utils/jwt.ts
 packages/core/admin/admin/src/utils/retryDynamicImport.ts
 packages/core/admin/admin/src/utils/urls.ts
@@ -2017,6 +2021,7 @@ packages/core/admin/admin/src/utils/locales.ts
 packages/core/admin/admin/src/utils/tests/cookies.test.ts
 packages/core/admin/admin/src/utils/tests/users.test.ts
 packages/core/admin/admin/src/utils/tests/urls.test.ts
+packages/core/admin/admin/src/utils/tests/getProjectType.test.ts
 packages/core/admin/admin/src/utils/tests/normalizeAPIError.test.ts
 packages/core/admin/admin/src/utils/tests/strings.test.ts
 packages/core/admin/admin/src/utils/tests/widgetLayout.test.ts
@@ -2148,6 +2153,7 @@ packages/core/admin/admin/src/components/Pagination.tsx
 packages/core/admin/admin/src/components/DescriptionComponentRenderer.tsx
 packages/core/admin/admin/src/components/Providers.tsx
 packages/core/admin/admin/src/components/tests/Table.test.tsx
+packages/core/admin/admin/src/components/tests/Context.test.tsx
 packages/core/admin/admin/src/components/tests/Widget.test.tsx
 packages/core/admin/admin/src/components/tests/Widgets.test.tsx
 packages/core/admin/admin/src/components/tests/LazyOutlet.test.tsx
@@ -2556,6 +2562,7 @@ packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/Blo
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/utils/types.ts
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/BlocksInput.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/BlocksToolbar.tsx
+packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/BlocksEditor.test.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/BlocksToolbar.test.tsx
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/mock-schema.ts
 packages/core/content-manager/admin/src/pages/EditView/components/FormInputs/BlocksInput/tests/normalizeBlocksState.test.ts
@@ -2833,7 +2840,6 @@ packages/core/content-manager/server/src/services/__tests__/document-metadata.te
 packages/core/content-manager/server/src/services/__tests__/uid.test.ts
 packages/core/content-manager/server/src/services/__tests__/components.test.ts
 packages/core/content-manager/server/src/services/__tests__/field-sizes.test.ts
-packages/core/content-manager/server/src/tsconfig.build.json
 packages/core/content-manager/server/src/validation/zod.ts
 packages/core/content-manager/server/src/validation/policies/hasPermissions.ts
 packages/core/content-manager/server/src/validation/__tests__/zod-yup-compat.test.ts
@@ -3191,7 +3197,10 @@ packages/core/openapi/src/constants.ts
 packages/core/openapi/src/assemblers/index.ts
 packages/core/openapi/src/assemblers/document/index.ts
 packages/core/openapi/src/assemblers/document/info.ts
+packages/core/openapi/src/assemblers/document/query-param-styles.ts
+packages/core/openapi/src/assemblers/document/security.ts
 packages/core/openapi/src/assemblers/document/metadata.ts
+packages/core/openapi/src/assemblers/document/server.ts
 packages/core/openapi/src/assemblers/document/path/path-item/index.ts
 packages/core/openapi/src/assemblers/document/path/path-item/path-item.ts
 packages/core/openapi/src/assemblers/document/path/path-item/operation/operation-id.ts
@@ -3221,11 +3230,13 @@ packages/core/openapi/lint-staged.config.mjs
 packages/core/openapi/.eslintrc.cjs
 packages/core/openapi/README.md
 packages/core/openapi/.npmignore
+packages/core/openapi/__tests__/query-param-styles.test.ts
 packages/core/openapi/__tests__/routes/api-routes-provider.test.ts
 packages/core/openapi/__tests__/routes/plugins-route-provider.test.ts
 packages/core/openapi/__tests__/routes/collector.test.ts
 packages/core/openapi/__tests__/routes/route-matcher.test.ts
 packages/core/openapi/__tests__/operation-assemblers.test.ts
+packages/core/openapi/__tests__/document-assemblers.test.ts
 packages/core/openapi/__tests__/mocks/index.ts
 packages/core/openapi/__tests__/mocks/strapi.mock.ts
 packages/core/openapi/__tests__/mocks/routes-provider.mock.ts
@@ -3264,7 +3275,6 @@ packages/core/strapi/src/cli/commands/start.ts
 packages/core/strapi/src/cli/commands/configuration/dump.ts
 packages/core/strapi/src/cli/commands/configuration/restore.ts
 packages/core/strapi/src/cli/commands/middlewares/list.ts
-packages/core/strapi/src/cli/commands/plugin/init/files/typescript.ts
 packages/core/strapi/src/cli/commands/report.ts
 packages/core/strapi/src/cli/commands/generate.ts
 packages/core/strapi/src/cli/commands/console.ts
@@ -3331,10 +3341,12 @@ packages/core/strapi/src/node/core/timer.ts
 packages/core/strapi/src/node/core/admin-customisations.ts
 packages/core/strapi/src/node/core/config.ts
 packages/core/strapi/src/node/core/files.ts
+packages/core/strapi/src/node/core/admin-vite-optimize-exclude.ts
 packages/core/strapi/src/node/core/managers.ts
 packages/core/strapi/src/node/core/resolve-module.ts
 packages/core/strapi/src/node/core/linked-packages.ts
 packages/core/strapi/src/node/core/__tests__/dependencies.test.ts
+packages/core/strapi/src/node/core/__tests__/admin-vite-optimize-exclude.test.ts
 packages/core/strapi/src/node/core/__tests__/plugins.test.ts
 packages/core/strapi/src/node/core/__tests__/admin-vite-aliases.test.ts
 packages/core/strapi/src/node/core/__tests__/resolve-module.test.ts
@@ -4756,6 +4768,7 @@ packages/plugins/users-permissions/admin/src/components/Policies/index.jsx
 packages/plugins/users-permissions/admin/src/components/BoundRoute/index.jsx
 packages/plugins/users-permissions/admin/src/components/BoundRoute/getMethodColor.js
 packages/plugins/users-permissions/rollup.config.mjs
+packages/plugins/users-permissions/jsconfig.json
 packages/plugins/users-permissions/LICENSE
 packages/plugins/users-permissions/jest.config.js
 packages/plugins/users-permissions/server/bootstrap/users-permissions-actions.js
@@ -5573,6 +5586,7 @@ tests/scripts/run-test-app.js
 tests/scripts/run-tests.js
 tests/scripts/run-cli-tests.js
 tests/scripts/run-api-tests.js
+tests/jsconfig.json
 tests/cli/jest.config.js
 tests/cli/constants.js
 tests/cli/tests/create-strapi-app/package-json.test.cli.ts
