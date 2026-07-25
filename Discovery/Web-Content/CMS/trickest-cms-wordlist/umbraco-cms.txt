@@ -116,6 +116,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Services/DistributedJobServ
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Services/PropertyEditorSchemaServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Services/PropertyValidationServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Editors/UserEditorAuthorizationHelperTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Sync/BatchedDatabaseServerMessengerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/HostedServices/RecurringHostedServiceBaseTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Mapping/MappingTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Strings/MarkdownToHtmlConverterTests.cs
@@ -147,6 +148,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/BackOfficeUserRead
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/MemberUserStoreTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/MemberIdentityUserTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Security/MemberManagerTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Events/RelateOnTrashNotificationHandlerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/MigrationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/MigrationPlanTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/AlterMigrationTests.cs
@@ -154,6 +156,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/PropertyDataCult
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/Upgrade/UmbracoPlanTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Migrations/Stubs/DropForeignKeyMigrationStub.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/BackOffice/BackOfficeClaimsPrincipalFactoryTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Logging/Serilog/Enrichers/HttpSessionIdEnricherTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Extensions/EmailMessageExtensionsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/HybridCache/ConvertedPublishedContentCacheTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/HybridCache/LazyCompressedStringTests.cs
@@ -206,7 +209,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Mappers/Propert
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Mappers/ContentTypeMapperTest.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/DefaultDatabaseAvailabilityCheckTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/SqlAzureDatabaseProviderMetadataTests.cs
-tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Scoping/ScopeUnitTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Scoping/ScopeTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Examine/UmbracoContentValueSetValidatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Examine/ContentValueSetBuilderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Examine/UmbracoFieldDefinitionCollectionTests.cs
@@ -412,6 +415,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ContentVersionCleanupService
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/IdKeyMapTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/BasicAuthServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/UserGroupServiceTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/TemporaryFileServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ContentPermissionServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/LongRunningOperationServiceTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Services/ElementContainerPermissionServiceTests.cs
@@ -523,6 +527,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/HashCodeCombinerTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/RangeTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/TemplateTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/PropertyGroupTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/Blocks/BlockEditorDataConverterTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/ContentTypeHistoryCleanupTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/MemberTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Models/Mapping/CommonMapperTests.cs
@@ -616,6 +621,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/TopoGraphTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/StackQueueTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/OrderedHashSetTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Collections/DeepCloneableListTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Configuration/CoreDebugSettingsConfigurationTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Configuration/Models/SecuritySettingsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Configuration/Models/Validation/RequestHandlerSettingsValidatorTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Configuration/Models/Validation/LoggingSettingsValidatorTests.cs
@@ -751,6 +757,7 @@ tests/Umbraco.Tests.Benchmarks/ContentTypeCachePolicyBenchmarks.cs
 tests/Umbraco.Tests.Benchmarks/ConcurrentDictionaryBenchmarks.cs
 tests/Umbraco.Tests.Benchmarks/ModelToSqlExpressionHelperBenchmarks.cs
 tests/Umbraco.Tests.Benchmarks/XmlBenchmarks.cs
+tests/Umbraco.Tests.Benchmarks/MediaUniqueNameBenchmarks.cs
 tests/Umbraco.Tests.Benchmarks/Program.cs
 tests/Umbraco.Tests.Benchmarks/OldUtf8ToAsciiConverter.cs
 tests/Umbraco.Tests.Benchmarks/SqlTemplatesBenchmark.cs
@@ -777,14 +784,15 @@ tests/Umbraco.Tests.AcceptanceTest/fixtures/customViews/Image.html
 tests/Umbraco.Tests.AcceptanceTest/fixtures/dictionary/TestSingleDictionary.udt
 tests/Umbraco.Tests.AcceptanceTest/fixtures/dictionary/TestDictionaryWithDescendants.udt
 tests/Umbraco.Tests.AcceptanceTest/cleanse-pkg.js
+tests/Umbraco.Tests.AcceptanceTest/.nvmrc
 tests/Umbraco.Tests.AcceptanceTest/tsconfig.json
 tests/Umbraco.Tests.AcceptanceTest/package.json
 tests/Umbraco.Tests.AcceptanceTest/README.npm.md
 tests/Umbraco.Tests.AcceptanceTest/createTest.js
 tests/Umbraco.Tests.AcceptanceTest/tsconfig.build.json
 tests/Umbraco.Tests.AcceptanceTest/README.md
-tests/Umbraco.Tests.AcceptanceTest/console-errors.json
 tests/Umbraco.Tests.AcceptanceTest/.prettierrc.json
+tests/Umbraco.Tests.AcceptanceTest/CLAUDE.md
 tests/Umbraco.Tests.AcceptanceTest/tests/ImagingSettingConfig/AdditionalSetup/appsettings.json
 tests/Umbraco.Tests.AcceptanceTest/tests/ImagingSettingConfig/HMACSecretKeyIsNotConfigured.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/UnattendedInstallConfig/AdditionalSetup/appsettings.json
@@ -856,6 +864,8 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Settings/Stylesheet/Style
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Dictionary/Dictionary.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/ContentPickerDynamicRoot.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/DataTypeFolder.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/MemberGroupPicker.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/TimeOnlyPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/ElementPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/BlockListEditor/BlockListEditor.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/BlockListEditor/BlockListBlocks.spec.ts
@@ -869,10 +879,15 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/MultiUrlPicker.s
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/ListView.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/Dropdown.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/Textstring.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/Slider.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/Tiptap.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/MarkdownEditor.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/MultipleTextString.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/RichTextEditor.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/ImageCropper.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/EmailAddress.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/Radiobox.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/CodeEditor.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/BlockGrid/BlockGridEditor.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/BlockGrid/Block/BlockGridBlockAdvanced.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/BlockGrid/Block/BlockGridBlockSettings.spec.ts
@@ -881,10 +896,15 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/MemberPicker.spe
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/Numeric.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/TrueFalse.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/DataTypeCollectionWorkspace.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/Decimal.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/UserPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/ApprovedColor.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/ContentPicker.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/DateTimeWithTimeZonePicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/DataType.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/DatePicker.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/EyeDropper.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/DataType/DateOnlyPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/BackofficeSearch/BackofficeSearchElement.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/BackofficeSearch/BackofficeSearchCrossProvider.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/BackofficeSearch/BackofficeSearch.spec.ts
@@ -932,6 +952,7 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/BulkActionsInList
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithListViewContent.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentInfoTab.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithDropdown.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithUserPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithMultiNodeTreePickerDataType.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithImageCropper.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithContentPicker.spec.ts
@@ -953,6 +974,7 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithUpload
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithUploadAudio.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/Clipboard/ClipboardBlockGridBlocks.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/Clipboard/ClipboardBlockListBlocks.spec.ts
+tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/ContentWithMemberGroupPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/BlockList/ContentWithBlockList.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/BlockList/VariantBlockList.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/Content/BlockList/BlockListWithPropertyEditor.spec.ts
@@ -1284,6 +1306,7 @@ tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/multiUrlPickerDataType
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/index.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/blockListBuilder/blockListBlockBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/blockListBuilder/index.ts
+tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/memberGroupPickerDataTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/emailAddressDataTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/multiNodeTreePickerDataTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/tiptapDataTypeBuilder.ts
@@ -1316,6 +1339,7 @@ tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/tinyMCEBuilder/tinyMCE
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/radioboxDataTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/textStringDataTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/multipleTextStringDataTypeBuilder.ts
+tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/userPickerDataTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/dataTypes/trueFalseDataTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/mediaTypes/mediaTypeAllowedMediaTypeBuilder.ts
 tests/Umbraco.Tests.AcceptanceTest/lib/builders/mediaTypes/index.ts
@@ -1504,6 +1528,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Persistence.EFCore/Scoping/EFCoreScopedF
 tests/Umbraco.Tests.Integration/Umbraco.Persistence.EFCore/Scoping/EFCoreScopeTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/HealthChecks/UntrustedDatabaseConstraintsCheckTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementEditingServiceTests.Delete.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/UserServiceTests.SetAvatar.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.DeleteFromRecycleBin.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/CachedDataTypeServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentServiceVariantTests.cs
@@ -1542,6 +1567,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/Import
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/ImportResources.Designer.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/MediaTypesAndMedia-Package.xml
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/Importing/CheckboxList-Content-Package.xml
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.Restore.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementContainerServiceTests.Create.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/DataTypeServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ElementContainerServiceTests.Delete.cs
@@ -1559,6 +1585,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentBlueprint
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentTypeServiceVariantsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.Get.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentEditingServiceTests.MoveToRecycleBin.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MediaEditingServiceTests.Restore.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ExternalLoginServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/ContentListViewServiceTestsBase.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MediaTypeServiceTests.cs
@@ -1640,6 +1667,7 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/PropertyTypeUsag
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/CacheInstructionServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Services/MemberTypeServiceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Routing/RedirectTrackerTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Sync/DatabaseServerMessengerMainDomTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Sync/SyncBootStateAccessorTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Sync/LastSyncedManagerTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/PropertyEditors/BlockEditorElementVariationTestBase.cs
@@ -1819,6 +1847,7 @@ tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/PropertyCache
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheTemplateTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheAncestryVariantTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaHybridCacheBoundedTests.cs
+tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheVarianceTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/ElementHybridCacheVariantsTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/MediaPropertyCacheLevelTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.PublishedCache.HybridCache/DocumentHybridCacheInconsistentStateTests.cs
@@ -2066,6 +2095,7 @@ tests/Umbraco.Tests.Integration/ManagementApi/DataType/UpdateDataTypeControllerT
 tests/Umbraco.Tests.Integration/ManagementApi/DataType/CreateDataTypeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/DataType/CopyDataTypeControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Factories/UserGroupPresentationFactoryTests.cs
+tests/Umbraco.Tests.Integration/ManagementApi/Factories/TemporaryFileConfigurationPresentationFactoryTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Factories/UserPresentationFactoryTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/RecycleBin/ReferencedByElementRecycleBinControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Element/RecycleBin/OriginalParentElementRecycleBinControllerTests.cs
@@ -2287,6 +2317,7 @@ tests/Umbraco.Tests.Integration/ManagementApi/Stylesheet/Tree/RootStylesheetTree
 tests/Umbraco.Tests.Integration/ManagementApi/Stylesheet/DeleteStylesheetControllerTests.cs
 tests/Umbraco.Tests.Integration/ManagementApi/Stylesheet/ByPathStylesheetControllerTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Persistence.EFCoreSqlite/SqliteRetryingExecutionStrategyTests.cs
+tests/Umbraco.Tests.Integration/CompatibilitySuppressions.xml
 Directory.Packages.props
 build/nightly-E2E-run-tests-template.yml
 build/nightly-build-trigger.yml
@@ -2807,6 +2838,7 @@ src/Umbraco.Infrastructure/Migrations/Upgrade/V_17_3_0/RetrustForeignKeyAndCheck
 src/Umbraco.Infrastructure/Migrations/Upgrade/V_17_3_0/AddSortableValueToPropertyData.cs
 src/Umbraco.Infrastructure/Migrations/Upgrade/V_17_3_0/RebuildHybridCache.cs
 src/Umbraco.Infrastructure/Migrations/Upgrade/V_17_3_0/OptimizeInvariantUrlRecords.cs
+src/Umbraco.Infrastructure/Migrations/Upgrade/V_18_1_0/AddContentTypeIdIndexForContent.cs
 src/Umbraco.Infrastructure/Migrations/Upgrade/V_17_6_0/AddContentTypeIdIndexForContent.cs
 src/Umbraco.Infrastructure/Migrations/Upgrade/UmbracoPremigrationPlan.cs
 src/Umbraco.Infrastructure/Migrations/MigrationContext.cs
@@ -2954,6 +2986,7 @@ src/Umbraco.Infrastructure/Persistence/Repositories/Implement/DomainRepository.c
 src/Umbraco.Infrastructure/Persistence/Repositories/Implement/EntityContainerRepository.cs
 src/Umbraco.Infrastructure/Persistence/Repositories/Implement/DynamicRootRepository.cs
 src/Umbraco.Infrastructure/Persistence/Repositories/Implement/MemberTypeContainerRepository.cs
+src/Umbraco.Infrastructure/Persistence/Repositories/Implement/SimilarNodeName.cs
 src/Umbraco.Infrastructure/Persistence/Repositories/Implement/WebhookLogRepository.cs
 src/Umbraco.Infrastructure/Persistence/Repositories/Implement/DocumentVersionRepository.cs
 src/Umbraco.Infrastructure/Persistence/Repositories/Implement/MediaRepository.cs
@@ -2995,7 +3028,6 @@ src/Umbraco.Infrastructure/Persistence/Repositories/Implement/MemberRepository.c
 src/Umbraco.Infrastructure/Persistence/Repositories/Implement/ContentTypeRepositoryBase.cs
 src/Umbraco.Infrastructure/Persistence/Repositories/Implement/AuditEntryRepository.cs
 src/Umbraco.Infrastructure/Persistence/Repositories/Implement/TagRepository.cs
-src/Umbraco.Infrastructure/Persistence/Repositories/Implement/ListExtensions.cs
 src/Umbraco.Infrastructure/Persistence/Repositories/Implement/WebhookRequestRepository.cs
 src/Umbraco.Infrastructure/Persistence/Repositories/Implement/StylesheetRepository.cs
 src/Umbraco.Infrastructure/Persistence/Repositories/Implement/TupleExtensions.cs
@@ -11191,6 +11223,7 @@ src/Umbraco.Web.UI.Client/src/packages/content/content/tree/sort-children-of-con
 src/Umbraco.Web.UI.Client/src/packages/content/content/tree/sort-children-of-content/sort-children-of-content.action.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/types.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/manifests.ts
+src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/bulk-content-publishing.controller.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/publish/entity-action/types.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/publish/entity-action/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/content/content/publishing/publish/entity-action/content-publish.action.kind.ts
@@ -12611,6 +12644,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/components/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/code-block/code-block.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/code-block/code-block.stories.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/code-block/index.ts
+src/Umbraco.Web.UI.Client/src/packages/core/components/code-block/code-block.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/input-radio-button-list/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/input-radio-button-list/input-radio-button-list.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/components/input-radio-button-list/input-radio-button-list.stories.ts
@@ -12777,6 +12811,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/default/default.a
 src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/entity-bulk-action.interface.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/common/bulk-tree-picker-action.controller.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/common/bulk-delete/types.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/common/bulk-delete/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/common/bulk-delete/constants.ts
@@ -12799,6 +12834,14 @@ src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/common/duplicate-
 src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/entity-bulk-action.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/entity-bulk-action-element.interface.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/progress/entity-bulk-action-progress-modal.element.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/progress/manifests.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/progress/entity-bulk-action-progress.controller.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/progress/constants.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/progress/entity-bulk-action-progress-modal.token.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/progress/index.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/progress/entity-bulk-action-progress.controller.test.ts
+src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/progress/entity-bulk-action-progress-modal.element.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entity-bulk-action/entity-bulk-action-base.ts
 src/Umbraco.Web.UI.Client/src/packages/core/themes/theme.context.ts
 src/Umbraco.Web.UI.Client/src/packages/core/themes/manifests.ts
@@ -13310,6 +13353,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/temporary-file/config/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/temporary-file/config/config.repository.ts
 src/Umbraco.Web.UI.Client/src/packages/core/temporary-file/config/config.server.data-source.ts
 src/Umbraco.Web.UI.Client/src/packages/core/temporary-file/config/config.store.token.ts
+src/Umbraco.Web.UI.Client/src/packages/core/temporary-file/config/config.repository.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/temporary-file/temporary-file.repository.ts
 src/Umbraco.Web.UI.Client/src/packages/core/temporary-file/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/entry-point.ts
@@ -13461,6 +13505,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/repository/data-source-response.inte
 src/Umbraco.Web.UI.Client/src/packages/core/repository/constants.ts
 src/Umbraco.Web.UI.Client/src/packages/core/repository/repository-details.manager.ts
 src/Umbraco.Web.UI.Client/src/packages/core/repository/repository-items.manager.ts
+src/Umbraco.Web.UI.Client/src/packages/core/repository/config-repository-base.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/repository/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/repository/pagination/fetch-all-pages.function.ts
 src/Umbraco.Web.UI.Client/src/packages/core/repository/pagination/fetch-all-pages.function.test.ts
@@ -13476,6 +13521,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/repository/data-mapper/mapping/data-
 src/Umbraco.Web.UI.Client/src/packages/core/repository/data-mapper/mapping/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/repository/data-mapper/mapping/data-mapping.extension.ts
 src/Umbraco.Web.UI.Client/src/packages/core/repository/data-mapper/data-mapper.ts
+src/Umbraco.Web.UI.Client/src/packages/core/repository/config-repository-base.ts
 src/Umbraco.Web.UI.Client/src/packages/core/view/index.ts
 src/Umbraco.Web.UI.Client/src/packages/core/view/context/view.controller.ts
 src/Umbraco.Web.UI.Client/src/packages/core/view/context/view.context.ts
@@ -15294,6 +15340,7 @@ src/Umbraco.Web.UI.Client/src/packages/core/router/contexts/route-path-addendum.
 src/Umbraco.Web.UI.Client/src/packages/core/router/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/core/router/route/not-found/route-not-found.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/router/route/router-slot-init.event.ts
+src/Umbraco.Web.UI.Client/src/packages/core/router/route/forbidden/route-forbidden.element.test.ts
 src/Umbraco.Web.UI.Client/src/packages/core/router/route/forbidden/route-forbidden.element.ts
 src/Umbraco.Web.UI.Client/src/packages/core/router/route/route.context-token.ts
 src/Umbraco.Web.UI.Client/src/packages/core/router/route/index.ts
@@ -15410,6 +15457,7 @@ src/Umbraco.Web.UI.Client/src/packages/user/current-user/repository/index.ts
 src/Umbraco.Web.UI.Client/src/packages/user/current-user/repository/current-user-config.store.token.ts
 src/Umbraco.Web.UI.Client/src/packages/user/current-user/repository/current-user.store.token.ts
 src/Umbraco.Web.UI.Client/src/packages/user/current-user/repository/current-user-config.server.data-source.ts
+src/Umbraco.Web.UI.Client/src/packages/user/current-user/repository/current-user-config.repository.test.ts
 src/Umbraco.Web.UI.Client/src/packages/user/current-user/repository/current-user.store.ts
 src/Umbraco.Web.UI.Client/src/packages/user/current-user/current-user.context.ts
 src/Umbraco.Web.UI.Client/src/packages/user/current-user/external-login/manifests.ts
@@ -15684,6 +15732,7 @@ src/Umbraco.Web.UI.Client/src/packages/user/user/repository/disable/index.ts
 src/Umbraco.Web.UI.Client/src/packages/user/user/repository/disable/disable-user.repository.ts
 src/Umbraco.Web.UI.Client/src/packages/user/user/repository/config/manifests.ts
 src/Umbraco.Web.UI.Client/src/packages/user/user/repository/config/constants.ts
+src/Umbraco.Web.UI.Client/src/packages/user/user/repository/config/user-config.repository.test.ts
 src/Umbraco.Web.UI.Client/src/packages/user/user/repository/config/user-config.server.data-source.ts
 src/Umbraco.Web.UI.Client/src/packages/user/user/repository/config/index.ts
 src/Umbraco.Web.UI.Client/src/packages/user/user/repository/config/user-config.repository.ts
@@ -16766,6 +16815,7 @@ src/Umbraco.Web.UI.Client/src/packages/preview/context/preview.context.ts
 src/Umbraco.Web.UI.Client/src/packages/preview/context/preview.context-token.ts
 src/Umbraco.Web.UI.Client/src/packages/preview/repository/index.ts
 src/Umbraco.Web.UI.Client/src/packages/preview/repository/preview.repository.ts
+src/Umbraco.Web.UI.Client/src/packages/preview/controllers/preview.controller.test.ts
 src/Umbraco.Web.UI.Client/src/packages/preview/controllers/preview.controller.ts
 src/Umbraco.Web.UI.Client/src/packages/preview/umbraco-package.ts
 src/Umbraco.Web.UI.Client/src/packages/performance-profiling/package.json

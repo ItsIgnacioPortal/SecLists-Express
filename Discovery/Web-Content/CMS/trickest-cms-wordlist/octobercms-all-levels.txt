@@ -88,6 +88,11 @@ modules/dashboard/models/DashboardSetting.php
 dashboard/models/DashboardSetting.php
 models/DashboardSetting.php
 DashboardSetting.php
+modules/dashboard/tests/widgets/DashTest.php
+dashboard/tests/widgets/DashTest.php
+tests/widgets/DashTest.php
+widgets/DashTest.php
+DashTest.php
 modules/dashboard/tests/classes/ReportDataCacheHelperTest.php
 dashboard/tests/classes/ReportDataCacheHelperTest.php
 tests/classes/ReportDataCacheHelperTest.php
@@ -1589,6 +1594,11 @@ fixtures/blueprints/landing/landing-page.yaml
 blueprints/landing/landing-page.yaml
 landing/landing-page.yaml
 landing-page.yaml
+modules/tailor/tests/controllers/EntriesTest.php
+tailor/tests/controllers/EntriesTest.php
+tests/controllers/EntriesTest.php
+controllers/EntriesTest.php
+EntriesTest.php
 modules/tailor/tests/database/EntriesFieldModelTest.php
 tailor/tests/database/EntriesFieldModelTest.php
 tests/database/EntriesFieldModelTest.php
