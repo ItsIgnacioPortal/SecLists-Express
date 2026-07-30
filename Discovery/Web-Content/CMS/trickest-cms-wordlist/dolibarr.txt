@@ -7445,6 +7445,7 @@ htdocs/install/mysql/data/llx_c_civilite.sql
 htdocs/install/mysql/data/llx_c_availability.sql
 htdocs/install/mysql/data/llx_accounting_account_bj.sql
 htdocs/install/mysql/data/llx_accounting_account_se.sql
+htdocs/install/mysql/data/llx_adherent_type.sql
 htdocs/install/mysql/data/llx_c_tva.sql
 htdocs/install/mysql/data/llx_c_type_resource.sql
 htdocs/install/mysql/data/llx_accounting_account_bf.sql
@@ -8242,6 +8243,7 @@ htdocs/install/mysql/migration/16.0.0-17.0.0.sql
 htdocs/install/mysql/migration/19.0.0-20.0.0.sql
 htdocs/install/mysql/migration/22.0.0-23.0.0.sql
 htdocs/install/mysql/migration/3.1.0-3.2.0.sql
+htdocs/install/mysql/migration/24.0.0-25.0.0.sql
 htdocs/install/mysql/migration/18.0.0-19.0.0.sql
 htdocs/install/mysql/migration/3.2.0-3.3.0.sql
 htdocs/install/mysql/migration/3.3.0-3.4.0.sql
@@ -14190,7 +14192,6 @@ dev/build/rpm/install.forced.php.mandriva
 dev/build/launchpad/README
 dev/build/generate_filelist_xml.php
 dev/build/flatpack/org.flatpak.Dolibarr.json
-dev/build/makepack-dolibarrtheme.pl
 dev/build/phpstan/README
 dev/build/phpstan/phpstan-baseline.neon
 dev/build/phpstan/bootstrap_action.php
@@ -14201,7 +14202,6 @@ dev/build/docker/Dockerfile
 dev/build/docker/docker-run.sh
 dev/build/docker/README.md
 dev/build/docker/docker-compose.yml
-dev/build/makepack-dolibarrmodule.pl
 dev/build/exe/doliwamp/php.ini.install
 dev/build/exe/doliwamp/rundoliadmin.bat.install
 dev/build/exe/doliwamp/install.forced.php.install
@@ -14298,7 +14298,6 @@ dev/build/debian/dolibarr.install
 dev/build/pdf/README.txt
 dev/build/pdf/htmldoc_en.book
 dev/build/makepack-dolibarr.php
-dev/build/makepack-dolibarrmodule.conf
 dev/build/docker-dev/.dockerignore
 dev/build/docker-dev/postgres.yml
 dev/build/docker-dev/Dockerfile

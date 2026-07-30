@@ -29841,6 +29841,11 @@ install/mysql/data/llx_accounting_account_se.sql
 mysql/data/llx_accounting_account_se.sql
 data/llx_accounting_account_se.sql
 llx_accounting_account_se.sql
+htdocs/install/mysql/data/llx_adherent_type.sql
+install/mysql/data/llx_adherent_type.sql
+mysql/data/llx_adherent_type.sql
+data/llx_adherent_type.sql
+llx_adherent_type.sql
 htdocs/install/mysql/data/llx_c_tva.sql
 install/mysql/data/llx_c_tva.sql
 mysql/data/llx_c_tva.sql
@@ -33826,6 +33831,11 @@ install/mysql/migration/3.1.0-3.2.0.sql
 mysql/migration/3.1.0-3.2.0.sql
 migration/3.1.0-3.2.0.sql
 3.1.0-3.2.0.sql
+htdocs/install/mysql/migration/24.0.0-25.0.0.sql
+install/mysql/migration/24.0.0-25.0.0.sql
+mysql/migration/24.0.0-25.0.0.sql
+migration/24.0.0-25.0.0.sql
+24.0.0-25.0.0.sql
 htdocs/install/mysql/migration/18.0.0-19.0.0.sql
 install/mysql/migration/18.0.0-19.0.0.sql
 mysql/migration/18.0.0-19.0.0.sql
@@ -70030,9 +70040,6 @@ dev/build/flatpack/org.flatpak.Dolibarr.json
 build/flatpack/org.flatpak.Dolibarr.json
 flatpack/org.flatpak.Dolibarr.json
 org.flatpak.Dolibarr.json
-dev/build/makepack-dolibarrtheme.pl
-build/makepack-dolibarrtheme.pl
-makepack-dolibarrtheme.pl
 dev/build/phpstan/README
 build/phpstan/README
 phpstan/README
@@ -70077,9 +70084,6 @@ dev/build/docker/docker-compose.yml
 build/docker/docker-compose.yml
 docker/docker-compose.yml
 docker-compose.yml
-dev/build/makepack-dolibarrmodule.pl
-build/makepack-dolibarrmodule.pl
-makepack-dolibarrmodule.pl
 dev/build/exe/doliwamp/php.ini.install
 build/exe/doliwamp/php.ini.install
 exe/doliwamp/php.ini.install
@@ -70545,9 +70549,6 @@ htmldoc_en.book
 dev/build/makepack-dolibarr.php
 build/makepack-dolibarr.php
 makepack-dolibarr.php
-dev/build/makepack-dolibarrmodule.conf
-build/makepack-dolibarrmodule.conf
-makepack-dolibarrmodule.conf
 dev/build/docker-dev/.dockerignore
 build/docker-dev/.dockerignore
 docker-dev/.dockerignore

@@ -551,6 +551,7 @@ features/admin/promotion/removing_catalog_promotions/removing_catalog_promotions
 features/admin/switching_admins_locale.feature
 features/admin/taxonomy/managing_taxons/changing_images_of_taxon.feature
 features/admin/taxonomy/managing_taxons/toggling_taxon.feature
+features/admin/taxonomy/managing_taxons/preventing_circular_parent_reference_via_api.feature
 features/admin/taxonomy/managing_taxons/ui/case_insensitive_parent_search.feature
 features/admin/taxonomy/managing_taxons/adding_taxon_for_parent.feature
 features/admin/taxonomy/managing_taxons/adding_taxon.feature
@@ -565,6 +566,7 @@ features/admin/taxonomy/managing_taxons/taxon_unique_code_validation.feature
 features/admin/taxonomy/managing_taxons/adding_images_to_existing_taxon.feature
 features/admin/taxonomy/managing_taxons/reordering_taxon.feature
 features/admin/taxonomy/managing_taxons/adding_taxon_with_parent.feature
+features/admin/taxonomy/managing_taxons/preventing_circular_parent_reference_when_editing_taxon.feature
 features/admin/taxonomy/managing_taxons/editing_taxon_slug_in_multiple_locales.feature
 features/admin/taxonomy/managing_taxons/preventing_xss_attack_while_adding_new_taxon.feature
 features/admin/resetting_password.feature
@@ -6660,6 +6662,7 @@ src/Sylius/Bundle/AdminBundle/templates/shared/crud/common/sidebar.html.twig
 src/Sylius/Bundle/AdminBundle/templates/shared/crud/common/navbar/menu.html.twig
 src/Sylius/Bundle/AdminBundle/templates/shared/crud/common/navbar/items.html.twig
 src/Sylius/Bundle/AdminBundle/templates/shared/crud/common/navbar/items/user.html.twig
+src/Sylius/Bundle/AdminBundle/templates/shared/crud/common/navbar/items/theme_switcher.html.twig
 src/Sylius/Bundle/AdminBundle/templates/shared/crud/common/navbar/menu/search.html.twig
 src/Sylius/Bundle/AdminBundle/templates/shared/crud/common/navbar/menu/shop_preview.html.twig
 src/Sylius/Bundle/AdminBundle/templates/shared/crud/common/content/header.html.twig
@@ -6718,6 +6721,7 @@ src/Sylius/Bundle/AdminBundle/templates/shared/components/confirmation_modal.htm
 src/Sylius/Bundle/AdminBundle/templates/shared/layout/base.html.twig
 src/Sylius/Bundle/AdminBundle/templates/shared/layout/base/javascripts.html.twig
 src/Sylius/Bundle/AdminBundle/templates/shared/layout/base/metatags.html.twig
+src/Sylius/Bundle/AdminBundle/templates/shared/layout/base/theme.html.twig
 src/Sylius/Bundle/AdminBundle/templates/shared/layout/base/stylesheets.html.twig
 src/Sylius/Bundle/AdminBundle/templates/shared/form_theme.html.twig
 src/Sylius/Bundle/AdminBundle/templates/shared/helper/header.html.twig
@@ -7612,6 +7616,7 @@ src/Sylius/Bundle/AdminBundle/Resources/assets/fonts/InterVariable.woff2
 src/Sylius/Bundle/AdminBundle/Resources/assets/controllers/TaxonTreeController.js
 src/Sylius/Bundle/AdminBundle/Resources/assets/controllers/SlugController.js
 src/Sylius/Bundle/AdminBundle/Resources/assets/controllers/DeleteTaxonController.js
+src/Sylius/Bundle/AdminBundle/Resources/assets/controllers/ThemeSwitcherController.js
 src/Sylius/Bundle/AdminBundle/Resources/assets/controllers/ProductTaxonTreeController.js
 src/Sylius/Bundle/AdminBundle/Resources/assets/controllers/BackButtonController.js
 src/Sylius/Bundle/AdminBundle/Resources/assets/controllers/ProductAttributeAutocomplete.js
