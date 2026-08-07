@@ -2,8 +2,10 @@ CONTRIBUTING.md
 pnpm-workspace.yaml
 .oxlintrc.json
 SECURITY.md
+.changeset/curly-cats-build.md
 .changeset/README.md
 .changeset/contributors.json
+.changeset/tidy-fields-read.md
 .changeset/config.json
 .prettierignore
 .npmrc
