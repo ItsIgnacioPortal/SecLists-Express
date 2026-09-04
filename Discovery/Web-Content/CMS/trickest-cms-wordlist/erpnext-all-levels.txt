@@ -1608,11 +1608,6 @@ telephony/doctype/voice_call_settings/test_voice_call_settings.py
 doctype/voice_call_settings/test_voice_call_settings.py
 voice_call_settings/test_voice_call_settings.py
 test_voice_call_settings.py
-erpnext/telephony/sidebar/telephony/telephony.json
-telephony/sidebar/telephony/telephony.json
-sidebar/telephony/telephony.json
-telephony/telephony.json
-telephony.json
 erpnext/edi/__init__.py
 edi/__init__.py
 __init__.py
@@ -1695,11 +1690,6 @@ edi/doctype/common_code/common_code.json
 doctype/common_code/common_code.json
 common_code/common_code.json
 common_code.json
-erpnext/edi/sidebar/edi/edi.json
-edi/sidebar/edi/edi.json
-sidebar/edi/edi.json
-edi/edi.json
-edi.json
 erpnext/communication/__init__.py
 communication/__init__.py
 __init__.py
@@ -1737,11 +1727,6 @@ communication/doctype/communication_medium_timeslot/communication_medium_timeslo
 doctype/communication_medium_timeslot/communication_medium_timeslot.py
 communication_medium_timeslot/communication_medium_timeslot.py
 communication_medium_timeslot.py
-erpnext/communication/sidebar/communication/communication.json
-communication/sidebar/communication/communication.json
-sidebar/communication/communication.json
-communication/communication.json
-communication.json
 erpnext/accounts/__init__.py
 accounts/__init__.py
 __init__.py
@@ -21699,11 +21684,6 @@ bulk_transaction/doctype/bulk_transaction_log/bulk_transaction_log.py
 doctype/bulk_transaction_log/bulk_transaction_log.py
 bulk_transaction_log/bulk_transaction_log.py
 bulk_transaction_log.py
-erpnext/bulk_transaction/sidebar/bulk_transaction/bulk_transaction.json
-bulk_transaction/sidebar/bulk_transaction/bulk_transaction.json
-sidebar/bulk_transaction/bulk_transaction.json
-bulk_transaction/bulk_transaction.json
-bulk_transaction.json
 erpnext/stock/reorder_item.py
 stock/reorder_item.py
 reorder_item.py

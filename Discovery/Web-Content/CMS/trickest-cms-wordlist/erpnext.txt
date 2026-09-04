@@ -348,7 +348,6 @@ erpnext/telephony/doctype/voice_call_settings/voice_call_settings.js
 erpnext/telephony/doctype/voice_call_settings/voice_call_settings.py
 erpnext/telephony/doctype/voice_call_settings/voice_call_settings.json
 erpnext/telephony/doctype/voice_call_settings/test_voice_call_settings.py
-erpnext/telephony/sidebar/telephony/telephony.json
 erpnext/edi/__init__.py
 erpnext/edi/doctype/__init__.py
 erpnext/edi/doctype/code_list/__init__.py
@@ -366,7 +365,6 @@ erpnext/edi/doctype/common_code/test_common_code.py
 erpnext/edi/doctype/common_code/common_code.js
 erpnext/edi/doctype/common_code/common_code.py
 erpnext/edi/doctype/common_code/common_code.json
-erpnext/edi/sidebar/edi/edi.json
 erpnext/communication/__init__.py
 erpnext/communication/doctype/__init__.py
 erpnext/communication/doctype/communication_medium/__init__.py
@@ -375,7 +373,6 @@ erpnext/communication/doctype/communication_medium/communication_medium.json
 erpnext/communication/doctype/communication_medium_timeslot/communication_medium_timeslot.json
 erpnext/communication/doctype/communication_medium_timeslot/__init__.py
 erpnext/communication/doctype/communication_medium_timeslot/communication_medium_timeslot.py
-erpnext/communication/sidebar/communication/communication.json
 erpnext/accounts/__init__.py
 erpnext/accounts/financial_report_template/horizontal_profit_and_loss_(columnar)/__init__.py
 erpnext/accounts/financial_report_template/horizontal_profit_and_loss_(columnar)/horizontal_profit_and_loss_(columnar).json
@@ -4536,7 +4533,6 @@ erpnext/bulk_transaction/doctype/bulk_transaction_log/bulk_transaction_log.js
 erpnext/bulk_transaction/doctype/bulk_transaction_log/bulk_transaction_log.json
 erpnext/bulk_transaction/doctype/bulk_transaction_log/test_bulk_transaction_log.py
 erpnext/bulk_transaction/doctype/bulk_transaction_log/bulk_transaction_log.py
-erpnext/bulk_transaction/sidebar/bulk_transaction/bulk_transaction.json
 erpnext/stock/reorder_item.py
 erpnext/stock/test_stock_balance.py
 erpnext/stock/__init__.py

@@ -85,6 +85,7 @@ cms/templates/admin/cms/page/tree/filter.html
 cms/templates/admin/cms/page/tree/menu.html
 cms/templates/admin/cms/page/close_frame.html
 cms/templates/admin/cms/page/delete_confirmation.html
+cms/templates/admin/cms/page/includes/object_tools.html
 cms/templates/admin/cms/page/includes/fieldset.html
 cms/templates/admin/cms/page/permissions.html
 cms/templates/admin/cms/page/delete_summary.html
@@ -832,6 +833,7 @@ cms/test_utils/project/templates/pluginapp/plugins/nocache.html
 cms/test_utils/project/templates/pluginapp/plugins/no_custom_model.html
 cms/test_utils/project/templates/sidebar_submenu.html
 cms/test_utils/project/templates/unicode_placeholder.html
+cms/test_utils/project/templates/admin/cms/page/change_form_object_tools_test.html
 cms/test_utils/project/templates/tests/rendering/inherit_with_or.html
 cms/test_utils/project/templates/tests/rendering/base.html
 cms/test_utils/project/templates/tests/rendering/inherit.html

@@ -22,6 +22,8 @@ witty-years-wash.md
 orange-crews-stick.md
 .changeset/enforce-read-permissions-keys-by-query.md
 enforce-read-permissions-keys-by-query.md
+.changeset/fair-kv-maxes-rest.md
+fair-kv-maxes-rest.md
 .changeset/mailtrap-email-transport.md
 mailtrap-email-transport.md
 .changeset/tidy-cases-repeat.md

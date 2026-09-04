@@ -28,6 +28,7 @@ delivery-process/documenting-a-release.md
 codeowners.toml
 .nvmrc
 rector.php
+UPGRADE-6.9.md
 SECURITY.md
 UPGRADE-6.2.md
 UPGRADE-6.3.md
@@ -7976,10 +7977,16 @@ tests/unit/Core/Test/PHPUnit/CompletionGuard/CompletionGuardTest.php
 tests/unit/Core/Test/PHPUnit/CompletionGuard/Subscriber/MarkExecutionStartedSubscriberTest.php
 tests/unit/Core/Test/PHPUnit/CompletionGuard/Subscriber/MarkExecutionFinishedSubscriberTest.php
 tests/unit/Core/Test/PHPUnit/Extension/DatabaseDiff/DbStateTest.php
+tests/unit/Core/Test/PHPUnit/Extension/DatabaseDiff/TestFinishedSubscriberTest.php
 tests/unit/Core/Test/PHPUnit/Extension/Datadog/TestRunnerExecutionFinishedSubscriberTest.php
+tests/unit/Core/Test/PHPUnit/Extension/Datadog/TestFailedSubscriberTest.php
+tests/unit/Core/Test/PHPUnit/Extension/Datadog/TestFinishedSubscriberTest.php
+tests/unit/Core/Test/PHPUnit/Extension/Datadog/DatadogPayloadTest.php
 tests/unit/Core/Test/PHPUnit/Extension/Datadog/TestErroredSubscriberTest.php
 tests/unit/Core/Test/PHPUnit/Extension/Common/TimeKeeperTest.php
 tests/unit/Core/Test/PHPUnit/Extension/FeatureFlag/TestPreparationStartedSubscriberTest.php
+tests/unit/Core/Test/PHPUnit/Extension/FeatureFlag/TestSkippedSubscriberTest.php
+tests/unit/Core/Test/PHPUnit/Extension/FeatureFlag/TestFinishedSubscriberTest.php
 tests/unit/Core/Test/PHPUnit/Extension/FeatureFlag/FeatureFlagExtensionTest.php
 tests/unit/Core/System/Tax/Api/TaxRateFkResolverTest.php
 tests/unit/Core/System/Tax/Aggregate/TaxRule/TaxRuleCollectionTest.php
@@ -8276,6 +8283,7 @@ tests/unit/Core/System/Snippet/SnippetServiceTest.php
 tests/unit/Core/System/Snippet/Subscriber/LanguageDeletionSubscriberTest.php
 tests/unit/Core/System/StateMachine/Api/StateMachineActionControllerTest.php
 tests/unit/Core/System/StateMachine/StateMachineRegistryTest.php
+tests/unit/Core/System/StateMachine/StateMachineTransitionValidatorTest.php
 tests/unit/Core/System/StateMachine/Event/StateMachineStateChangeEventTest.php
 tests/unit/Core/System/StateMachine/StateMachineEntityTest.php
 tests/unit/Core/System/StateMachine/StateMachineLockerTest.php
@@ -9256,8 +9264,9 @@ tests/unit/Core/Content/Product/SalesChannel/Listing/Processor/PagingProcessorTe
 tests/unit/Core/Content/Product/SalesChannel/Listing/Processor/CompressedCriteriaListingProcessorTest.php
 tests/unit/Core/Content/Product/SalesChannel/Listing/ProductListingRouteTest.php
 tests/unit/Core/Content/Product/SalesChannel/Listing/ProductListingResultTest.php
-tests/unit/Core/Content/Product/SalesChannel/Listing/ProductListingLoaderExtensionsTests.php
+tests/unit/Core/Content/Product/SalesChannel/Listing/ResolveListingIdsExtensionTest.php
 tests/unit/Core/Content/Product/SalesChannel/Listing/FilterCollectionTest.php
+tests/unit/Core/Content/Product/SalesChannel/Listing/ResolveListingExtensionTest.php
 tests/unit/Core/Content/Product/SalesChannel/Price/AppScriptProductPriceCalculatorTest.php
 tests/unit/Core/Content/Product/SalesChannel/Price/ProductPriceCalculatorTest.php
 tests/unit/Core/Content/Product/SalesChannel/Price/ReferencePriceDtoTest.php
@@ -11037,6 +11046,7 @@ tests/migration/Core/V6_8/Migration1773829004RegisterProductStreamIndexerTest.ph
 tests/migration/Core/V6_8/Migration1785810496ConvertLineItemProductStatesRuleConditionTest.php
 tests/migration/Core/V6_8/Migration1755497870RemoveLabelTranslationOfImportExportProfileTest.php
 tests/migration/Core/V6_8/Migration1743256470RemoveElasticsearchAppConfigFlagTest.php
+tests/migration/Core/V6_8/Migration1787763662UniqueStateMachineTransitionActionTest.php
 tests/migration/Core/V6_8/Migration1779977359RemoveMailTemplateTypeTemplateDataColumnTest.php
 tests/migration/Core/V6_8/Migration1784628114ProductRestockTimeMinValueTest.php
 tests/migration/Core/V6_8/Migration1763125903RemoveOrderLineItemStatesColumnTest.php
@@ -11048,6 +11058,7 @@ tests/migration/Core/V6_7/Migration1697112043TemporaryPaymentAndShippingTechnica
 tests/migration/Core/V6_7/Migration1764580028AddAltAttributeToOrderConfirmationMailImagesTest.php
 tests/migration/Core/V6_7/Migration1767604966UpdateTotalPriceOrderDeliveryPositionTest.php
 tests/migration/Core/V6_7/Migration1773824493AddProviderColumnToProductExportTest.php
+tests/migration/Core/V6_7/Migration1788180753FixPaymentReminderMailSubjectTest.php
 tests/migration/Core/V6_7/Migration1773420826AddSalutationPositionColumnTest.php
 tests/migration/Core/V6_7/Migration1785327592AddTranslationAutoUpdateToLanguageTest.php
 tests/migration/Core/V6_7/Migration1752229050ChangeDESnippetOfMeterUnitTest.php
@@ -11192,6 +11203,7 @@ tests/migration/Core/V6_7/Migration1773815272SalesChannelNameTranslationTest.php
 tests/migration/Core/V6_7/Migration1772443355InitiallySetRevokedConsentsToDeclinedTest.php
 tests/migration/Core/V6_7/Migration1782518400AddUnconfirmedAppSecretsToAppTest.php
 tests/migration/Core/V6_7/Migration1768545322AssignRevocationPageToSystemConfigSettingTest.php
+tests/migration/Core/V6_7/Migration1788182786AddDefaultCurrenciesToSalesChannelsTest.php
 tests/migration/Core/V6_7/Migration1773647849AlignFlowNameWithEventNameTest.php
 tests/migration/Core/V6_7/Migration1780029093FixProductComparisonTemplateBreadcrumbTest.php
 tests/migration/Core/V6_7/Migration1756068709FixCustomerAddressFirstNameLengthTest.php
@@ -11386,6 +11398,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/MockingSimpleObjectsN
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/Tests/NoExpectExceptionMessageRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoCreateMockWithoutExpectationsRuleDisabledTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoBCPlanningDeprecationRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/CoversTargetInCoverageSourceRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DataProviderRowArity/data-provider-row-arity-cases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/PublicServiceDecoratorRule/NonPublicDecorator.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/PublicServiceDecoratorRule/NonExistDecorator.php
@@ -11433,12 +11446,15 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractR
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/TaggedServiceContractRule/GoodTaggedService.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AddColumnRule/Migration1769435681ProblematicPattern.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AddColumnRule/Migration1769435682ValidPattern.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoKernelBootInSetUpBeforeClassRule/Cases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AssertEqualsCanonicalizingListArgumentRule/Cases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoNativeTimeFunctionRule/NativeTimeFunctionUsage.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoStaticRuntimeExceptionReturnRuleTest/DummyException.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoStaticRuntimeExceptionReturnRuleTest/NotException.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/Cases.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/NoticeRegressionCases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/OpaqueUseCases.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/ProductionSuts.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/AbstractBaseCases.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/CasesOutOfScope.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/NoCreateMockWithoutExpectationsRule/PropertyCases.php
@@ -11544,6 +11560,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEval
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/SchemaExtensionClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/DefaultingConstructorParent.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ExceptionWithoutLogicClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ProseMentionClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ParentLiteralConfigClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/ArraySetterClass.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CodeCoverageIgnoreEvaluation/SeeShortFormIntegrationTestClass.php
@@ -11598,6 +11615,22 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DALFieldsMustBeRegiste
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DALFieldsMustBeRegisteredWithSchemaBuilder/MyAssociationField.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DALFieldsMustBeRegisteredWithSchemaBuilder/MyTranslatedField.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/DALFieldsMustBeRegisteredWithSchemaBuilder/NotRegisteredField.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/Covered/OutsideSourceClass.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/Tests/CoversSuffixExcludedFixture.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/Tests/CoversFileExcludedFixture.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/Tests/CoversExcludedTraitFixture.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/Tests/CoversDirectoryExcludedFixture.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/Tests/CoversAllowedTargetFixture.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/Tests/CoversOutsideSourceFixture.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/Tests/NonUnitNamespaceFixture.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/Tests/CoversNothingFixture.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/project/phpunit.xml.dist
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/project/src/AllowedService.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/project/src/SingleExcluded.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/project/src/Tooling/ToolingTrait.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/project/src/Tooling/ToolingHelper.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/project/src/Boilerplate/BoilerplateService.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/CoversTargetInCoverageSourceRule/project/src/Boilerplate/ExcludedEntity.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AclValidPermissionsRule/invalid-acl-name-in-route-attribute.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AclValidPermissionsRule/invalid-acl-name-in-method-call.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/data/AclValidPermissionsRule/attributes-to-be-skipped.php
@@ -11649,6 +11682,7 @@ tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/McpToolResponseTraitRuleTes
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/CoversAttributeRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoUnsafeRequestHasSessionRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoStaticRuntimeExceptionReturnRuleTest.php
+tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoKernelBootInSetUpBeforeClassRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoNativeTimeClassRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Rules/NoCreateMockWithoutExpectationsRuleTest.php
 tests/devops/Core/DevOps/StaticAnalyse/PHPStan/Type/CollectionHasSpecifyingExtensionTest.php
@@ -14056,6 +14090,7 @@ src/Core/Migration/V6_8/Migration1763125903RemoveOrderLineItemStatesColumn.php
 src/Core/Migration/V6_8/Migration1784628114ProductRestockTimeMinValue.php
 src/Core/Migration/V6_8/Migration1755497870RemoveLabelTranslationOfImportExportProfile.php
 src/Core/Migration/V6_8/Migration1743256470RemoveDebitPayment.php
+src/Core/Migration/V6_8/Migration1787763662UniqueStateMachineTransitionAction.php
 src/Core/Migration/V6_8/Migration1769676545RemoveOrderAddressVatIdColumn.php
 src/Core/Migration/V6_8/Migration1779977359RemoveMailTemplateTypeTemplateDataColumn.php
 src/Core/Migration/V6_8/Migration1777952600BackfillPrimaryOrderDelivery.php
@@ -14138,6 +14173,7 @@ src/Core/Migration/V6_7/Migration1787130172BackfillDocumentTypeName.php
 src/Core/Migration/V6_7/Migration1786447612FixSalesChannelAnalyticsConstraint.php
 src/Core/Migration/V6_7/Migration1787205808AddNumberRangeReadAclPrivilege.php
 src/Core/Migration/V6_7/Migration1782518400AddUnconfirmedAppSecretsToApp.php
+src/Core/Migration/V6_7/Migration1788182786AddDefaultCurrenciesToSalesChannels.php
 src/Core/Migration/V6_7/Migration1770705203AddPaymentMethodChangedFlowAndMailTemplate.php
 src/Core/Migration/V6_7/Migration1788113950FixAmericanSamoaPostalCodePattern.php
 src/Core/Migration/V6_7/Migration1742568836CreateThemeRuntimeConfigTable.php
@@ -14200,6 +14236,7 @@ src/Core/Migration/V6_7/Migration1787311123AddSourceTypeToStateMachineHistory.ph
 src/Core/Migration/V6_7/Migration1726135997CreateMessengerStatsTable.php
 src/Core/Migration/V6_7/Migration1786369207SeedAppProvidedDocumentType.php
 src/Core/Migration/V6_7/Migration1776691515SetDefaultCmsPageIdForCategories.php
+src/Core/Migration/V6_7/Migration1788180753FixPaymentReminderMailSubject.php
 src/Core/Migration/V6_7/Migration1756068709FixCustomerAddressFirstNameLength.php
 src/Core/Migration/V6_7/Migration1773420826AddSalutationPositionColumn.php
 src/Core/Migration/V6_7/Migration1742199549MeasurementSystemTable.php
@@ -14558,7 +14595,9 @@ src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Migration/NoAfterStatementRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Migration/NonStandardFkGuardRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Migration/NoDropStatementInUpdateRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/NoFlowStoreFunctionRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoKernelBootInSetUpBeforeClassRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoReflectionOnNonPublicMethodsRule.php
+src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/CoversTargetInCoverageSourceRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/NoAssertEqualsOnClosureRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/TestPackageMatchRule.php
 src/Core/DevOps/StaticAnalyze/PHPStan/Rules/Tests/AssertEqualsCanonicalizingListArgumentRule.php
@@ -15436,6 +15475,7 @@ src/Core/System/StateMachine/Exception/IllegalTransitionException.php
 src/Core/System/StateMachine/StateMachineException.php
 src/Core/System/StateMachine/StateMachineTransitionResult.php
 src/Core/System/StateMachine/StateMachineDefinition.php
+src/Core/System/StateMachine/StateMachineTransitionValidator.php
 src/Core/System/StateMachine/Aggregation/StateMachineTransition/StateMachineTransitionDefinition.php
 src/Core/System/StateMachine/Aggregation/StateMachineTransition/StateMachineTransitionEntity.php
 src/Core/System/StateMachine/Aggregation/StateMachineTransition/StateMachineTransitionCollection.php
@@ -21494,6 +21534,7 @@ src/Administration/Resources/app/administration/src/core/service/api/tag.api.ser
 src/Administration/Resources/app/administration/src/core/service/api/sso-settings.service.ts
 src/Administration/Resources/app/administration/src/core/service/api/known-ips.api.service.js
 src/Administration/Resources/app/administration/src/core/service/api/guest-customer-convert.service.js
+src/Administration/Resources/app/administration/src/core/service/api/checkout-store.api.service.spec.ts
 src/Administration/Resources/app/administration/src/core/service/api/notifications.service.js
 src/Administration/Resources/app/administration/src/core/service/api/errors/InvalidActionButtonParameterError.ts
 src/Administration/Resources/app/administration/src/core/service/api/errors/InvalidActionButtonParameterError.spec.js

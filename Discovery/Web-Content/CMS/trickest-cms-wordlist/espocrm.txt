@@ -1582,6 +1582,7 @@ application/Espo/Repositories/Integration.php
 application/Espo/Repositories/Portal.php
 application/Espo/Repositories/ScheduledJob.php
 application/Espo/Repositories/PhoneNumber.php
+application/Espo/Repositories/Settings.php
 application/Espo/Repositories/ArrayValue.php
 application/Espo/Repositories/Job.php
 application/Espo/Repositories/EmailAddress.php
@@ -8374,6 +8375,7 @@ application/Espo/Resources/metadata/authenticationMethods/Oidc.json
 application/Espo/Resources/metadata/authenticationMethods/LDAP.json
 application/Espo/Resources/metadata/authenticationMethods/Hmac.json
 application/Espo/Resources/metadata/authenticationMethods/ApiKey.json
+application/Espo/Resources/metadata/entityAcl/Extension.json
 application/Espo/Resources/metadata/entityAcl/OAuthAccount.json
 application/Espo/Resources/metadata/entityAcl/ExternalAccount.json
 application/Espo/Resources/metadata/entityAcl/EmailAccount.json
@@ -8928,6 +8930,7 @@ application/Espo/Classes/Record/Hooks/PipelineStage/BeforeDelete.php
 application/Espo/Classes/Record/Hooks/Pipeline/AfterDelete.php
 application/Espo/Classes/Record/Hooks/Pipeline/AfterSave.php
 application/Espo/Classes/Record/Hooks/Pipeline/BeforeDelete.php
+application/Espo/Classes/Record/Note/OutputFilter.php
 application/Espo/Classes/Record/Note/UpdateInputFilter.php
 application/Espo/Classes/Record/User/OutputFilter.php
 application/Espo/Classes/Record/User/InputFilter.php

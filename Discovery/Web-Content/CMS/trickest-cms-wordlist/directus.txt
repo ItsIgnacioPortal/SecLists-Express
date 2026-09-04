@@ -11,6 +11,7 @@ contributing.md
 .changeset/witty-years-wash.md
 .changeset/orange-crews-stick.md
 .changeset/enforce-read-permissions-keys-by-query.md
+.changeset/fair-kv-maxes-rest.md
 .changeset/mailtrap-email-transport.md
 .changeset/tidy-cases-repeat.md
 .changeset/config.json

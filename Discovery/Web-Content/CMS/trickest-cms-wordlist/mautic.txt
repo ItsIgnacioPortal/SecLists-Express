@@ -1076,6 +1076,7 @@ app/bundles/DynamicContentBundle/Tests/Functional/DynamicContentCloneTest.php
 app/bundles/DynamicContentBundle/Tests/Controller/DynamicContentProjectSearchFunctionalTest.php
 app/bundles/DynamicContentBundle/Tests/Controller/DynamicContentApiControllerFunctionalTest.php
 app/bundles/DynamicContentBundle/Tests/Controller/DynamicContentControllerFunctionalTest.php
+app/bundles/DynamicContentBundle/Tests/Controller/DynamicContentControllerTest.php
 app/bundles/DynamicContentBundle/Tests/Unit/Validator/Constraints/NoNestingValidatorTest.php
 app/bundles/DynamicContentBundle/Tests/Unit/EventListener/DynamicContentSubscriberTest.php
 app/bundles/DynamicContentBundle/Tests/Unit/EventListener/BuildJsSubscriberTest.php
@@ -1208,6 +1209,7 @@ app/bundles/FormBundle/Tests/Helper/BlockedFreeEmailProvidersHelperTest.php
 app/bundles/FormBundle/Tests/Helper/ConditionalFieldOrderTestData.php
 app/bundles/FormBundle/Tests/Helper/FormFieldHelperTest.php
 app/bundles/FormBundle/Tests/Functional/FormSubmissionFunctionalTest.php
+app/bundles/FormBundle/Tests/Functional/ConfiguredSiteUrlFunctionalTest.php
 app/bundles/FormBundle/Tests/Functional/UpdateLeadFormActionFunctionalTest.php
 app/bundles/FormBundle/Tests/Functional/Model/SubmissionOwnerAndStageFunctionalTest.php
 app/bundles/FormBundle/Tests/Collector/FieldCollectorTest.php
@@ -1526,6 +1528,7 @@ app/bundles/EmailBundle/Tests/Controller/AjaxControllerTest.php
 app/bundles/EmailBundle/Tests/Controller/PublicControllerFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/EmailFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/EmailProjectSearchFunctionalTest.php
+app/bundles/EmailBundle/Tests/Controller/EmailDynamicContentVariationFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/EmailSendDisabledTrackingFunctionalTest.php
 app/bundles/EmailBundle/Tests/Controller/EmailMapStatsControllerTest.php
 app/bundles/EmailBundle/Tests/Controller/PublicControllerPreferenceCenterFallbackFunctionalTest.php
@@ -2119,6 +2122,7 @@ app/bundles/CoreBundle/Tests/Unit/Factory/ModelFactoryTest.php
 app/bundles/CoreBundle/Tests/Unit/Type/UTCDateTimeImmutableTypeTest.php
 app/bundles/CoreBundle/Tests/Unit/Event/CustomTemplateEventTest.php
 app/bundles/CoreBundle/Tests/Unit/Security/Permissions/CorePermissionsTest.php
+app/bundles/CoreBundle/Tests/Unit/Serializer/ImportEntityDenormalizerTest.php
 app/bundles/CoreBundle/Tests/Unit/Monolog/LogProcessorTest.php
 app/bundles/CoreBundle/Tests/Unit/Monolog/Handler/FileLogHandlerTest.php
 app/bundles/CoreBundle/Tests/Unit/Service/BulkNotificationTest.php
@@ -2623,6 +2627,7 @@ app/bundles/CoreBundle/Security/Exception/Cryptography/Symmetric/InvalidDecrypti
 app/bundles/CoreBundle/Security/Exception/PermissionException.php
 app/bundles/CoreBundle/Security/Exception/PermissionNotFoundException.php
 app/bundles/CoreBundle/Security/Exception/PermissionBadFormatException.php
+app/bundles/CoreBundle/Serializer/ImportEntityDenormalizer.php
 app/bundles/CoreBundle/Monolog/Handler/FileLogHandler.php
 app/bundles/CoreBundle/Monolog/LogProcessor.php
 app/bundles/CoreBundle/Service/SearchCommandListInterface.php

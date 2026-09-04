@@ -8965,6 +8965,10 @@ application/Espo/Repositories/PhoneNumber.php
 Espo/Repositories/PhoneNumber.php
 Repositories/PhoneNumber.php
 PhoneNumber.php
+application/Espo/Repositories/Settings.php
+Espo/Repositories/Settings.php
+Repositories/Settings.php
+Settings.php
 application/Espo/Repositories/ArrayValue.php
 Espo/Repositories/ArrayValue.php
 Repositories/ArrayValue.php
@@ -53024,6 +53028,12 @@ Resources/metadata/authenticationMethods/ApiKey.json
 metadata/authenticationMethods/ApiKey.json
 authenticationMethods/ApiKey.json
 ApiKey.json
+application/Espo/Resources/metadata/entityAcl/Extension.json
+Espo/Resources/metadata/entityAcl/Extension.json
+Resources/metadata/entityAcl/Extension.json
+metadata/entityAcl/Extension.json
+entityAcl/Extension.json
+Extension.json
 application/Espo/Resources/metadata/entityAcl/OAuthAccount.json
 Espo/Resources/metadata/entityAcl/OAuthAccount.json
 Resources/metadata/entityAcl/OAuthAccount.json
@@ -56131,6 +56141,12 @@ Record/Hooks/Pipeline/BeforeDelete.php
 Hooks/Pipeline/BeforeDelete.php
 Pipeline/BeforeDelete.php
 BeforeDelete.php
+application/Espo/Classes/Record/Note/OutputFilter.php
+Espo/Classes/Record/Note/OutputFilter.php
+Classes/Record/Note/OutputFilter.php
+Record/Note/OutputFilter.php
+Note/OutputFilter.php
+OutputFilter.php
 application/Espo/Classes/Record/Note/UpdateInputFilter.php
 Espo/Classes/Record/Note/UpdateInputFilter.php
 Classes/Record/Note/UpdateInputFilter.php
