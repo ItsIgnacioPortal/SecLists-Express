@@ -554,6 +554,7 @@ tests/api/core/upload/admin/settings.test.api.js
 tests/api/core/upload/admin/private-file-signing.test.api.js
 tests/api/core/upload/admin/file.test.api.js
 tests/api/core/mcp/mcp-content-manager-rbac.test.api.ts
+tests/api/core/mcp/utils/strict-tool-client.ts
 tests/api/core/mcp/utils/mcp-client.ts
 tests/api/core/mcp/mcp-audit-logs.test.api.ts
 tests/api/core/mcp/mcp-content-manager-shaping.test.api.ts
@@ -2883,6 +2884,7 @@ packages/core/strapi/src/node/core/plugins.ts
 packages/core/strapi/src/node/core/admin-vite-singleton-modules.ts
 packages/core/strapi/src/node/webpack/build.ts
 packages/core/strapi/src/node/webpack/watch.ts
+packages/core/strapi/src/node/webpack/resolve-production-config.test.ts
 packages/core/strapi/src/node/webpack/config.ts
 packages/core/strapi/src/node/__tests__/create-build-context.test.ts
 packages/core/strapi/src/node/develop.ts
@@ -2978,6 +2980,7 @@ packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/ass
 packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/restore-mapper-integration.test.ts
 packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/restore-links.test.ts
 packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/restore-entities.test.ts
+packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/restore-configuration.test.ts
 packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/resolve-link-ref.test.ts
 packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/assets-destination-writable.test.ts
 packages/core/data-transfer/src/strapi/providers/local-destination/__tests__/index.test.ts
@@ -3755,18 +3758,22 @@ packages/core/core/src/services/mcp/middleware/__tests__/oauthDiscoveryFallback.
 packages/core/core/src/services/mcp/authentication.ts
 packages/core/core/src/services/mcp/utils/withTimeout.ts
 packages/core/core/src/services/mcp/utils/createSafeCapabilityRegistration.ts
+packages/core/core/src/services/mcp/utils/toSdkMcpCapabilityResult.ts
 packages/core/core/src/services/mcp/utils/safeHandlerWrapper.ts
 packages/core/core/src/services/mcp/utils/jsonRpcErrors.ts
 packages/core/core/src/services/mcp/utils/__tests__/createSafeCapabilityRegistration.test.ts
 packages/core/core/src/services/mcp/utils/__tests__/sendJsonRpcError.test.ts
 packages/core/core/src/services/mcp/utils/__tests__/safeHandlerWrapper.test.ts
+packages/core/core/src/services/mcp/utils/__tests__/toSdkMcpCapabilityResult.test.ts
 packages/core/core/src/services/mcp/utils/__tests__/withTimeout.test.ts
+packages/core/core/src/services/mcp/utils/createMcpCapabilityHandlerContext.ts
 packages/core/core/src/services/mcp/utils/sendJsonRpcError.ts
 packages/core/core/src/services/mcp/index.ts
 packages/core/core/src/services/mcp/resource-registry.ts
 packages/core/core/src/services/mcp/routes.ts
 packages/core/core/src/services/mcp/__tests__/authentication.test.ts
 packages/core/core/src/services/mcp/__tests__/service-integration.test.ts
+packages/core/core/src/services/mcp/__tests__/capability-results.test.ts
 packages/core/core/src/services/mcp/__tests__/routes.test.ts
 packages/core/core/src/services/mcp/handlers/types.ts
 packages/core/core/src/services/mcp/handlers/handlePost.ts
@@ -3784,6 +3791,7 @@ packages/core/core/src/services/mcp/internal/McpCapabilityDefinitionRegistry.ts
 packages/core/core/src/services/mcp/internal/McpServerFactory.ts
 packages/core/core/src/services/mcp/internal/__tests__/McpCapabilityDefinitionRegistry.test.ts
 packages/core/core/src/services/mcp/internal/__tests__/McpCapabilityRegistry.test.ts
+packages/core/core/src/services/mcp/internal/__tests__/McpToolDiscovery.test.ts
 packages/core/core/src/services/mcp/internal/__tests__/McpServerFactory.test.ts
 packages/core/core/src/services/mcp/internal/__tests__/McpConfiguration.test.ts
 packages/core/core/src/services/mcp/internal/__tests__/syncMcpSessionCapabilities.test.ts
@@ -4021,6 +4029,7 @@ packages/core/admin/shared/utils/__tests__/auth-cookie-name.test.ts
 packages/core/admin/shared/utils/__tests__/session-auth.test.ts
 packages/core/admin/shared/utils/__tests__/auth-cookie-domain.test.ts
 packages/core/admin/shared/utils/__tests__/auth-cookie-path.test.ts
+packages/core/admin/shared/utils/audit-log-export.ts
 packages/core/admin/shared/contracts/users.ts
 packages/core/admin/shared/contracts/roles.ts
 packages/core/admin/shared/contracts/content-types.ts
@@ -4524,6 +4533,10 @@ packages/core/admin/ee/server/src/services/role.ts
 packages/core/admin/ee/server/src/services/metrics.ts
 packages/core/admin/ee/server/src/services/passport/provider-registry.ts
 packages/core/admin/ee/server/src/services/passport/sso.ts
+packages/core/admin/ee/server/src/audit-logs/utils/export-token.ts
+packages/core/admin/ee/server/src/audit-logs/utils/__tests__/export-token.test.ts
+packages/core/admin/ee/server/src/audit-logs/utils/__tests__/csv.test.ts
+packages/core/admin/ee/server/src/audit-logs/utils/csv.ts
 packages/core/admin/ee/server/src/audit-logs/content-types/audit-log.ts
 packages/core/admin/ee/server/src/audit-logs/validation/audit-logs.ts
 packages/core/admin/ee/server/src/audit-logs/validation/__tests__/audit-logs.test.ts
@@ -4534,6 +4547,7 @@ packages/core/admin/ee/server/src/audit-logs/controllers/__tests__/audit-logs.te
 packages/core/admin/ee/server/src/audit-logs/utils.ts
 packages/core/admin/ee/server/src/audit-logs/services/lifecycles.ts
 packages/core/admin/ee/server/src/audit-logs/services/audit-logs.ts
+packages/core/admin/ee/server/src/audit-logs/services/__tests__/create-export-stream.test.ts
 packages/core/admin/ee/server/src/audit-logs/services/__tests__/find-many-users.test.ts
 packages/core/admin/ee/server/src/audit-logs/services/__tests__/audit-logs.test.ts
 packages/core/admin/ee/server/src/audit-logs/services/__tests__/find-many.test.ts
@@ -4561,6 +4575,7 @@ packages/core/admin/ee/admin/src/pages/SettingsPage/pages/Users/components/Magic
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/Users/ListPage.tsx
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/tests/SingleSignOnPage.test.tsx
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/components/ComboboxFilter.tsx
+packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/components/ExportCard.tsx
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/components/Modal.tsx
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/utils/tableHeaders.ts
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/utils/getActionTypesDefaultMessages.ts
@@ -4569,7 +4584,9 @@ packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/utils/getDis
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/ListPage.tsx
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/tests/ListPage.test.tsx
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/hooks/useFormatTimeStamp.ts
+packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/hooks/tests/useExportAuditLogs.test.ts
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/hooks/tests/useAuditLogsData.test.ts
+packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/hooks/useExportAuditLogs.ts
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/AuditLogs/hooks/useAuditLogsData.ts
 packages/core/admin/ee/admin/src/pages/SettingsPage/pages/SingleSignOnPage.tsx
 packages/core/admin/ee/admin/src/services/ai.ts
@@ -4650,6 +4667,8 @@ packages/core/types/src/modules/event-hub.ts
 packages/core/types/src/modules/session-manager.ts
 packages/core/types/src/modules/custom-fields.ts
 packages/core/types/src/modules/ai.ts
+packages/core/types/src/modules/__tests__/mcp-capability-results.test.ts
+packages/core/types/src/modules/__tests__/mcp.test.ts
 packages/core/types/src/modules/entity-validator.ts
 packages/core/types/src/modules/metrics.ts
 packages/core/types/src/modules/webhook-runner.ts
@@ -4906,6 +4925,7 @@ packages/core/upload/server/src/services/__tests__/upload/findAndCountPage.test.
 packages/core/upload/server/src/services/__tests__/upload/formatFileInfo.test.ts
 packages/core/upload/server/src/services/__tests__/upload/updateFileInfo.test.ts
 packages/core/upload/server/src/services/__tests__/upload/replace.test.ts
+packages/core/upload/server/src/services/__tests__/upload/unhandled-provider-rejection.test.ts
 packages/core/upload/server/src/services/__tests__/upload/responsive-parallelism.test.ts
 packages/core/upload/server/src/services/__tests__/file.test.ts
 packages/core/upload/server/src/services/__tests__/folder.test.ts
