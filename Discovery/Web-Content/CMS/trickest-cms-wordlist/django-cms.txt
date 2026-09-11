@@ -602,6 +602,7 @@ cms/tests/test_signals.py
 cms/tests/test_toolbar_enabled_models.py
 cms/tests/test_placeholder_app_admin.py
 cms/tests/test_page_user_group_admin.py
+cms/tests/test_copy_permissions.py
 cms/tests/__init__.py
 cms/tests/test_cms_config_wizards.py
 cms/tests/test_placeholder.py
@@ -1068,6 +1069,7 @@ cms/test_utils/project/app_with_two_cms_config_classes/models.py
 cms/test_utils/project/models.py
 cms/test_utils/project/fourth_urls_for_apphook_tests.py
 cms/test_utils/runners.py
+cms/test_utils/mail.py
 cms/test_utils/testcases.py
 cms/test_utils/.coveragerc
 cms/__main__.py
