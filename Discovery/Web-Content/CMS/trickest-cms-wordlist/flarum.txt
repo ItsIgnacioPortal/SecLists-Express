@@ -504,6 +504,7 @@ extensions/mentions/tests/integration/api/CreatePostWithEmptyContentTest.php
 extensions/mentions/tests/integration/api/PostMentionsTest.php
 extensions/mentions/tests/integration/api/EditPostWithEmptyContentTest.php
 extensions/mentions/tests/integration/api/MentionsDuringSavingTest.php
+extensions/mentions/tests/integration/api/ManyUserMentionsTest.php
 extensions/mentions/tests/integration/api/TagMentionsTest.php
 extensions/mentions/tests/integration/api/NotificationsTest.php
 extensions/mentions/tests/integration/api/UserMentionsTest.php
@@ -2895,6 +2896,7 @@ framework/core/tests/integration/admin/IndexTest.php
 framework/core/tests/integration/user/AvatarImageValidationTest.php
 framework/core/tests/integration/user/GroupPermissionCacheTest.php
 framework/core/tests/integration/slugger/SlugDriverTest.php
+framework/core/tests/integration/PostEditThrottleTest.php
 framework/core/tests/integration/console/CacheClearCommandTest.php
 framework/core/tests/integration/console/InfoCommandMemoryLimitTest.php
 framework/core/tests/integration/console/MigrateCommandIsolationTest.php
@@ -2946,6 +2948,7 @@ framework/core/tests/integration/frontend/FontAwesomeLoadingTest.php
 framework/core/tests/integration/forum/UpgradePageTest.php
 framework/core/tests/integration/forum/DefaultRouteTest.php
 framework/core/tests/integration/forum/GlobalLogoutTest.php
+framework/core/tests/integration/forum/CustomLessFileAccessTest.php
 framework/core/tests/integration/forum/Auth/ResponseFactoryTest.php
 framework/core/tests/integration/forum/RegisterTest.php
 framework/core/tests/integration/forum/LogoutTest.php
@@ -2999,6 +3002,7 @@ framework/core/tests/unit/Install/Steps/PublishAssetsTest.php
 framework/core/tests/unit/Install/Prerequisite/WritablePathsTest.php
 framework/core/tests/unit/Install/BaseUrlTest.php
 framework/core/tests/unit/Foundation/ExtensionDependencyResolutionTest.php
+framework/core/tests/unit/Foundation/Console/InfoCommandExecGuardTest.php
 framework/core/tests/unit/Foundation/PathsTest.php
 framework/core/tests/unit/Foundation/ConfigTest.php
 framework/core/tests/unit/Foundation/ErrorHandling/ContentNegotiationFormatterTest.php
