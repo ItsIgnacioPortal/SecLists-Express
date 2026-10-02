@@ -686,6 +686,7 @@ test/org/apache/el/TestELEvaluation.java
 test/org/apache/el/TesterBeanBB.java
 test/org/apache/el/TesterBeanB.java
 test/org/apache/catalina/ant/jmx/TestJMXAccessorTask.java
+test/org/apache/catalina/ant/jmx/TestJMXAccessorCondition.java
 test/org/apache/catalina/ant/TestDeployTask.java
 test/org/apache/catalina/realm/TestGenericPrincipal.java
 test/org/apache/catalina/realm/TestRealmBase.java
@@ -848,6 +849,7 @@ test/org/apache/catalina/core/TestStandardWrapper.java
 test/org/apache/catalina/core/TestAsyncContextIoError.java
 test/org/apache/catalina/core/TestStandardHostValve.java
 test/org/apache/catalina/core/TesterApplicationHttpRequestPerformance.java
+test/org/apache/catalina/core/TestStandardVirtualThreadExecutor.java
 test/org/apache/catalina/core/TestAsyncContextImplListenerOnComplete.java
 test/org/apache/catalina/core/TestApplicationContextGetRequestDispatcherC.java
 test/org/apache/catalina/core/TestApplicationServletRegistration.java
@@ -867,12 +869,15 @@ test/org/apache/catalina/core/TestAprLifecycleListener.java
 test/org/apache/catalina/core/TestStandardContextValve.java
 test/org/apache/catalina/core/TesterDefaultInstanceManagerPerformance.java
 test/org/apache/catalina/core/TestApplicationHttpRequest.java
+test/org/apache/catalina/core/TestStandardThreadExecutor.java
 test/org/apache/catalina/core/TestDefaultInstanceManager.java
 test/org/apache/catalina/core/TestApplicationContextGetRequestDispatcherB.java
 test/org/apache/catalina/core/TestApplicationContext.java
+test/org/apache/catalina/core/TestApplicationPart.java
 test/org/apache/catalina/core/TestAsyncContextImpl.java
 test/org/apache/catalina/core/TestApplicationContextStripPathParams.java
 test/org/apache/catalina/core/TestStandardContextAliases.java
+test/org/apache/catalina/core/TestFrameworkListener.java
 test/org/apache/catalina/core/TestApplicationContextGetRequestDispatcher.java
 test/org/apache/catalina/core/TestApplicationMapping.java
 test/org/apache/catalina/core/TesterTldListener.java
@@ -891,6 +896,7 @@ test/org/apache/catalina/util/TestParameterMap.java
 test/org/apache/catalina/util/TestFilterUtil.java
 test/org/apache/catalina/util/TestCustomObjectInputStream.java
 test/org/apache/catalina/mbeans/TestRegistration.java
+test/org/apache/catalina/ha/deploy/TestFileMessageFactory.java
 test/org/apache/catalina/ha/context/TestReplicatedContext.java
 test/org/apache/catalina/ha/session/TestDeltaRequest.java
 test/org/apache/catalina/ha/session/TestDeltaSession.java
