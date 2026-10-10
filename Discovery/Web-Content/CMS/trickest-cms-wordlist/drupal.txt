@@ -1812,6 +1812,7 @@ core/tests/Drupal/KernelTests/Core/Config/ConfigInstallTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigEventsTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigEntityNormalizeTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigImporterMissingContentTest.php
+core/tests/Drupal/KernelTests/Core/Config/ConfigEntityValidationTestBaseUnsharedTest.php
 core/tests/Drupal/KernelTests/Core/Config/Storage/ConfigStorageTestBase.php
 core/tests/Drupal/KernelTests/Core/Config/Storage/ManagedStorageTest.php
 core/tests/Drupal/KernelTests/Core/Config/Storage/FileStorageTest.php
@@ -2081,6 +2082,8 @@ core/tests/Drupal/KernelTests/Config/Schema/MappingTest.php
 core/tests/Drupal/KernelTests/Config/TypedConfigTest.php
 core/tests/Drupal/KernelTests/Config/DefaultConfigTest.php
 core/tests/Drupal/KernelTests/KernelTestCompilerPass.php
+core/tests/Drupal/KernelTests/SharedDatabaseStateViolationTest.php
+core/tests/Drupal/KernelTests/SharedDatabaseStateTest.php
 core/tests/Drupal/KernelTests/Scripts/TestSiteApplicationTest.php
 core/tests/Drupal/KernelTests/AssertConfigTrait.php
 core/tests/Drupal/KernelTests/FileSystemModuleDiscoveryDataProviderTrait.php
@@ -2371,8 +2374,10 @@ core/tests/Drupal/FunctionalTests/Update/UpdateReducedThemeRegistryTest.php
 core/tests/Drupal/TestTools/PhpUnitTestCaseJUnitResult.php
 core/tests/Drupal/TestTools/ErrorHandler/DrupalDebugClassLoader.php
 core/tests/Drupal/TestTools/ErrorHandler/BootstrapErrorHandler.php
+core/tests/Drupal/TestTools/PhpUnitCompatibility/ForwardCompatibilityTrait.php
 core/tests/Drupal/TestTools/PhpUnitCompatibility/RunnerVersion.php
 core/tests/Drupal/TestTools/Attribute/Skip.php
+core/tests/Drupal/TestTools/Attribute/ShareEnvironment.php
 core/tests/Drupal/TestTools/Random.php
 core/tests/Drupal/TestTools/Extension/Dump/DebugDump.php
 core/tests/Drupal/TestTools/Extension/Dump/TestRunnerFinishedSubscriber.php
@@ -3115,6 +3120,7 @@ core/tests/Drupal/Tests/PerformanceData.php
 core/tests/Drupal/Tests/EntityTrait.php
 core/tests/Drupal/Tests/BrowserTestBase.php
 core/tests/Drupal/Tests/TestTools/ErrorHandler/DrupalDebugClassLoaderTest.php
+core/tests/Drupal/Tests/TestTools/Attribute/ShareEnvironmentTest.php
 core/tests/Drupal/Tests/TestRequirementsTrait.php
 core/tests/Drupal/Tests/Composer/ComposerTest.php
 core/tests/Drupal/Tests/Composer/ComposerIntegrationTest.php
@@ -7592,12 +7598,10 @@ core/modules/package_manager/tests/fixtures/build_test_projects/alpha/1.1.0/comp
 core/modules/package_manager/tests/fixtures/build_test_projects/alpha/1.1.0/alpha.info.yml.hide
 core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.0.0/composer.json
 core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.0.0/updated_module.info.yml.hide
-core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.0.0/updated_module.module
 core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.1.0/composer.json
 core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.1.0/src/PostApplySubscriber.php
 core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.1.0/updated_module.info.yml.hide
 core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.1.0/updated_module.services.yml
-core/modules/package_manager/tests/fixtures/build_test_projects/updated_module/1.1.0/updated_module.module
 core/modules/package_manager/tests/fixtures/build_test_projects/main_module/composer.json
 core/modules/package_manager/tests/fixtures/build_test_projects/main_module/main_module.info.yml.hide
 core/modules/package_manager/tests/fixtures/build_test_projects/main_module/main_module_submodule/main_module_submodule.info.yml.hide
@@ -8720,7 +8724,6 @@ core/modules/system/tests/modules/system_test/src/Controller/PageCacheAcceptHead
 core/modules/system/tests/modules/system_test/system_test.routing.yml
 core/modules/system/tests/modules/system_test/system_test.permissions.yml
 core/modules/system/tests/modules/system_test/system_test.info.yml
-core/modules/system/tests/modules/system_test/system_test.module
 core/modules/system/tests/modules/autowire_test/src/Plugin/Block/AutowireErrorBlock.php
 core/modules/system/tests/modules/autowire_test/src/Plugin/Block/AutowireBlock.php
 core/modules/system/tests/modules/autowire_test/src/TestInjection.php
@@ -8806,6 +8809,7 @@ core/modules/system/tests/modules/test_htmx/test_htmx.info.yml
 core/modules/system/tests/modules/test_htmx/src/Form/HtmxTestForm.php
 core/modules/system/tests/modules/test_htmx/src/Form/HtmxTestAjaxForm.php
 core/modules/system/tests/modules/test_htmx/src/Hook/TestHtmxHooks.php
+core/modules/system/tests/modules/test_htmx/src/Controller/HtmxFragmentController.php
 core/modules/system/tests/modules/test_htmx/src/Controller/HtmxTestAttachmentsController.php
 core/modules/system/tests/modules/test_htmx/test_htmx.libraries.yml
 core/modules/system/tests/modules/test_htmx/test_htmx.routing.yml
@@ -9432,8 +9436,6 @@ core/modules/system/tests/modules/render_array_non_html_subscriber_test/render_a
 core/modules/system/tests/modules/tabbingmanager_test/src/Controller/TabbingManagerTestController.php
 core/modules/system/tests/modules/tabbingmanager_test/tabbingmanager_test.info.yml
 core/modules/system/tests/modules/tabbingmanager_test/tabbingmanager_test.routing.yml
-core/modules/system/tests/modules/deprecation_hook_attribute_test/src/Hook/DeprecationHookAttributeTestHooks.php
-core/modules/system/tests/modules/deprecation_hook_attribute_test/deprecation_hook_attribute_test.info.yml
 core/modules/system/tests/modules/performance_test/src/Cache/CacheTagOperation.php
 core/modules/system/tests/modules/performance_test/src/Cache/CacheTagsChecksumDecorator.php
 core/modules/system/tests/modules/performance_test/src/Cache/CacheFactoryDecorator.php
@@ -9513,8 +9515,8 @@ core/modules/system/tests/modules/hold_test/hold_test.info.yml
 core/modules/system/tests/modules/dummydb/src/Driver/Database/dummydb/Connection.php
 core/modules/system/tests/modules/dummydb/src/Driver/Database/dummydb/Install/Tasks.php
 core/modules/system/tests/modules/dummydb/dummydb.info.yml
-core/modules/system/tests/modules/deprecation_test/deprecation_test.module
 core/modules/system/tests/modules/deprecation_test/deprecation_test.services.yml
+core/modules/system/tests/modules/deprecation_test/src/Hook/DeprecationTestHooks.php
 core/modules/system/tests/modules/deprecation_test/src/DeprecatedController.php
 core/modules/system/tests/modules/deprecation_test/src/Deprecation/FixtureDeprecatedClass.php
 core/modules/system/tests/modules/deprecation_test/deprecation_test.info.yml
@@ -11587,7 +11589,6 @@ core/modules/navigation/templates/navigation--messages.html.twig
 core/modules/navigation/templates/top-bar-page-action.html.twig
 core/modules/navigation/templates/navigation-menu.html.twig
 core/modules/navigation/templates/navigation-content-top.html.twig
-core/modules/navigation/modules/navigation_top_bar/navigation_top_bar.info.yml
 core/modules/navigation/navigation.info.yml
 core/modules/navigation/navigation.layouts.yml
 core/modules/media_library/src/Form/SettingsForm.php
