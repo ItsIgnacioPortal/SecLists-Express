@@ -1363,6 +1363,7 @@ htdocs/includes/ace/src/snippets/vbscript.js
 htdocs/includes/ace/src/snippets/hjson.js
 htdocs/includes/ace/src/snippets/php.js
 htdocs/includes/ace/src/snippets/prolog.js
+htdocs/includes/ace/src/snippets/mariadb.js
 htdocs/includes/ace/src/snippets/elixir.js
 htdocs/includes/ace/src/snippets/ftl.js
 htdocs/includes/ace/src/snippets/glsl.js
@@ -1402,6 +1403,7 @@ htdocs/includes/ace/src/snippets/applescript.js
 htdocs/includes/ace/src/snippets/csharp.js
 htdocs/includes/ace/src/snippets/pig.js
 htdocs/includes/ace/src/snippets/flix.js
+htdocs/includes/ace/src/snippets/cedarschema.js
 htdocs/includes/ace/src/snippets/asciidoc.js
 htdocs/includes/ace/src/snippets/raku.js
 htdocs/includes/ace/src/snippets/asl.js
@@ -1429,6 +1431,7 @@ htdocs/includes/ace/src/snippets/python.js
 htdocs/includes/ace/src/snippets/redshift.js
 htdocs/includes/ace/src/snippets/nim.js
 htdocs/includes/ace/src/snippets/c_cpp.js
+htdocs/includes/ace/src/snippets/groq.js
 htdocs/includes/ace/src/snippets/php_laravel_blade.js
 htdocs/includes/ace/src/snippets/lucene.js
 htdocs/includes/ace/src/snippets/clue.js
@@ -1510,6 +1513,7 @@ htdocs/includes/ace/src/snippets/pgsql.js
 htdocs/includes/ace/src/snippets/csound_document.js
 htdocs/includes/ace/src/snippets/gitignore.js
 htdocs/includes/ace/src/snippets/css.js
+htdocs/includes/ace/src/snippets/cedar.js
 htdocs/includes/ace/src/snippets/space.js
 htdocs/includes/ace/src/snippets/ejs.js
 htdocs/includes/ace/src/snippets/apex.js
@@ -1572,15 +1576,18 @@ htdocs/includes/ace/src/theme-solarized_dark.js
 htdocs/includes/ace/src/mode-wollok.js
 htdocs/includes/ace/src/ext-spellcheck.js
 htdocs/includes/ace/src/mode-handlebars.js
+htdocs/includes/ace/src/mode-groq.js
 htdocs/includes/ace/src/mode-sjs.js
 htdocs/includes/ace/src/mode-julia.js
 htdocs/includes/ace/src/mode-jsp.js
 htdocs/includes/ace/src/mode-asl.js
+htdocs/includes/ace/src/mode-cedarschema.js
 htdocs/includes/ace/src/mode-json.js
 htdocs/includes/ace/src/mode-terraform.js
 htdocs/includes/ace/src/theme-kuroir.js
 htdocs/includes/ace/src/mode-csharp.js
 htdocs/includes/ace/src/mode-nim.js
+htdocs/includes/ace/src/mode-mariadb.js
 htdocs/includes/ace/src/ext-diff.js
 htdocs/includes/ace/src/mode-ruby.js
 htdocs/includes/ace/src/mode-rst.js
@@ -1596,6 +1603,7 @@ htdocs/includes/ace/src/mode-nix.js
 htdocs/includes/ace/src/mode-html_elixir.js
 htdocs/includes/ace/src/mode-smithy.js
 htdocs/includes/ace/src/worker-php.js
+htdocs/includes/ace/src/ext-whitespaces_in_selection.js
 htdocs/includes/ace/src/theme-github.js
 htdocs/includes/ace/src/mode-toml.js
 htdocs/includes/ace/src/theme-gruvbox_dark_hard.js
@@ -1646,6 +1654,7 @@ htdocs/includes/ace/src/keybinding-vim.js
 htdocs/includes/ace/src/mode-mushcode.js
 htdocs/includes/ace/src/mode-gcode.js
 htdocs/includes/ace/src/theme-clouds.js
+htdocs/includes/ace/src/mode-cedar.js
 htdocs/includes/ace/src/mode-puppet.js
 htdocs/includes/ace/src/mode-xml.js
 htdocs/includes/ace/src/mode-css.js
@@ -1982,6 +1991,7 @@ htdocs/includes/OAuth/OAuth2/Service/EveOnline.php
 htdocs/includes/OAuth/OAuth2/Service/Harvest.php
 htdocs/includes/OAuth/OAuth2/Service/Buffer.php
 htdocs/includes/OAuth/OAuth2/Service/Generic.php
+htdocs/includes/OAuth/OAuth2/Service/Microsoftapp.php
 htdocs/includes/OAuth/OAuth2/Service/Nest.php
 htdocs/includes/OAuth/OAuth2/Service/Heroku.php
 htdocs/includes/OAuth/OAuth2/Service/Microsoft2.php
@@ -3249,6 +3259,7 @@ htdocs/admin/tools/update.php
 htdocs/admin/tools/listevents.php
 htdocs/admin/tools/ui/dolibarr-context/index.php
 htdocs/admin/tools/ui/dolibarr-context/langs-tool.php
+htdocs/admin/tools/ui/dolibarr-context/inc_fetch.php
 htdocs/admin/tools/ui/dolibarr-context/inc_seteventmessage.php
 htdocs/admin/tools/ui/dolibarr-context/knows-hooks.php
 htdocs/admin/tools/ui/index.php
@@ -3606,6 +3617,7 @@ htdocs/core/boxes/box_fediverse.php
 htdocs/core/boxes/box_graph_invoices_supplier_permonth.php
 htdocs/core/boxes/box_last_modified_ticket.php
 htdocs/core/boxes/box_contacts.php
+htdocs/core/boxes/box_holidays_to_approve.php
 htdocs/core/boxes/box_members_last_subscriptions.php
 htdocs/core/boxes/box_members_last_modified.php
 htdocs/core/boxes/box_external_rss.php
@@ -3629,6 +3641,7 @@ htdocs/core/boxes/box_accountancy_suspense_account.php
 htdocs/core/boxes/box_last_modified_knowledgerecord.php
 htdocs/core/boxes/box_scheduled_jobs.php
 htdocs/core/boxes/box_contracts.php
+htdocs/core/boxes/box_expensereports_to_approve.php
 htdocs/core/boxes/box_graph_propales_permonth.php
 htdocs/core/boxes/box_last_knowledgerecord.php
 htdocs/core/boxes/box_birthdays.php
@@ -3791,6 +3804,7 @@ htdocs/core/ajax/ajaxuploadpage.php
 htdocs/core/ajax/constantonoff.php
 htdocs/core/ajax/onlineSign.php
 htdocs/core/ajax/changepositionfields.php
+htdocs/core/ajax/updatefield.php
 htdocs/core/ajax/fetchKnowledgeRecord.php
 htdocs/core/ajax/ajaxinvoiceline.php
 htdocs/core/ajax/contacts.php
@@ -3806,7 +3820,6 @@ htdocs/core/ajax/updateextrafield.php
 htdocs/core/ajax/ajaxstatusprospect.php
 htdocs/core/ajax/locationincoterms.php
 htdocs/core/ajax/security.php
-htdocs/core/ajax/savekanbanfield.php
 htdocs/core/ajax/ajaxsellistfield.php
 htdocs/core/ajax/ajaxextrafield.php
 htdocs/core/ajax/bankconciliate.php
@@ -3852,6 +3865,7 @@ htdocs/core/js/lib_foot_search_tool.js
 htdocs/core/js/lib_foot.js.php
 htdocs/core/js/lib_photosresize.js
 htdocs/core/js/editinplace.js
+htdocs/core/js/customreports.js
 htdocs/core/js/lib_tooltip-freeze-by-alt-keypress.js
 htdocs/core/js/dst.js
 htdocs/core/js/lib_notification.js.php
@@ -3931,6 +3945,7 @@ htdocs/core/modules/modProductBatch.class.php
 htdocs/core/modules/oauth/microsoft3_oauthcallback.php
 htdocs/core/modules/oauth/github_oauthcallback.php
 htdocs/core/modules/oauth/stripelive_oauthcallback.php
+htdocs/core/modules/oauth/microsoftapp_oauthcallback.php
 htdocs/core/modules/oauth/microsoft_oauthcallback.php
 htdocs/core/modules/oauth/google_oauthcallback.php
 htdocs/core/modules/oauth/microsoft2_oauthcallback.php
@@ -5114,6 +5129,7 @@ htdocs/install/mysql/tables/llx_product_perentity-multicompany.sql
 htdocs/install/mysql/tables/llx_categorie_user.sql
 htdocs/install/mysql/tables/llx_user.key.sql
 htdocs/install/mysql/tables/llx_c_type_container-website.key.sql
+htdocs/install/mysql/tables/llx_schemas.key.sql
 htdocs/install/mysql/tables/llx_categorie_invoice-facture.sql
 htdocs/install/mysql/tables/llx_actioncomm_resources.key.sql
 htdocs/install/mysql/tables/llx_partnership-partnership.sql
@@ -5280,6 +5296,7 @@ htdocs/install/mysql/tables/llx_projet_task_dependency-project.sql
 htdocs/install/mysql/tables/llx_accounting_fiscalyear.sql
 htdocs/install/mysql/tables/llx_accounting_balance_snapshot-accounting.sql
 htdocs/install/mysql/tables/llx_categories_extrafields.key.sql
+htdocs/install/mysql/tables/llx_extrafields_schemas.key.sql
 htdocs/install/mysql/tables/llx_c_action_trigger.sql
 htdocs/install/mysql/tables/llx_accounting_account.key.sql
 htdocs/install/mysql/tables/llx_adherent_extrafields.key.sql
@@ -5479,7 +5496,6 @@ htdocs/install/mysql/tables/llx_overwrite_trans.key.sql
 htdocs/install/mysql/tables/llx_c_stcomm.sql
 htdocs/install/mysql/tables/llx_pos_cash_fence_extrafields.key.sql
 htdocs/install/mysql/tables/llx_element_element.sql
-htdocs/install/mysql/tables/llx_c_field_list.sql
 htdocs/install/mysql/tables/llx_mrp_mo-mrp.sql
 htdocs/install/mysql/tables/llx_supplier_proposaldet_extrafields.sql
 htdocs/install/mysql/tables/llx_actioncomm_reminder.key.sql
@@ -5789,6 +5805,7 @@ htdocs/multicurrency/class/multicurrency.class.php
 htdocs/multicurrency/multicurrency_rate.php
 htdocs/takepos/printbox.php
 htdocs/takepos/index.php
+htdocs/takepos/creditnote_apply.php
 htdocs/takepos/send.php
 htdocs/takepos/README.md
 htdocs/takepos/smpcb.php
@@ -12595,7 +12612,9 @@ htdocs/public/ticket/document.php
 htdocs/public/ticket/create_ticket.php
 htdocs/public/includes/dolibarr-js-context/dolibarr-context.umd.js
 htdocs/public/includes/dolibarr-js-context/dolibarr-tool.langs.js
+htdocs/public/includes/dolibarr-js-context/dolibarr-context.compat.js
 htdocs/public/includes/dolibarr-js-context/dolibarr-tool.seteventmessage.js
+htdocs/public/includes/dolibarr-js-context/dolibarr-tool.fetch.js
 htdocs/public/includes/dolibarr-js-context/dolibarr-context.mock.js
 htdocs/public/includes/tinymce/tinymce/themes/silver/theme.min.js
 htdocs/public/includes/tinymce/tinymce/models/dom/model.min.js
@@ -13189,6 +13208,7 @@ test/phpunit/XCalLibTest.php
 test/phpunit/MoTest.php
 test/phpunit/LinkTest.php
 test/phpunit/RepositoryTest.php
+test/phpunit/AiMcpApiBridgeProjectsTest.php
 test/phpunit/PaiementTest.php
 test/phpunit/FichinterTest.php
 test/phpunit/BookKeepingTest.php
@@ -13436,11 +13456,15 @@ ChangeLog
 .agents/AGENTS.md
 .agents/agents/agent-power.toml
 .agents/skills/skill-doli-devmodule/SKILL.md
+.agents/skills/skill-doli-translation/SKILL.md
 .agents/skills/skill-doli-test-hurl/SKILL.md
 .agents/skills/skill-doli-code-review/SKILL.md
+.agents/skills/skill-doli-upmerge/SKILL.md
 .agents/skills/skill-doli-dev/SKILL.md
+.agents/skills/skill-doli-website-edit/SKILL.md
 .agents/skills/skill-doli-test-phpunit/SKILL.md
 .agents/skills/skill-doli-test-interactive/SKILL.md
+.agents/skills/skill-doli-github/SKILL.md
 .editorconfig
 dev/pullmerge.sh
 dev/README
@@ -13540,6 +13564,7 @@ dev/initdemo/initdemo.sh
 dev/lockedfiles.txt
 dev/tools/fixaltlanguages.sh
 dev/tools/apstats.php
+dev/tools/github_authors_and_commits_bydate.sh
 dev/tools/dolibarr-postgres2mysql.php
 dev/tools/test/testperf.php
 dev/tools/test/testtcpdf.php

@@ -1168,6 +1168,9 @@ core/profiles/tests/testing_hooks/testing_hooks.profile
 core/profiles/tests/testing_hooks/src/Hook/TestingHooksProfile.php
 core/profiles/tests/testing_hooks/testing_hooks.info.yml
 core/profiles/tests/testing_no_version/testing_no_version.info.yml
+core/profiles/tests/testing_install_tasks_interface/src/Install/Tasks/TestingInstallTasksInterfaceTasks.php
+core/profiles/tests/testing_install_tasks_interface/testing_install_tasks_interface.profile
+core/profiles/tests/testing_install_tasks_interface/testing_install_tasks_interface.info.yml
 core/profiles/tests/testing_multilingual/testing_multilingual.info.yml
 core/profiles/tests/testing_multilingual/config/install/locale.settings.yml
 core/profiles/tests/testing_multilingual/config/install/language.entity.es.yml
@@ -1827,6 +1830,7 @@ core/tests/Drupal/KernelTests/Core/Config/MailerDsnConfigValidationTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigImportRenameValidationTest.php
 core/tests/Drupal/KernelTests/Core/Config/SimpleConfigValidationTest.php
 core/tests/Drupal/KernelTests/Core/Config/ConfigFileContentTest.php
+core/tests/Drupal/KernelTests/Core/Config/ConfigExportCommandTest.php
 core/tests/Drupal/KernelTests/Core/Config/ImportStorageTransformerTest.php
 core/tests/Drupal/KernelTests/Core/Routing/RouteProviderTest.php
 core/tests/Drupal/KernelTests/Core/Routing/RouterTest.php
@@ -1849,6 +1853,7 @@ core/tests/Drupal/KernelTests/Core/Extension/ModuleInstallerTest.php
 core/tests/Drupal/KernelTests/Core/Extension/ModuleConfigureRouteTest.php
 core/tests/Drupal/KernelTests/Core/Extension/FileIncludeGadgetChainTest.php
 core/tests/Drupal/KernelTests/Core/Extension/Command/ExtensionInstallCommandTest.php
+core/tests/Drupal/KernelTests/Core/Extension/Command/ExtensionUninstallCommandTest.php
 core/tests/Drupal/KernelTests/Core/Extension/ModuleHandlerTest.php
 core/tests/Drupal/KernelTests/Core/Extension/ThemeExtensionListTest.php
 core/tests/Drupal/KernelTests/Core/Extension/ExtensionAvailableConstraintValidatorTest.php
@@ -2075,6 +2080,7 @@ core/tests/Drupal/KernelTests/KernelTestHttpRequestTest.php
 core/tests/Drupal/KernelTests/Component/Render/FormattableMarkupKernelTest.php
 core/tests/Drupal/KernelTests/Component/ComponentRenderTest.php
 core/tests/Drupal/KernelTests/ConfigFormTestBase.php
+core/tests/Drupal/KernelTests/KernelTestSharedContainerTest.php
 core/tests/Drupal/KernelTests/AssertContentTrait.php
 core/tests/Drupal/KernelTests/RouteProvider.php
 core/tests/Drupal/KernelTests/DrupalApplicationTesterTrait.php
@@ -2273,6 +2279,7 @@ core/tests/Drupal/FunctionalTests/Installer/ProfileSkipInstallTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerExistingDatabaseSettingsTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerNonDefaultDatabaseDriverTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerExistingConfigSyncDirectoryProfileHookInstallTest.php
+core/tests/Drupal/FunctionalTests/Installer/TaskAdditionAndAlterInstallerTest.php
 core/tests/Drupal/FunctionalTests/Installer/DistributionProfileExistingSettingsTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerProfileRequirementsTest.php
 core/tests/Drupal/FunctionalTests/Installer/InstallerConfigDirectorySetNoDirectoryTest.php
@@ -2666,6 +2673,7 @@ core/tests/Drupal/Tests/Core/StringTranslation/TranslationManagerTest.php
 core/tests/Drupal/Tests/Core/Installer/InstallerExtensionListDeprecationTest.php
 core/tests/Drupal/Tests/Core/Error/DrupalLogErrorTest.php
 core/tests/Drupal/Tests/Core/Condition/ConditionAccessResolverTraitTest.php
+core/tests/Drupal/Tests/Core/Condition/ConditionPluginBaseTest.php
 core/tests/Drupal/Tests/Core/PreWarm/CachePreWarmerTest.php
 core/tests/Drupal/Tests/Core/Command/BootableCommandTraitTest.php
 core/tests/Drupal/Tests/Core/Command/DrupalConsoleLoggerTest.php
@@ -8621,6 +8629,7 @@ core/modules/system/tests/src/Kernel/Installer/InstallTranslationFilePatternTest
 core/modules/system/tests/src/Kernel/Installer/InstallerDependenciesResolutionTest.php
 core/modules/system/tests/src/Kernel/GenericTest.php
 core/modules/system/tests/src/Kernel/Command/StatusCommandTest.php
+core/modules/system/tests/src/Kernel/Command/ExtensionListCommandTest.php
 core/modules/system/tests/src/Kernel/Block/SystemMenuBlockTest.php
 core/modules/system/tests/src/Kernel/Block/StubPathMatcher.php
 core/modules/system/tests/src/Kernel/System/DateFormatsLockedTest.php
@@ -13108,6 +13117,7 @@ core/lib/Drupal/Core/Form/ConfirmFormInterface.php
 core/lib/Drupal/Core/Form/FormStateValuesTrait.php
 core/lib/Drupal/Core/Form/SubformStateInterface.php
 core/lib/Drupal/Core/Form/FormBuilderInterface.php
+core/lib/Drupal/Core/Form/FormSelectOptions.php
 core/lib/Drupal/Core/Form/FormBase.php
 core/lib/Drupal/Core/Form/ConfigTarget.php
 core/lib/Drupal/Core/Form/ConfigFormBaseTrait.php
@@ -13456,6 +13466,7 @@ core/lib/Drupal/Core/Test/EnvironmentCleaner.php
 core/lib/Drupal/Core/Test/TestRun.php
 core/lib/Drupal/Core/Test/TestKernel.php
 core/lib/Drupal/Core/Test/PerformanceTestRecorder.php
+core/lib/Drupal/Core/Test/KernelTestDrupalKernel.php
 core/lib/Drupal/Core/Test/PhpUnitTestDiscoveryTracer.php
 core/lib/Drupal/Core/Test/TestRunResultsStorageInterface.php
 core/lib/Drupal/Core/Test/TestDiscovery.php
@@ -14014,6 +14025,7 @@ core/lib/Drupal/Core/Command/DrupalConsoleLogger.php
 core/lib/Drupal/Core/Command/DbImportCommand.php
 core/lib/Drupal/Core/Command/DbToolsApplication.php
 core/lib/Drupal/Core/Command/ServerCommand.php
+core/lib/Drupal/Core/Command/OutputFormat.php
 core/lib/Drupal/Core/Command/DrupalApplication.php
 core/lib/Drupal/Core/Command/DbCommandBase.php
 core/lib/Drupal/Core/Command/GenerateProxyClassCommand.php
@@ -14202,6 +14214,7 @@ core/lib/Drupal/Core/Config/ConfigInstaller.php
 core/lib/Drupal/Core/Config/ImmutableConfig.php
 core/lib/Drupal/Core/Config/StorageTransformerException.php
 core/lib/Drupal/Core/Config/Config.php
+core/lib/Drupal/Core/Config/Command/ConfigExportCommand.php
 core/lib/Drupal/Core/Config/ExportStorageManager.php
 core/lib/Drupal/Core/Config/SyncFactory.php
 core/lib/Drupal/Core/Config/ConfigPrefixLengthException.php
@@ -14349,10 +14362,13 @@ core/lib/Drupal/Core/Extension/Plugin/Validation/Constraint/ExtensionAvailableCo
 core/lib/Drupal/Core/Extension/Plugin/Validation/Constraint/ExtensionAvailableConstraint.php
 core/lib/Drupal/Core/Extension/module.api.php
 core/lib/Drupal/Core/Extension/ThemeInstallerInterface.php
+core/lib/Drupal/Core/Extension/Command/ExtensionListCommand.php
+core/lib/Drupal/Core/Extension/Command/ExtensionUninstallCommand.php
 core/lib/Drupal/Core/Extension/Command/ExtensionInstallCommand.php
 core/lib/Drupal/Core/Extension/InstallRequirementsInterface.php
 core/lib/Drupal/Core/Extension/ModuleRequiredByThemesUninstallValidator.php
 core/lib/Drupal/Core/Extension/MissingDependencyException.php
+core/lib/Drupal/Core/Extension/Install/TasksInterface.php
 core/lib/Drupal/Core/Extension/Dependency.php
 core/lib/Drupal/Core/Extension/ExtensionPathResolver.php
 core/lib/Drupal/Core/Extension/DatabaseDriver.php
